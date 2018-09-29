@@ -1,0 +1,1805 @@
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Int_SW,"ax",%progbits
+  20              		.align	2
+  21              		.global	Int_SW
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Int_SW, %function
+  25              	Int_SW:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** volatile uint8 letra;
+  14:main.c        **** 
+  15:main.c        **** CY_ISR(Int_SW){
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  16:main.c        ****         LCD_Position(0,1);    
+  36              		.loc 1 16 0
+  37 0002 0121     		movs	r1, #1
+  38 0004 0020     		movs	r0, #0
+  39 0006 FFF7FEFF 		bl	LCD_Position
+  40              	.LVL0:
+  17:main.c        ****         LCD_PrintString("1");
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 2
+
+
+  41              		.loc 1 17 0
+  42 000a 6448     		ldr	r0, .L29
+  43 000c FFF7FEFF 		bl	LCD_PrintString
+  44              	.LVL1:
+  18:main.c        ****         Control_Write(0);
+  45              		.loc 1 18 0
+  46 0010 0020     		movs	r0, #0
+  47 0012 FFF7FEFF 		bl	Control_Write
+  48              	.LVL2:
+  19:main.c        ****     switch(SW_Read()) {
+  49              		.loc 1 19 0
+  50 0016 FFF7FEFF 		bl	SW_Read
+  51              	.LVL3:
+  52 001a 0138     		subs	r0, r0, #1
+  53 001c 0F28     		cmp	r0, #15
+  54 001e 00F2B680 		bhi	.L2
+  55 0022 DFE800F0 		tbb	[pc, r0]
+  56              	.L4:
+  57 0026 08       		.byte	(.L3-.L4)/2
+  58 0027 34       		.byte	(.L5-.L4)/2
+  59 0028 B4       		.byte	(.L2-.L4)/2
+  60 0029 B4       		.byte	(.L2-.L4)/2
+  61 002a B4       		.byte	(.L2-.L4)/2
+  62 002b B4       		.byte	(.L2-.L4)/2
+  63 002c B4       		.byte	(.L2-.L4)/2
+  64 002d 5F       		.byte	(.L6-.L4)/2
+  65 002e B4       		.byte	(.L2-.L4)/2
+  66 002f B4       		.byte	(.L2-.L4)/2
+  67 0030 B4       		.byte	(.L2-.L4)/2
+  68 0031 B4       		.byte	(.L2-.L4)/2
+  69 0032 B4       		.byte	(.L2-.L4)/2
+  70 0033 B4       		.byte	(.L2-.L4)/2
+  71 0034 B4       		.byte	(.L2-.L4)/2
+  72 0035 8A       		.byte	(.L7-.L4)/2
+  73              		.p2align 1
+  74              	.L3:
+  20:main.c        **** 
+  21:main.c        ****             case 0x01:
+  22:main.c        ****                  switch(P0_Read()) {
+  75              		.loc 1 22 0
+  76 0036 FFF7FEFF 		bl	P0_Read
+  77              	.LVL4:
+  78 003a 0738     		subs	r0, r0, #7
+  79 003c 0728     		cmp	r0, #7
+  80 003e 00F2A680 		bhi	.L2
+  81 0042 DFE800F0 		tbb	[pc, r0]
+  82              	.L9:
+  83 0046 1C       		.byte	(.L8-.L9)/2
+  84 0047 A4       		.byte	(.L2-.L9)/2
+  85 0048 A4       		.byte	(.L2-.L9)/2
+  86 0049 A4       		.byte	(.L2-.L9)/2
+  87 004a 14       		.byte	(.L10-.L9)/2
+  88 004b A4       		.byte	(.L2-.L9)/2
+  89 004c 0C       		.byte	(.L11-.L9)/2
+  90 004d 04       		.byte	(.L12-.L9)/2
+  91              		.p2align 1
+  92              	.L12:
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 3
+
+
+  23:main.c        ****                     case 0xE:
+  24:main.c        ****                     LCD_Position(0,1);    
+  93              		.loc 1 24 0
+  94 004e 0121     		movs	r1, #1
+  95 0050 0020     		movs	r0, #0
+  96 0052 FFF7FEFF 		bl	LCD_Position
+  97              	.LVL5:
+  25:main.c        ****                     LCD_PrintString("1");
+  98              		.loc 1 25 0
+  99 0056 5148     		ldr	r0, .L29
+ 100 0058 FFF7FEFF 		bl	LCD_PrintString
+ 101              	.LVL6:
+  26:main.c        ****                     break;
+ 102              		.loc 1 26 0
+ 103 005c 97E0     		b	.L2
+ 104              	.L11:
+  27:main.c        ****                     case 0xD:
+  28:main.c        ****                     LCD_Position(0,1);    
+ 105              		.loc 1 28 0
+ 106 005e 0121     		movs	r1, #1
+ 107 0060 0020     		movs	r0, #0
+ 108 0062 FFF7FEFF 		bl	LCD_Position
+ 109              	.LVL7:
+  29:main.c        ****                     LCD_PrintString("2");
+ 110              		.loc 1 29 0
+ 111 0066 4E48     		ldr	r0, .L29+4
+ 112 0068 FFF7FEFF 		bl	LCD_PrintString
+ 113              	.LVL8:
+  30:main.c        ****                     break;
+ 114              		.loc 1 30 0
+ 115 006c 8FE0     		b	.L2
+ 116              	.L10:
+  31:main.c        ****                      case 0xB:
+  32:main.c        ****                     LCD_Position(0,1);    
+ 117              		.loc 1 32 0
+ 118 006e 0121     		movs	r1, #1
+ 119 0070 0020     		movs	r0, #0
+ 120 0072 FFF7FEFF 		bl	LCD_Position
+ 121              	.LVL9:
+  33:main.c        ****                     LCD_PrintString("3");
+ 122              		.loc 1 33 0
+ 123 0076 4B48     		ldr	r0, .L29+8
+ 124 0078 FFF7FEFF 		bl	LCD_PrintString
+ 125              	.LVL10:
+  34:main.c        ****                     break;
+ 126              		.loc 1 34 0
+ 127 007c 87E0     		b	.L2
+ 128              	.L8:
+  35:main.c        ****                     case 0x7:
+  36:main.c        ****                     LCD_Position(0,1);    
+ 129              		.loc 1 36 0
+ 130 007e 0121     		movs	r1, #1
+ 131 0080 0020     		movs	r0, #0
+ 132 0082 FFF7FEFF 		bl	LCD_Position
+ 133              	.LVL11:
+  37:main.c        ****                     LCD_PrintString("A");
+ 134              		.loc 1 37 0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 4
+
+
+ 135 0086 4848     		ldr	r0, .L29+12
+ 136 0088 FFF7FEFF 		bl	LCD_PrintString
+ 137              	.LVL12:
+  38:main.c        ****                     break;
+ 138              		.loc 1 38 0
+ 139 008c 7FE0     		b	.L2
+ 140              	.L5:
+  39:main.c        ****                     default:
+  40:main.c        ****                     break;
+  41:main.c        ****                 }
+  42:main.c        ****                     
+  43:main.c        ****                     break;
+  44:main.c        ****                 case 0x02:
+  45:main.c        ****                 switch(P0_Read()) {
+ 141              		.loc 1 45 0
+ 142 008e FFF7FEFF 		bl	P0_Read
+ 143              	.LVL13:
+ 144 0092 0738     		subs	r0, r0, #7
+ 145 0094 0728     		cmp	r0, #7
+ 146 0096 7AD8     		bhi	.L2
+ 147 0098 DFE800F0 		tbb	[pc, r0]
+ 148              	.L14:
+ 149 009c 1C       		.byte	(.L13-.L14)/2
+ 150 009d 79       		.byte	(.L2-.L14)/2
+ 151 009e 79       		.byte	(.L2-.L14)/2
+ 152 009f 79       		.byte	(.L2-.L14)/2
+ 153 00a0 14       		.byte	(.L15-.L14)/2
+ 154 00a1 79       		.byte	(.L2-.L14)/2
+ 155 00a2 0C       		.byte	(.L16-.L14)/2
+ 156 00a3 04       		.byte	(.L17-.L14)/2
+ 157              		.p2align 1
+ 158              	.L17:
+  46:main.c        ****                     case 0xE:
+  47:main.c        ****                     LCD_Position(0,1);    
+ 159              		.loc 1 47 0
+ 160 00a4 0121     		movs	r1, #1
+ 161 00a6 0020     		movs	r0, #0
+ 162 00a8 FFF7FEFF 		bl	LCD_Position
+ 163              	.LVL14:
+  48:main.c        ****                     LCD_PrintString("4");
+ 164              		.loc 1 48 0
+ 165 00ac 3F48     		ldr	r0, .L29+16
+ 166 00ae FFF7FEFF 		bl	LCD_PrintString
+ 167              	.LVL15:
+  49:main.c        ****                     break;
+ 168              		.loc 1 49 0
+ 169 00b2 6CE0     		b	.L2
+ 170              	.L16:
+  50:main.c        ****                     case 0xD:
+  51:main.c        ****                     LCD_Position(0,1);    
+ 171              		.loc 1 51 0
+ 172 00b4 0121     		movs	r1, #1
+ 173 00b6 0020     		movs	r0, #0
+ 174 00b8 FFF7FEFF 		bl	LCD_Position
+ 175              	.LVL16:
+  52:main.c        ****                     LCD_PrintString("5");
+ 176              		.loc 1 52 0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 5
+
+
+ 177 00bc 3C48     		ldr	r0, .L29+20
+ 178 00be FFF7FEFF 		bl	LCD_PrintString
+ 179              	.LVL17:
+  53:main.c        ****                     break;
+ 180              		.loc 1 53 0
+ 181 00c2 64E0     		b	.L2
+ 182              	.L15:
+  54:main.c        ****                      case 0xB:
+  55:main.c        ****                     LCD_Position(0,1);    
+ 183              		.loc 1 55 0
+ 184 00c4 0121     		movs	r1, #1
+ 185 00c6 0020     		movs	r0, #0
+ 186 00c8 FFF7FEFF 		bl	LCD_Position
+ 187              	.LVL18:
+  56:main.c        ****                     LCD_PrintString("6");
+ 188              		.loc 1 56 0
+ 189 00cc 3948     		ldr	r0, .L29+24
+ 190 00ce FFF7FEFF 		bl	LCD_PrintString
+ 191              	.LVL19:
+  57:main.c        ****                     break;
+ 192              		.loc 1 57 0
+ 193 00d2 5CE0     		b	.L2
+ 194              	.L13:
+  58:main.c        ****                     case 0x7:
+  59:main.c        ****                     LCD_Position(0,1);    
+ 195              		.loc 1 59 0
+ 196 00d4 0121     		movs	r1, #1
+ 197 00d6 0020     		movs	r0, #0
+ 198 00d8 FFF7FEFF 		bl	LCD_Position
+ 199              	.LVL20:
+  60:main.c        ****                     LCD_PrintString("B");
+ 200              		.loc 1 60 0
+ 201 00dc 3648     		ldr	r0, .L29+28
+ 202 00de FFF7FEFF 		bl	LCD_PrintString
+ 203              	.LVL21:
+  61:main.c        ****                     break;
+ 204              		.loc 1 61 0
+ 205 00e2 54E0     		b	.L2
+ 206              	.L6:
+  62:main.c        ****                     default:
+  63:main.c        ****                     break;   
+  64:main.c        ****                 }
+  65:main.c        ****                     break;
+  66:main.c        **** 
+  67:main.c        ****                     break;
+  68:main.c        ****                 case 0x08:
+  69:main.c        ****                     switch(P0_Read()) {
+ 207              		.loc 1 69 0
+ 208 00e4 FFF7FEFF 		bl	P0_Read
+ 209              	.LVL22:
+ 210 00e8 0738     		subs	r0, r0, #7
+ 211 00ea 0728     		cmp	r0, #7
+ 212 00ec 4FD8     		bhi	.L2
+ 213 00ee DFE800F0 		tbb	[pc, r0]
+ 214              	.L19:
+ 215 00f2 1C       		.byte	(.L18-.L19)/2
+ 216 00f3 4E       		.byte	(.L2-.L19)/2
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 6
+
+
+ 217 00f4 4E       		.byte	(.L2-.L19)/2
+ 218 00f5 4E       		.byte	(.L2-.L19)/2
+ 219 00f6 14       		.byte	(.L20-.L19)/2
+ 220 00f7 4E       		.byte	(.L2-.L19)/2
+ 221 00f8 0C       		.byte	(.L21-.L19)/2
+ 222 00f9 04       		.byte	(.L22-.L19)/2
+ 223              		.p2align 1
+ 224              	.L22:
+  70:main.c        ****                     case 0xE:
+  71:main.c        ****                     LCD_Position(0,1);    
+ 225              		.loc 1 71 0
+ 226 00fa 0121     		movs	r1, #1
+ 227 00fc 0020     		movs	r0, #0
+ 228 00fe FFF7FEFF 		bl	LCD_Position
+ 229              	.LVL23:
+  72:main.c        ****                     LCD_PrintString("7");
+ 230              		.loc 1 72 0
+ 231 0102 2E48     		ldr	r0, .L29+32
+ 232 0104 FFF7FEFF 		bl	LCD_PrintString
+ 233              	.LVL24:
+  73:main.c        ****                     break;
+ 234              		.loc 1 73 0
+ 235 0108 41E0     		b	.L2
+ 236              	.L21:
+  74:main.c        ****                     case 0xD:
+  75:main.c        ****                     LCD_Position(0,1);    
+ 237              		.loc 1 75 0
+ 238 010a 0121     		movs	r1, #1
+ 239 010c 0020     		movs	r0, #0
+ 240 010e FFF7FEFF 		bl	LCD_Position
+ 241              	.LVL25:
+  76:main.c        ****                     LCD_PrintString("8");
+ 242              		.loc 1 76 0
+ 243 0112 2B48     		ldr	r0, .L29+36
+ 244 0114 FFF7FEFF 		bl	LCD_PrintString
+ 245              	.LVL26:
+  77:main.c        ****                     break;
+ 246              		.loc 1 77 0
+ 247 0118 39E0     		b	.L2
+ 248              	.L20:
+  78:main.c        ****                      case 0xB:
+  79:main.c        ****                     LCD_Position(0,1);    
+ 249              		.loc 1 79 0
+ 250 011a 0121     		movs	r1, #1
+ 251 011c 0020     		movs	r0, #0
+ 252 011e FFF7FEFF 		bl	LCD_Position
+ 253              	.LVL27:
+  80:main.c        ****                     LCD_PrintString("9");
+ 254              		.loc 1 80 0
+ 255 0122 2848     		ldr	r0, .L29+40
+ 256 0124 FFF7FEFF 		bl	LCD_PrintString
+ 257              	.LVL28:
+  81:main.c        ****                     break;
+ 258              		.loc 1 81 0
+ 259 0128 31E0     		b	.L2
+ 260              	.L18:
+  82:main.c        ****                     case 0x7:
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 7
+
+
+  83:main.c        ****                     LCD_Position(0,1);    
+ 261              		.loc 1 83 0
+ 262 012a 0121     		movs	r1, #1
+ 263 012c 0020     		movs	r0, #0
+ 264 012e FFF7FEFF 		bl	LCD_Position
+ 265              	.LVL29:
+  84:main.c        ****                     LCD_PrintString("C");
+ 266              		.loc 1 84 0
+ 267 0132 2548     		ldr	r0, .L29+44
+ 268 0134 FFF7FEFF 		bl	LCD_PrintString
+ 269              	.LVL30:
+  85:main.c        ****                     break;
+ 270              		.loc 1 85 0
+ 271 0138 29E0     		b	.L2
+ 272              	.L7:
+  86:main.c        ****                     default:
+  87:main.c        ****                     break;   
+  88:main.c        ****                 }
+  89:main.c        ****                     break;
+  90:main.c        ****                 case 0x10:
+  91:main.c        ****                     switch(P0_Read()) {
+ 273              		.loc 1 91 0
+ 274 013a FFF7FEFF 		bl	P0_Read
+ 275              	.LVL31:
+ 276 013e 0738     		subs	r0, r0, #7
+ 277 0140 0728     		cmp	r0, #7
+ 278 0142 24D8     		bhi	.L2
+ 279 0144 DFE800F0 		tbb	[pc, r0]
+ 280              	.L24:
+ 281 0148 1C       		.byte	(.L23-.L24)/2
+ 282 0149 23       		.byte	(.L2-.L24)/2
+ 283 014a 23       		.byte	(.L2-.L24)/2
+ 284 014b 23       		.byte	(.L2-.L24)/2
+ 285 014c 14       		.byte	(.L25-.L24)/2
+ 286 014d 23       		.byte	(.L2-.L24)/2
+ 287 014e 0C       		.byte	(.L26-.L24)/2
+ 288 014f 04       		.byte	(.L27-.L24)/2
+ 289              		.p2align 1
+ 290              	.L27:
+  92:main.c        ****                     case 0xE:
+  93:main.c        ****                     LCD_Position(0,1);    
+ 291              		.loc 1 93 0
+ 292 0150 0121     		movs	r1, #1
+ 293 0152 0020     		movs	r0, #0
+ 294 0154 FFF7FEFF 		bl	LCD_Position
+ 295              	.LVL32:
+  94:main.c        ****                     LCD_PrintString("*");
+ 296              		.loc 1 94 0
+ 297 0158 1C48     		ldr	r0, .L29+48
+ 298 015a FFF7FEFF 		bl	LCD_PrintString
+ 299              	.LVL33:
+  95:main.c        ****                     break;
+ 300              		.loc 1 95 0
+ 301 015e 16E0     		b	.L2
+ 302              	.L26:
+  96:main.c        ****                     case 0xD:
+  97:main.c        ****                     LCD_Position(0,1);    
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 8
+
+
+ 303              		.loc 1 97 0
+ 304 0160 0121     		movs	r1, #1
+ 305 0162 0020     		movs	r0, #0
+ 306 0164 FFF7FEFF 		bl	LCD_Position
+ 307              	.LVL34:
+  98:main.c        ****                     LCD_PrintString("0");
+ 308              		.loc 1 98 0
+ 309 0168 1948     		ldr	r0, .L29+52
+ 310 016a FFF7FEFF 		bl	LCD_PrintString
+ 311              	.LVL35:
+  99:main.c        ****                     break;
+ 312              		.loc 1 99 0
+ 313 016e 0EE0     		b	.L2
+ 314              	.L25:
+ 100:main.c        ****                      case 0xB:
+ 101:main.c        ****                     LCD_Position(0,1);    
+ 315              		.loc 1 101 0
+ 316 0170 0121     		movs	r1, #1
+ 317 0172 0020     		movs	r0, #0
+ 318 0174 FFF7FEFF 		bl	LCD_Position
+ 319              	.LVL36:
+ 102:main.c        ****                     LCD_PrintString("#");
+ 320              		.loc 1 102 0
+ 321 0178 1648     		ldr	r0, .L29+56
+ 322 017a FFF7FEFF 		bl	LCD_PrintString
+ 323              	.LVL37:
+ 103:main.c        ****                     break;
+ 324              		.loc 1 103 0
+ 325 017e 06E0     		b	.L2
+ 326              	.L23:
+ 104:main.c        ****                     case 0x7:
+ 105:main.c        ****                     LCD_Position(0,1);    
+ 327              		.loc 1 105 0
+ 328 0180 0121     		movs	r1, #1
+ 329 0182 0020     		movs	r0, #0
+ 330 0184 FFF7FEFF 		bl	LCD_Position
+ 331              	.LVL38:
+ 106:main.c        ****                     LCD_PrintString("D");
+ 332              		.loc 1 106 0
+ 333 0188 1348     		ldr	r0, .L29+60
+ 334 018a FFF7FEFF 		bl	LCD_PrintString
+ 335              	.LVL39:
+ 336              	.L2:
+ 107:main.c        ****                     break;
+ 108:main.c        ****                     default:
+ 109:main.c        ****                     break;   
+ 110:main.c        ****                 }
+ 111:main.c        **** 
+ 112:main.c        ****                     break;
+ 113:main.c        ****             default:
+ 114:main.c        ****                 break;
+ 115:main.c        ****     }
+ 116:main.c        ****     Control_Write(1);
+ 337              		.loc 1 116 0
+ 338 018e 0120     		movs	r0, #1
+ 339 0190 FFF7FEFF 		bl	Control_Write
+ 340              	.LVL40:
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 9
+
+
+ 117:main.c        ****     SW_ClearInterrupt();
+ 341              		.loc 1 117 0
+ 342 0194 FFF7FEFF 		bl	SW_ClearInterrupt
+ 343              	.LVL41:
+ 344 0198 08BD     		pop	{r3, pc}
+ 345              	.L30:
+ 346 019a 00BF     		.align	2
+ 347              	.L29:
+ 348 019c 00000000 		.word	.LC0
+ 349 01a0 04000000 		.word	.LC1
+ 350 01a4 08000000 		.word	.LC2
+ 351 01a8 0C000000 		.word	.LC3
+ 352 01ac 10000000 		.word	.LC4
+ 353 01b0 14000000 		.word	.LC5
+ 354 01b4 18000000 		.word	.LC6
+ 355 01b8 1C000000 		.word	.LC7
+ 356 01bc 20000000 		.word	.LC8
+ 357 01c0 24000000 		.word	.LC9
+ 358 01c4 28000000 		.word	.LC10
+ 359 01c8 2C000000 		.word	.LC11
+ 360 01cc 30000000 		.word	.LC12
+ 361 01d0 34000000 		.word	.LC13
+ 362 01d4 38000000 		.word	.LC14
+ 363 01d8 3C000000 		.word	.LC15
+ 364              		.cfi_endproc
+ 365              	.LFE63:
+ 366              		.size	Int_SW, .-Int_SW
+ 367              		.section	.text.main,"ax",%progbits
+ 368              		.align	2
+ 369              		.global	main
+ 370              		.thumb
+ 371              		.thumb_func
+ 372              		.type	main, %function
+ 373              	main:
+ 374              	.LFB64:
+ 118:main.c        **** }
+ 119:main.c        **** 
+ 120:main.c        **** 
+ 121:main.c        **** int main(void)
+ 122:main.c        **** {
+ 375              		.loc 1 122 0
+ 376              		.cfi_startproc
+ 377              		@ Volatile: function does not return.
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381              		.cfi_def_cfa_offset 8
+ 382              		.cfi_offset 3, -8
+ 383              		.cfi_offset 14, -4
+ 123:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 384              		.loc 1 123 0
+ 385              		.syntax unified
+ 386              	@ 123 "main.c" 1
+ 387 0002 62B6     		CPSIE   i
+ 388              	@ 0 "" 2
+ 124:main.c        ****     ISR_SW_StartEx(Int_SW); //indicar cual es la rutina/vector de interrupcion
+ 389              		.loc 1 124 0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 10
+
+
+ 390              		.thumb
+ 391              		.syntax unified
+ 392 0004 0748     		ldr	r0, .L34
+ 393 0006 FFF7FEFF 		bl	ISR_SW_StartEx
+ 394              	.LVL42:
+ 125:main.c        ****     LCD_Start();
+ 395              		.loc 1 125 0
+ 396 000a FFF7FEFF 		bl	LCD_Start
+ 397              	.LVL43:
+ 126:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+ 127:main.c        ****     LCD_Position(1,1);
+ 398              		.loc 1 127 0
+ 399 000e 0121     		movs	r1, #1
+ 400 0010 0846     		mov	r0, r1
+ 401 0012 FFF7FEFF 		bl	LCD_Position
+ 402              	.LVL44:
+ 128:main.c        ****     LCD_PrintString("cel");
+ 403              		.loc 1 128 0
+ 404 0016 0448     		ldr	r0, .L34+4
+ 405 0018 FFF7FEFF 		bl	LCD_PrintString
+ 406              	.LVL45:
+ 129:main.c        ****     Control_Write(1);
+ 407              		.loc 1 129 0
+ 408 001c 0120     		movs	r0, #1
+ 409 001e FFF7FEFF 		bl	Control_Write
+ 410              	.LVL46:
+ 411              	.L32:
+ 412 0022 FEE7     		b	.L32
+ 413              	.L35:
+ 414              		.align	2
+ 415              	.L34:
+ 416 0024 00000000 		.word	Int_SW
+ 417 0028 40000000 		.word	.LC16
+ 418              		.cfi_endproc
+ 419              	.LFE64:
+ 420              		.size	main, .-main
+ 421              		.comm	letra,1,1
+ 422              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 423              		.align	2
+ 424              	.LC0:
+ 425 0000 3100     		.ascii	"1\000"
+ 426 0002 0000     		.space	2
+ 427              	.LC1:
+ 428 0004 3200     		.ascii	"2\000"
+ 429 0006 0000     		.space	2
+ 430              	.LC2:
+ 431 0008 3300     		.ascii	"3\000"
+ 432 000a 0000     		.space	2
+ 433              	.LC3:
+ 434 000c 4100     		.ascii	"A\000"
+ 435 000e 0000     		.space	2
+ 436              	.LC4:
+ 437 0010 3400     		.ascii	"4\000"
+ 438 0012 0000     		.space	2
+ 439              	.LC5:
+ 440 0014 3500     		.ascii	"5\000"
+ 441 0016 0000     		.space	2
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 11
+
+
+ 442              	.LC6:
+ 443 0018 3600     		.ascii	"6\000"
+ 444 001a 0000     		.space	2
+ 445              	.LC7:
+ 446 001c 4200     		.ascii	"B\000"
+ 447 001e 0000     		.space	2
+ 448              	.LC8:
+ 449 0020 3700     		.ascii	"7\000"
+ 450 0022 0000     		.space	2
+ 451              	.LC9:
+ 452 0024 3800     		.ascii	"8\000"
+ 453 0026 0000     		.space	2
+ 454              	.LC10:
+ 455 0028 3900     		.ascii	"9\000"
+ 456 002a 0000     		.space	2
+ 457              	.LC11:
+ 458 002c 4300     		.ascii	"C\000"
+ 459 002e 0000     		.space	2
+ 460              	.LC12:
+ 461 0030 2A00     		.ascii	"*\000"
+ 462 0032 0000     		.space	2
+ 463              	.LC13:
+ 464 0034 3000     		.ascii	"0\000"
+ 465 0036 0000     		.space	2
+ 466              	.LC14:
+ 467 0038 2300     		.ascii	"#\000"
+ 468 003a 0000     		.space	2
+ 469              	.LC15:
+ 470 003c 4400     		.ascii	"D\000"
+ 471 003e 0000     		.space	2
+ 472              	.LC16:
+ 473 0040 63656C00 		.ascii	"cel\000"
+ 474              		.text
+ 475              	.Letext0:
+ 476              		.file 2 "d:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 477              		.file 3 "d:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 478              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 479              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 480              		.file 6 "Generated_Source\\PSoC5/LCD.h"
+ 481              		.file 7 "Generated_Source\\PSoC5/Control.h"
+ 482              		.file 8 "Generated_Source\\PSoC5/SW.h"
+ 483              		.file 9 "Generated_Source\\PSoC5/P0.h"
+ 484              		.file 10 "Generated_Source\\PSoC5/ISR_SW.h"
+ 485              		.section	.debug_info,"",%progbits
+ 486              	.Ldebug_info0:
+ 487 0000 35050000 		.4byte	0x535
+ 488 0004 0400     		.2byte	0x4
+ 489 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 490 000a 04       		.byte	0x4
+ 491 000b 01       		.uleb128 0x1
+ 492 000c 60000000 		.4byte	.LASF27
+ 493 0010 0C       		.byte	0xc
+ 494 0011 9A010000 		.4byte	.LASF28
+ 495 0015 DD010000 		.4byte	.LASF29
+ 496 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 497 001d 00000000 		.4byte	0
+ 498 0021 00000000 		.4byte	.Ldebug_line0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 12
+
+
+ 499 0025 02       		.uleb128 0x2
+ 500 0026 01       		.byte	0x1
+ 501 0027 06       		.byte	0x6
+ 502 0028 D1010000 		.4byte	.LASF0
+ 503 002c 02       		.uleb128 0x2
+ 504 002d 01       		.byte	0x1
+ 505 002e 08       		.byte	0x8
+ 506 002f 52000000 		.4byte	.LASF1
+ 507 0033 02       		.uleb128 0x2
+ 508 0034 02       		.byte	0x2
+ 509 0035 05       		.byte	0x5
+ 510 0036 AC010000 		.4byte	.LASF2
+ 511 003a 02       		.uleb128 0x2
+ 512 003b 02       		.byte	0x2
+ 513 003c 07       		.byte	0x7
+ 514 003d 00010000 		.4byte	.LASF3
+ 515 0041 03       		.uleb128 0x3
+ 516 0042 30000000 		.4byte	.LASF9
+ 517 0046 02       		.byte	0x2
+ 518 0047 3F       		.byte	0x3f
+ 519 0048 4C000000 		.4byte	0x4c
+ 520 004c 02       		.uleb128 0x2
+ 521 004d 04       		.byte	0x4
+ 522 004e 05       		.byte	0x5
+ 523 004f BC010000 		.4byte	.LASF4
+ 524 0053 02       		.uleb128 0x2
+ 525 0054 04       		.byte	0x4
+ 526 0055 07       		.byte	0x7
+ 527 0056 EE000000 		.4byte	.LASF5
+ 528 005a 02       		.uleb128 0x2
+ 529 005b 08       		.byte	0x8
+ 530 005c 05       		.byte	0x5
+ 531 005d 8C010000 		.4byte	.LASF6
+ 532 0061 02       		.uleb128 0x2
+ 533 0062 08       		.byte	0x8
+ 534 0063 07       		.byte	0x7
+ 535 0064 49010000 		.4byte	.LASF7
+ 536 0068 04       		.uleb128 0x4
+ 537 0069 04       		.byte	0x4
+ 538 006a 05       		.byte	0x5
+ 539 006b 696E7400 		.ascii	"int\000"
+ 540 006f 02       		.uleb128 0x2
+ 541 0070 04       		.byte	0x4
+ 542 0071 07       		.byte	0x7
+ 543 0072 3C010000 		.4byte	.LASF8
+ 544 0076 03       		.uleb128 0x3
+ 545 0077 3A000000 		.4byte	.LASF10
+ 546 007b 03       		.byte	0x3
+ 547 007c 2C       		.byte	0x2c
+ 548 007d 41000000 		.4byte	0x41
+ 549 0081 05       		.uleb128 0x5
+ 550 0082 B6010000 		.4byte	.LASF11
+ 551 0086 04       		.byte	0x4
+ 552 0087 E401     		.2byte	0x1e4
+ 553 0089 2C000000 		.4byte	0x2c
+ 554 008d 02       		.uleb128 0x2
+ 555 008e 04       		.byte	0x4
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 13
+
+
+ 556 008f 04       		.byte	0x4
+ 557 0090 42000000 		.4byte	.LASF12
+ 558 0094 02       		.uleb128 0x2
+ 559 0095 08       		.byte	0x8
+ 560 0096 04       		.byte	0x4
+ 561 0097 20010000 		.4byte	.LASF13
+ 562 009b 02       		.uleb128 0x2
+ 563 009c 01       		.byte	0x1
+ 564 009d 08       		.byte	0x8
+ 565 009e A1010000 		.4byte	.LASF14
+ 566 00a2 06       		.uleb128 0x6
+ 567 00a3 81000000 		.4byte	0x81
+ 568 00a7 02       		.uleb128 0x2
+ 569 00a8 04       		.byte	0x4
+ 570 00a9 07       		.byte	0x7
+ 571 00aa 83010000 		.4byte	.LASF15
+ 572 00ae 02       		.uleb128 0x2
+ 573 00af 08       		.byte	0x8
+ 574 00b0 04       		.byte	0x4
+ 575 00b1 C5010000 		.4byte	.LASF16
+ 576 00b5 07       		.uleb128 0x7
+ 577 00b6 29000000 		.4byte	.LASF30
+ 578 00ba 01       		.byte	0x1
+ 579 00bb 0F       		.byte	0xf
+ 580 00bc 00000000 		.4byte	.LFB63
+ 581 00c0 DC010000 		.4byte	.LFE63-.LFB63
+ 582 00c4 01       		.uleb128 0x1
+ 583 00c5 9C       		.byte	0x9c
+ 584 00c6 46040000 		.4byte	0x446
+ 585 00ca 08       		.uleb128 0x8
+ 586 00cb 0A000000 		.4byte	.LVL0
+ 587 00cf E0040000 		.4byte	0x4e0
+ 588 00d3 E2000000 		.4byte	0xe2
+ 589 00d7 09       		.uleb128 0x9
+ 590 00d8 01       		.uleb128 0x1
+ 591 00d9 50       		.byte	0x50
+ 592 00da 01       		.uleb128 0x1
+ 593 00db 30       		.byte	0x30
+ 594 00dc 09       		.uleb128 0x9
+ 595 00dd 01       		.uleb128 0x1
+ 596 00de 51       		.byte	0x51
+ 597 00df 01       		.uleb128 0x1
+ 598 00e0 31       		.byte	0x31
+ 599 00e1 00       		.byte	0
+ 600 00e2 08       		.uleb128 0x8
+ 601 00e3 10000000 		.4byte	.LVL1
+ 602 00e7 EB040000 		.4byte	0x4eb
+ 603 00eb F9000000 		.4byte	0xf9
+ 604 00ef 09       		.uleb128 0x9
+ 605 00f0 01       		.uleb128 0x1
+ 606 00f1 50       		.byte	0x50
+ 607 00f2 05       		.uleb128 0x5
+ 608 00f3 03       		.byte	0x3
+ 609 00f4 00000000 		.4byte	.LC0
+ 610 00f8 00       		.byte	0
+ 611 00f9 08       		.uleb128 0x8
+ 612 00fa 16000000 		.4byte	.LVL2
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 14
+
+
+ 613 00fe F6040000 		.4byte	0x4f6
+ 614 0102 0C010000 		.4byte	0x10c
+ 615 0106 09       		.uleb128 0x9
+ 616 0107 01       		.uleb128 0x1
+ 617 0108 50       		.byte	0x50
+ 618 0109 01       		.uleb128 0x1
+ 619 010a 30       		.byte	0x30
+ 620 010b 00       		.byte	0
+ 621 010c 0A       		.uleb128 0xa
+ 622 010d 1A000000 		.4byte	.LVL3
+ 623 0111 01050000 		.4byte	0x501
+ 624 0115 0A       		.uleb128 0xa
+ 625 0116 3A000000 		.4byte	.LVL4
+ 626 011a 0C050000 		.4byte	0x50c
+ 627 011e 08       		.uleb128 0x8
+ 628 011f 56000000 		.4byte	.LVL5
+ 629 0123 E0040000 		.4byte	0x4e0
+ 630 0127 36010000 		.4byte	0x136
+ 631 012b 09       		.uleb128 0x9
+ 632 012c 01       		.uleb128 0x1
+ 633 012d 50       		.byte	0x50
+ 634 012e 01       		.uleb128 0x1
+ 635 012f 30       		.byte	0x30
+ 636 0130 09       		.uleb128 0x9
+ 637 0131 01       		.uleb128 0x1
+ 638 0132 51       		.byte	0x51
+ 639 0133 01       		.uleb128 0x1
+ 640 0134 31       		.byte	0x31
+ 641 0135 00       		.byte	0
+ 642 0136 08       		.uleb128 0x8
+ 643 0137 5C000000 		.4byte	.LVL6
+ 644 013b EB040000 		.4byte	0x4eb
+ 645 013f 4D010000 		.4byte	0x14d
+ 646 0143 09       		.uleb128 0x9
+ 647 0144 01       		.uleb128 0x1
+ 648 0145 50       		.byte	0x50
+ 649 0146 05       		.uleb128 0x5
+ 650 0147 03       		.byte	0x3
+ 651 0148 00000000 		.4byte	.LC0
+ 652 014c 00       		.byte	0
+ 653 014d 08       		.uleb128 0x8
+ 654 014e 66000000 		.4byte	.LVL7
+ 655 0152 E0040000 		.4byte	0x4e0
+ 656 0156 65010000 		.4byte	0x165
+ 657 015a 09       		.uleb128 0x9
+ 658 015b 01       		.uleb128 0x1
+ 659 015c 50       		.byte	0x50
+ 660 015d 01       		.uleb128 0x1
+ 661 015e 30       		.byte	0x30
+ 662 015f 09       		.uleb128 0x9
+ 663 0160 01       		.uleb128 0x1
+ 664 0161 51       		.byte	0x51
+ 665 0162 01       		.uleb128 0x1
+ 666 0163 31       		.byte	0x31
+ 667 0164 00       		.byte	0
+ 668 0165 08       		.uleb128 0x8
+ 669 0166 6C000000 		.4byte	.LVL8
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 15
+
+
+ 670 016a EB040000 		.4byte	0x4eb
+ 671 016e 7C010000 		.4byte	0x17c
+ 672 0172 09       		.uleb128 0x9
+ 673 0173 01       		.uleb128 0x1
+ 674 0174 50       		.byte	0x50
+ 675 0175 05       		.uleb128 0x5
+ 676 0176 03       		.byte	0x3
+ 677 0177 04000000 		.4byte	.LC1
+ 678 017b 00       		.byte	0
+ 679 017c 08       		.uleb128 0x8
+ 680 017d 76000000 		.4byte	.LVL9
+ 681 0181 E0040000 		.4byte	0x4e0
+ 682 0185 94010000 		.4byte	0x194
+ 683 0189 09       		.uleb128 0x9
+ 684 018a 01       		.uleb128 0x1
+ 685 018b 50       		.byte	0x50
+ 686 018c 01       		.uleb128 0x1
+ 687 018d 30       		.byte	0x30
+ 688 018e 09       		.uleb128 0x9
+ 689 018f 01       		.uleb128 0x1
+ 690 0190 51       		.byte	0x51
+ 691 0191 01       		.uleb128 0x1
+ 692 0192 31       		.byte	0x31
+ 693 0193 00       		.byte	0
+ 694 0194 08       		.uleb128 0x8
+ 695 0195 7C000000 		.4byte	.LVL10
+ 696 0199 EB040000 		.4byte	0x4eb
+ 697 019d AB010000 		.4byte	0x1ab
+ 698 01a1 09       		.uleb128 0x9
+ 699 01a2 01       		.uleb128 0x1
+ 700 01a3 50       		.byte	0x50
+ 701 01a4 05       		.uleb128 0x5
+ 702 01a5 03       		.byte	0x3
+ 703 01a6 08000000 		.4byte	.LC2
+ 704 01aa 00       		.byte	0
+ 705 01ab 08       		.uleb128 0x8
+ 706 01ac 86000000 		.4byte	.LVL11
+ 707 01b0 E0040000 		.4byte	0x4e0
+ 708 01b4 C3010000 		.4byte	0x1c3
+ 709 01b8 09       		.uleb128 0x9
+ 710 01b9 01       		.uleb128 0x1
+ 711 01ba 50       		.byte	0x50
+ 712 01bb 01       		.uleb128 0x1
+ 713 01bc 30       		.byte	0x30
+ 714 01bd 09       		.uleb128 0x9
+ 715 01be 01       		.uleb128 0x1
+ 716 01bf 51       		.byte	0x51
+ 717 01c0 01       		.uleb128 0x1
+ 718 01c1 31       		.byte	0x31
+ 719 01c2 00       		.byte	0
+ 720 01c3 08       		.uleb128 0x8
+ 721 01c4 8C000000 		.4byte	.LVL12
+ 722 01c8 EB040000 		.4byte	0x4eb
+ 723 01cc DA010000 		.4byte	0x1da
+ 724 01d0 09       		.uleb128 0x9
+ 725 01d1 01       		.uleb128 0x1
+ 726 01d2 50       		.byte	0x50
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 16
+
+
+ 727 01d3 05       		.uleb128 0x5
+ 728 01d4 03       		.byte	0x3
+ 729 01d5 0C000000 		.4byte	.LC3
+ 730 01d9 00       		.byte	0
+ 731 01da 0A       		.uleb128 0xa
+ 732 01db 92000000 		.4byte	.LVL13
+ 733 01df 0C050000 		.4byte	0x50c
+ 734 01e3 08       		.uleb128 0x8
+ 735 01e4 AC000000 		.4byte	.LVL14
+ 736 01e8 E0040000 		.4byte	0x4e0
+ 737 01ec FB010000 		.4byte	0x1fb
+ 738 01f0 09       		.uleb128 0x9
+ 739 01f1 01       		.uleb128 0x1
+ 740 01f2 50       		.byte	0x50
+ 741 01f3 01       		.uleb128 0x1
+ 742 01f4 30       		.byte	0x30
+ 743 01f5 09       		.uleb128 0x9
+ 744 01f6 01       		.uleb128 0x1
+ 745 01f7 51       		.byte	0x51
+ 746 01f8 01       		.uleb128 0x1
+ 747 01f9 31       		.byte	0x31
+ 748 01fa 00       		.byte	0
+ 749 01fb 08       		.uleb128 0x8
+ 750 01fc B2000000 		.4byte	.LVL15
+ 751 0200 EB040000 		.4byte	0x4eb
+ 752 0204 12020000 		.4byte	0x212
+ 753 0208 09       		.uleb128 0x9
+ 754 0209 01       		.uleb128 0x1
+ 755 020a 50       		.byte	0x50
+ 756 020b 05       		.uleb128 0x5
+ 757 020c 03       		.byte	0x3
+ 758 020d 10000000 		.4byte	.LC4
+ 759 0211 00       		.byte	0
+ 760 0212 08       		.uleb128 0x8
+ 761 0213 BC000000 		.4byte	.LVL16
+ 762 0217 E0040000 		.4byte	0x4e0
+ 763 021b 2A020000 		.4byte	0x22a
+ 764 021f 09       		.uleb128 0x9
+ 765 0220 01       		.uleb128 0x1
+ 766 0221 50       		.byte	0x50
+ 767 0222 01       		.uleb128 0x1
+ 768 0223 30       		.byte	0x30
+ 769 0224 09       		.uleb128 0x9
+ 770 0225 01       		.uleb128 0x1
+ 771 0226 51       		.byte	0x51
+ 772 0227 01       		.uleb128 0x1
+ 773 0228 31       		.byte	0x31
+ 774 0229 00       		.byte	0
+ 775 022a 08       		.uleb128 0x8
+ 776 022b C2000000 		.4byte	.LVL17
+ 777 022f EB040000 		.4byte	0x4eb
+ 778 0233 41020000 		.4byte	0x241
+ 779 0237 09       		.uleb128 0x9
+ 780 0238 01       		.uleb128 0x1
+ 781 0239 50       		.byte	0x50
+ 782 023a 05       		.uleb128 0x5
+ 783 023b 03       		.byte	0x3
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 17
+
+
+ 784 023c 14000000 		.4byte	.LC5
+ 785 0240 00       		.byte	0
+ 786 0241 08       		.uleb128 0x8
+ 787 0242 CC000000 		.4byte	.LVL18
+ 788 0246 E0040000 		.4byte	0x4e0
+ 789 024a 59020000 		.4byte	0x259
+ 790 024e 09       		.uleb128 0x9
+ 791 024f 01       		.uleb128 0x1
+ 792 0250 50       		.byte	0x50
+ 793 0251 01       		.uleb128 0x1
+ 794 0252 30       		.byte	0x30
+ 795 0253 09       		.uleb128 0x9
+ 796 0254 01       		.uleb128 0x1
+ 797 0255 51       		.byte	0x51
+ 798 0256 01       		.uleb128 0x1
+ 799 0257 31       		.byte	0x31
+ 800 0258 00       		.byte	0
+ 801 0259 08       		.uleb128 0x8
+ 802 025a D2000000 		.4byte	.LVL19
+ 803 025e EB040000 		.4byte	0x4eb
+ 804 0262 70020000 		.4byte	0x270
+ 805 0266 09       		.uleb128 0x9
+ 806 0267 01       		.uleb128 0x1
+ 807 0268 50       		.byte	0x50
+ 808 0269 05       		.uleb128 0x5
+ 809 026a 03       		.byte	0x3
+ 810 026b 18000000 		.4byte	.LC6
+ 811 026f 00       		.byte	0
+ 812 0270 08       		.uleb128 0x8
+ 813 0271 DC000000 		.4byte	.LVL20
+ 814 0275 E0040000 		.4byte	0x4e0
+ 815 0279 88020000 		.4byte	0x288
+ 816 027d 09       		.uleb128 0x9
+ 817 027e 01       		.uleb128 0x1
+ 818 027f 50       		.byte	0x50
+ 819 0280 01       		.uleb128 0x1
+ 820 0281 30       		.byte	0x30
+ 821 0282 09       		.uleb128 0x9
+ 822 0283 01       		.uleb128 0x1
+ 823 0284 51       		.byte	0x51
+ 824 0285 01       		.uleb128 0x1
+ 825 0286 31       		.byte	0x31
+ 826 0287 00       		.byte	0
+ 827 0288 08       		.uleb128 0x8
+ 828 0289 E2000000 		.4byte	.LVL21
+ 829 028d EB040000 		.4byte	0x4eb
+ 830 0291 9F020000 		.4byte	0x29f
+ 831 0295 09       		.uleb128 0x9
+ 832 0296 01       		.uleb128 0x1
+ 833 0297 50       		.byte	0x50
+ 834 0298 05       		.uleb128 0x5
+ 835 0299 03       		.byte	0x3
+ 836 029a 1C000000 		.4byte	.LC7
+ 837 029e 00       		.byte	0
+ 838 029f 0A       		.uleb128 0xa
+ 839 02a0 E8000000 		.4byte	.LVL22
+ 840 02a4 0C050000 		.4byte	0x50c
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 18
+
+
+ 841 02a8 08       		.uleb128 0x8
+ 842 02a9 02010000 		.4byte	.LVL23
+ 843 02ad E0040000 		.4byte	0x4e0
+ 844 02b1 C0020000 		.4byte	0x2c0
+ 845 02b5 09       		.uleb128 0x9
+ 846 02b6 01       		.uleb128 0x1
+ 847 02b7 50       		.byte	0x50
+ 848 02b8 01       		.uleb128 0x1
+ 849 02b9 30       		.byte	0x30
+ 850 02ba 09       		.uleb128 0x9
+ 851 02bb 01       		.uleb128 0x1
+ 852 02bc 51       		.byte	0x51
+ 853 02bd 01       		.uleb128 0x1
+ 854 02be 31       		.byte	0x31
+ 855 02bf 00       		.byte	0
+ 856 02c0 08       		.uleb128 0x8
+ 857 02c1 08010000 		.4byte	.LVL24
+ 858 02c5 EB040000 		.4byte	0x4eb
+ 859 02c9 D7020000 		.4byte	0x2d7
+ 860 02cd 09       		.uleb128 0x9
+ 861 02ce 01       		.uleb128 0x1
+ 862 02cf 50       		.byte	0x50
+ 863 02d0 05       		.uleb128 0x5
+ 864 02d1 03       		.byte	0x3
+ 865 02d2 20000000 		.4byte	.LC8
+ 866 02d6 00       		.byte	0
+ 867 02d7 08       		.uleb128 0x8
+ 868 02d8 12010000 		.4byte	.LVL25
+ 869 02dc E0040000 		.4byte	0x4e0
+ 870 02e0 EF020000 		.4byte	0x2ef
+ 871 02e4 09       		.uleb128 0x9
+ 872 02e5 01       		.uleb128 0x1
+ 873 02e6 50       		.byte	0x50
+ 874 02e7 01       		.uleb128 0x1
+ 875 02e8 30       		.byte	0x30
+ 876 02e9 09       		.uleb128 0x9
+ 877 02ea 01       		.uleb128 0x1
+ 878 02eb 51       		.byte	0x51
+ 879 02ec 01       		.uleb128 0x1
+ 880 02ed 31       		.byte	0x31
+ 881 02ee 00       		.byte	0
+ 882 02ef 08       		.uleb128 0x8
+ 883 02f0 18010000 		.4byte	.LVL26
+ 884 02f4 EB040000 		.4byte	0x4eb
+ 885 02f8 06030000 		.4byte	0x306
+ 886 02fc 09       		.uleb128 0x9
+ 887 02fd 01       		.uleb128 0x1
+ 888 02fe 50       		.byte	0x50
+ 889 02ff 05       		.uleb128 0x5
+ 890 0300 03       		.byte	0x3
+ 891 0301 24000000 		.4byte	.LC9
+ 892 0305 00       		.byte	0
+ 893 0306 08       		.uleb128 0x8
+ 894 0307 22010000 		.4byte	.LVL27
+ 895 030b E0040000 		.4byte	0x4e0
+ 896 030f 1E030000 		.4byte	0x31e
+ 897 0313 09       		.uleb128 0x9
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 19
+
+
+ 898 0314 01       		.uleb128 0x1
+ 899 0315 50       		.byte	0x50
+ 900 0316 01       		.uleb128 0x1
+ 901 0317 30       		.byte	0x30
+ 902 0318 09       		.uleb128 0x9
+ 903 0319 01       		.uleb128 0x1
+ 904 031a 51       		.byte	0x51
+ 905 031b 01       		.uleb128 0x1
+ 906 031c 31       		.byte	0x31
+ 907 031d 00       		.byte	0
+ 908 031e 08       		.uleb128 0x8
+ 909 031f 28010000 		.4byte	.LVL28
+ 910 0323 EB040000 		.4byte	0x4eb
+ 911 0327 35030000 		.4byte	0x335
+ 912 032b 09       		.uleb128 0x9
+ 913 032c 01       		.uleb128 0x1
+ 914 032d 50       		.byte	0x50
+ 915 032e 05       		.uleb128 0x5
+ 916 032f 03       		.byte	0x3
+ 917 0330 28000000 		.4byte	.LC10
+ 918 0334 00       		.byte	0
+ 919 0335 08       		.uleb128 0x8
+ 920 0336 32010000 		.4byte	.LVL29
+ 921 033a E0040000 		.4byte	0x4e0
+ 922 033e 4D030000 		.4byte	0x34d
+ 923 0342 09       		.uleb128 0x9
+ 924 0343 01       		.uleb128 0x1
+ 925 0344 50       		.byte	0x50
+ 926 0345 01       		.uleb128 0x1
+ 927 0346 30       		.byte	0x30
+ 928 0347 09       		.uleb128 0x9
+ 929 0348 01       		.uleb128 0x1
+ 930 0349 51       		.byte	0x51
+ 931 034a 01       		.uleb128 0x1
+ 932 034b 31       		.byte	0x31
+ 933 034c 00       		.byte	0
+ 934 034d 08       		.uleb128 0x8
+ 935 034e 38010000 		.4byte	.LVL30
+ 936 0352 EB040000 		.4byte	0x4eb
+ 937 0356 64030000 		.4byte	0x364
+ 938 035a 09       		.uleb128 0x9
+ 939 035b 01       		.uleb128 0x1
+ 940 035c 50       		.byte	0x50
+ 941 035d 05       		.uleb128 0x5
+ 942 035e 03       		.byte	0x3
+ 943 035f 2C000000 		.4byte	.LC11
+ 944 0363 00       		.byte	0
+ 945 0364 0A       		.uleb128 0xa
+ 946 0365 3E010000 		.4byte	.LVL31
+ 947 0369 0C050000 		.4byte	0x50c
+ 948 036d 08       		.uleb128 0x8
+ 949 036e 58010000 		.4byte	.LVL32
+ 950 0372 E0040000 		.4byte	0x4e0
+ 951 0376 85030000 		.4byte	0x385
+ 952 037a 09       		.uleb128 0x9
+ 953 037b 01       		.uleb128 0x1
+ 954 037c 50       		.byte	0x50
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 20
+
+
+ 955 037d 01       		.uleb128 0x1
+ 956 037e 30       		.byte	0x30
+ 957 037f 09       		.uleb128 0x9
+ 958 0380 01       		.uleb128 0x1
+ 959 0381 51       		.byte	0x51
+ 960 0382 01       		.uleb128 0x1
+ 961 0383 31       		.byte	0x31
+ 962 0384 00       		.byte	0
+ 963 0385 08       		.uleb128 0x8
+ 964 0386 5E010000 		.4byte	.LVL33
+ 965 038a EB040000 		.4byte	0x4eb
+ 966 038e 9C030000 		.4byte	0x39c
+ 967 0392 09       		.uleb128 0x9
+ 968 0393 01       		.uleb128 0x1
+ 969 0394 50       		.byte	0x50
+ 970 0395 05       		.uleb128 0x5
+ 971 0396 03       		.byte	0x3
+ 972 0397 30000000 		.4byte	.LC12
+ 973 039b 00       		.byte	0
+ 974 039c 08       		.uleb128 0x8
+ 975 039d 68010000 		.4byte	.LVL34
+ 976 03a1 E0040000 		.4byte	0x4e0
+ 977 03a5 B4030000 		.4byte	0x3b4
+ 978 03a9 09       		.uleb128 0x9
+ 979 03aa 01       		.uleb128 0x1
+ 980 03ab 50       		.byte	0x50
+ 981 03ac 01       		.uleb128 0x1
+ 982 03ad 30       		.byte	0x30
+ 983 03ae 09       		.uleb128 0x9
+ 984 03af 01       		.uleb128 0x1
+ 985 03b0 51       		.byte	0x51
+ 986 03b1 01       		.uleb128 0x1
+ 987 03b2 31       		.byte	0x31
+ 988 03b3 00       		.byte	0
+ 989 03b4 08       		.uleb128 0x8
+ 990 03b5 6E010000 		.4byte	.LVL35
+ 991 03b9 EB040000 		.4byte	0x4eb
+ 992 03bd CB030000 		.4byte	0x3cb
+ 993 03c1 09       		.uleb128 0x9
+ 994 03c2 01       		.uleb128 0x1
+ 995 03c3 50       		.byte	0x50
+ 996 03c4 05       		.uleb128 0x5
+ 997 03c5 03       		.byte	0x3
+ 998 03c6 34000000 		.4byte	.LC13
+ 999 03ca 00       		.byte	0
+ 1000 03cb 08       		.uleb128 0x8
+ 1001 03cc 78010000 		.4byte	.LVL36
+ 1002 03d0 E0040000 		.4byte	0x4e0
+ 1003 03d4 E3030000 		.4byte	0x3e3
+ 1004 03d8 09       		.uleb128 0x9
+ 1005 03d9 01       		.uleb128 0x1
+ 1006 03da 50       		.byte	0x50
+ 1007 03db 01       		.uleb128 0x1
+ 1008 03dc 30       		.byte	0x30
+ 1009 03dd 09       		.uleb128 0x9
+ 1010 03de 01       		.uleb128 0x1
+ 1011 03df 51       		.byte	0x51
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 21
+
+
+ 1012 03e0 01       		.uleb128 0x1
+ 1013 03e1 31       		.byte	0x31
+ 1014 03e2 00       		.byte	0
+ 1015 03e3 08       		.uleb128 0x8
+ 1016 03e4 7E010000 		.4byte	.LVL37
+ 1017 03e8 EB040000 		.4byte	0x4eb
+ 1018 03ec FA030000 		.4byte	0x3fa
+ 1019 03f0 09       		.uleb128 0x9
+ 1020 03f1 01       		.uleb128 0x1
+ 1021 03f2 50       		.byte	0x50
+ 1022 03f3 05       		.uleb128 0x5
+ 1023 03f4 03       		.byte	0x3
+ 1024 03f5 38000000 		.4byte	.LC14
+ 1025 03f9 00       		.byte	0
+ 1026 03fa 08       		.uleb128 0x8
+ 1027 03fb 88010000 		.4byte	.LVL38
+ 1028 03ff E0040000 		.4byte	0x4e0
+ 1029 0403 12040000 		.4byte	0x412
+ 1030 0407 09       		.uleb128 0x9
+ 1031 0408 01       		.uleb128 0x1
+ 1032 0409 50       		.byte	0x50
+ 1033 040a 01       		.uleb128 0x1
+ 1034 040b 30       		.byte	0x30
+ 1035 040c 09       		.uleb128 0x9
+ 1036 040d 01       		.uleb128 0x1
+ 1037 040e 51       		.byte	0x51
+ 1038 040f 01       		.uleb128 0x1
+ 1039 0410 31       		.byte	0x31
+ 1040 0411 00       		.byte	0
+ 1041 0412 08       		.uleb128 0x8
+ 1042 0413 8E010000 		.4byte	.LVL39
+ 1043 0417 EB040000 		.4byte	0x4eb
+ 1044 041b 29040000 		.4byte	0x429
+ 1045 041f 09       		.uleb128 0x9
+ 1046 0420 01       		.uleb128 0x1
+ 1047 0421 50       		.byte	0x50
+ 1048 0422 05       		.uleb128 0x5
+ 1049 0423 03       		.byte	0x3
+ 1050 0424 3C000000 		.4byte	.LC15
+ 1051 0428 00       		.byte	0
+ 1052 0429 08       		.uleb128 0x8
+ 1053 042a 94010000 		.4byte	.LVL40
+ 1054 042e F6040000 		.4byte	0x4f6
+ 1055 0432 3C040000 		.4byte	0x43c
+ 1056 0436 09       		.uleb128 0x9
+ 1057 0437 01       		.uleb128 0x1
+ 1058 0438 50       		.byte	0x50
+ 1059 0439 01       		.uleb128 0x1
+ 1060 043a 31       		.byte	0x31
+ 1061 043b 00       		.byte	0
+ 1062 043c 0A       		.uleb128 0xa
+ 1063 043d 98010000 		.4byte	.LVL41
+ 1064 0441 17050000 		.4byte	0x517
+ 1065 0445 00       		.byte	0
+ 1066 0446 0B       		.uleb128 0xb
+ 1067 0447 27010000 		.4byte	.LASF31
+ 1068 044b 01       		.byte	0x1
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 22
+
+
+ 1069 044c 79       		.byte	0x79
+ 1070 044d 68000000 		.4byte	0x68
+ 1071 0451 00000000 		.4byte	.LFB64
+ 1072 0455 2C000000 		.4byte	.LFE64-.LFB64
+ 1073 0459 01       		.uleb128 0x1
+ 1074 045a 9C       		.byte	0x9c
+ 1075 045b BE040000 		.4byte	0x4be
+ 1076 045f 08       		.uleb128 0x8
+ 1077 0460 0A000000 		.4byte	.LVL42
+ 1078 0464 22050000 		.4byte	0x522
+ 1079 0468 76040000 		.4byte	0x476
+ 1080 046c 09       		.uleb128 0x9
+ 1081 046d 01       		.uleb128 0x1
+ 1082 046e 50       		.byte	0x50
+ 1083 046f 05       		.uleb128 0x5
+ 1084 0470 03       		.byte	0x3
+ 1085 0471 00000000 		.4byte	Int_SW
+ 1086 0475 00       		.byte	0
+ 1087 0476 0A       		.uleb128 0xa
+ 1088 0477 0E000000 		.4byte	.LVL43
+ 1089 047b 2D050000 		.4byte	0x52d
+ 1090 047f 08       		.uleb128 0x8
+ 1091 0480 16000000 		.4byte	.LVL44
+ 1092 0484 E0040000 		.4byte	0x4e0
+ 1093 0488 97040000 		.4byte	0x497
+ 1094 048c 09       		.uleb128 0x9
+ 1095 048d 01       		.uleb128 0x1
+ 1096 048e 50       		.byte	0x50
+ 1097 048f 01       		.uleb128 0x1
+ 1098 0490 31       		.byte	0x31
+ 1099 0491 09       		.uleb128 0x9
+ 1100 0492 01       		.uleb128 0x1
+ 1101 0493 51       		.byte	0x51
+ 1102 0494 01       		.uleb128 0x1
+ 1103 0495 31       		.byte	0x31
+ 1104 0496 00       		.byte	0
+ 1105 0497 08       		.uleb128 0x8
+ 1106 0498 1C000000 		.4byte	.LVL45
+ 1107 049c EB040000 		.4byte	0x4eb
+ 1108 04a0 AE040000 		.4byte	0x4ae
+ 1109 04a4 09       		.uleb128 0x9
+ 1110 04a5 01       		.uleb128 0x1
+ 1111 04a6 50       		.byte	0x50
+ 1112 04a7 05       		.uleb128 0x5
+ 1113 04a8 03       		.byte	0x3
+ 1114 04a9 40000000 		.4byte	.LC16
+ 1115 04ad 00       		.byte	0
+ 1116 04ae 0C       		.uleb128 0xc
+ 1117 04af 22000000 		.4byte	.LVL46
+ 1118 04b3 F6040000 		.4byte	0x4f6
+ 1119 04b7 09       		.uleb128 0x9
+ 1120 04b8 01       		.uleb128 0x1
+ 1121 04b9 50       		.byte	0x50
+ 1122 04ba 01       		.uleb128 0x1
+ 1123 04bb 31       		.byte	0x31
+ 1124 04bc 00       		.byte	0
+ 1125 04bd 00       		.byte	0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 23
+
+
+ 1126 04be 0D       		.uleb128 0xd
+ 1127 04bf 13010000 		.4byte	.LASF17
+ 1128 04c3 05       		.byte	0x5
+ 1129 04c4 1207     		.2byte	0x712
+ 1130 04c6 CA040000 		.4byte	0x4ca
+ 1131 04ca 06       		.uleb128 0x6
+ 1132 04cb 76000000 		.4byte	0x76
+ 1133 04cf 0E       		.uleb128 0xe
+ 1134 04d0 A6010000 		.4byte	.LASF18
+ 1135 04d4 01       		.byte	0x1
+ 1136 04d5 0D       		.byte	0xd
+ 1137 04d6 A2000000 		.4byte	0xa2
+ 1138 04da 05       		.uleb128 0x5
+ 1139 04db 03       		.byte	0x3
+ 1140 04dc 00000000 		.4byte	letra
+ 1141 04e0 0F       		.uleb128 0xf
+ 1142 04e1 60010000 		.4byte	.LASF19
+ 1143 04e5 60010000 		.4byte	.LASF19
+ 1144 04e9 06       		.byte	0x6
+ 1145 04ea 3D       		.byte	0x3d
+ 1146 04eb 0F       		.uleb128 0xf
+ 1147 04ec 2C010000 		.4byte	.LASF20
+ 1148 04f0 2C010000 		.4byte	.LASF20
+ 1149 04f4 06       		.byte	0x6
+ 1150 04f5 3C       		.byte	0x3c
+ 1151 04f6 0F       		.uleb128 0xf
+ 1152 04f7 75010000 		.4byte	.LASF21
+ 1153 04fb 75010000 		.4byte	.LASF21
+ 1154 04ff 07       		.byte	0x7
+ 1155 0500 2F       		.byte	0x2f
+ 1156 0501 0F       		.uleb128 0xf
+ 1157 0502 6D010000 		.4byte	.LASF22
+ 1158 0506 6D010000 		.4byte	.LASF22
+ 1159 050a 08       		.byte	0x8
+ 1160 050b 29       		.byte	0x29
+ 1161 050c 0F       		.uleb128 0xf
+ 1162 050d 21000000 		.4byte	.LASF23
+ 1163 0511 21000000 		.4byte	.LASF23
+ 1164 0515 09       		.byte	0x9
+ 1165 0516 29       		.byte	0x29
+ 1166 0517 0F       		.uleb128 0xf
+ 1167 0518 00000000 		.4byte	.LASF24
+ 1168 051c 00000000 		.4byte	.LASF24
+ 1169 0520 08       		.byte	0x8
+ 1170 0521 2B       		.byte	0x2b
+ 1171 0522 0F       		.uleb128 0xf
+ 1172 0523 12000000 		.4byte	.LASF25
+ 1173 0527 12000000 		.4byte	.LASF25
+ 1174 052b 0A       		.byte	0xa
+ 1175 052c 18       		.byte	0x18
+ 1176 052d 0F       		.uleb128 0xf
+ 1177 052e 48000000 		.4byte	.LASF26
+ 1178 0532 48000000 		.4byte	.LASF26
+ 1179 0536 06       		.byte	0x6
+ 1180 0537 38       		.byte	0x38
+ 1181 0538 00       		.byte	0
+ 1182              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 24
+
+
+ 1183              	.Ldebug_abbrev0:
+ 1184 0000 01       		.uleb128 0x1
+ 1185 0001 11       		.uleb128 0x11
+ 1186 0002 01       		.byte	0x1
+ 1187 0003 25       		.uleb128 0x25
+ 1188 0004 0E       		.uleb128 0xe
+ 1189 0005 13       		.uleb128 0x13
+ 1190 0006 0B       		.uleb128 0xb
+ 1191 0007 03       		.uleb128 0x3
+ 1192 0008 0E       		.uleb128 0xe
+ 1193 0009 1B       		.uleb128 0x1b
+ 1194 000a 0E       		.uleb128 0xe
+ 1195 000b 55       		.uleb128 0x55
+ 1196 000c 17       		.uleb128 0x17
+ 1197 000d 11       		.uleb128 0x11
+ 1198 000e 01       		.uleb128 0x1
+ 1199 000f 10       		.uleb128 0x10
+ 1200 0010 17       		.uleb128 0x17
+ 1201 0011 00       		.byte	0
+ 1202 0012 00       		.byte	0
+ 1203 0013 02       		.uleb128 0x2
+ 1204 0014 24       		.uleb128 0x24
+ 1205 0015 00       		.byte	0
+ 1206 0016 0B       		.uleb128 0xb
+ 1207 0017 0B       		.uleb128 0xb
+ 1208 0018 3E       		.uleb128 0x3e
+ 1209 0019 0B       		.uleb128 0xb
+ 1210 001a 03       		.uleb128 0x3
+ 1211 001b 0E       		.uleb128 0xe
+ 1212 001c 00       		.byte	0
+ 1213 001d 00       		.byte	0
+ 1214 001e 03       		.uleb128 0x3
+ 1215 001f 16       		.uleb128 0x16
+ 1216 0020 00       		.byte	0
+ 1217 0021 03       		.uleb128 0x3
+ 1218 0022 0E       		.uleb128 0xe
+ 1219 0023 3A       		.uleb128 0x3a
+ 1220 0024 0B       		.uleb128 0xb
+ 1221 0025 3B       		.uleb128 0x3b
+ 1222 0026 0B       		.uleb128 0xb
+ 1223 0027 49       		.uleb128 0x49
+ 1224 0028 13       		.uleb128 0x13
+ 1225 0029 00       		.byte	0
+ 1226 002a 00       		.byte	0
+ 1227 002b 04       		.uleb128 0x4
+ 1228 002c 24       		.uleb128 0x24
+ 1229 002d 00       		.byte	0
+ 1230 002e 0B       		.uleb128 0xb
+ 1231 002f 0B       		.uleb128 0xb
+ 1232 0030 3E       		.uleb128 0x3e
+ 1233 0031 0B       		.uleb128 0xb
+ 1234 0032 03       		.uleb128 0x3
+ 1235 0033 08       		.uleb128 0x8
+ 1236 0034 00       		.byte	0
+ 1237 0035 00       		.byte	0
+ 1238 0036 05       		.uleb128 0x5
+ 1239 0037 16       		.uleb128 0x16
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 25
+
+
+ 1240 0038 00       		.byte	0
+ 1241 0039 03       		.uleb128 0x3
+ 1242 003a 0E       		.uleb128 0xe
+ 1243 003b 3A       		.uleb128 0x3a
+ 1244 003c 0B       		.uleb128 0xb
+ 1245 003d 3B       		.uleb128 0x3b
+ 1246 003e 05       		.uleb128 0x5
+ 1247 003f 49       		.uleb128 0x49
+ 1248 0040 13       		.uleb128 0x13
+ 1249 0041 00       		.byte	0
+ 1250 0042 00       		.byte	0
+ 1251 0043 06       		.uleb128 0x6
+ 1252 0044 35       		.uleb128 0x35
+ 1253 0045 00       		.byte	0
+ 1254 0046 49       		.uleb128 0x49
+ 1255 0047 13       		.uleb128 0x13
+ 1256 0048 00       		.byte	0
+ 1257 0049 00       		.byte	0
+ 1258 004a 07       		.uleb128 0x7
+ 1259 004b 2E       		.uleb128 0x2e
+ 1260 004c 01       		.byte	0x1
+ 1261 004d 3F       		.uleb128 0x3f
+ 1262 004e 19       		.uleb128 0x19
+ 1263 004f 03       		.uleb128 0x3
+ 1264 0050 0E       		.uleb128 0xe
+ 1265 0051 3A       		.uleb128 0x3a
+ 1266 0052 0B       		.uleb128 0xb
+ 1267 0053 3B       		.uleb128 0x3b
+ 1268 0054 0B       		.uleb128 0xb
+ 1269 0055 27       		.uleb128 0x27
+ 1270 0056 19       		.uleb128 0x19
+ 1271 0057 11       		.uleb128 0x11
+ 1272 0058 01       		.uleb128 0x1
+ 1273 0059 12       		.uleb128 0x12
+ 1274 005a 06       		.uleb128 0x6
+ 1275 005b 40       		.uleb128 0x40
+ 1276 005c 18       		.uleb128 0x18
+ 1277 005d 9742     		.uleb128 0x2117
+ 1278 005f 19       		.uleb128 0x19
+ 1279 0060 01       		.uleb128 0x1
+ 1280 0061 13       		.uleb128 0x13
+ 1281 0062 00       		.byte	0
+ 1282 0063 00       		.byte	0
+ 1283 0064 08       		.uleb128 0x8
+ 1284 0065 898201   		.uleb128 0x4109
+ 1285 0068 01       		.byte	0x1
+ 1286 0069 11       		.uleb128 0x11
+ 1287 006a 01       		.uleb128 0x1
+ 1288 006b 31       		.uleb128 0x31
+ 1289 006c 13       		.uleb128 0x13
+ 1290 006d 01       		.uleb128 0x1
+ 1291 006e 13       		.uleb128 0x13
+ 1292 006f 00       		.byte	0
+ 1293 0070 00       		.byte	0
+ 1294 0071 09       		.uleb128 0x9
+ 1295 0072 8A8201   		.uleb128 0x410a
+ 1296 0075 00       		.byte	0
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 26
+
+
+ 1297 0076 02       		.uleb128 0x2
+ 1298 0077 18       		.uleb128 0x18
+ 1299 0078 9142     		.uleb128 0x2111
+ 1300 007a 18       		.uleb128 0x18
+ 1301 007b 00       		.byte	0
+ 1302 007c 00       		.byte	0
+ 1303 007d 0A       		.uleb128 0xa
+ 1304 007e 898201   		.uleb128 0x4109
+ 1305 0081 00       		.byte	0
+ 1306 0082 11       		.uleb128 0x11
+ 1307 0083 01       		.uleb128 0x1
+ 1308 0084 31       		.uleb128 0x31
+ 1309 0085 13       		.uleb128 0x13
+ 1310 0086 00       		.byte	0
+ 1311 0087 00       		.byte	0
+ 1312 0088 0B       		.uleb128 0xb
+ 1313 0089 2E       		.uleb128 0x2e
+ 1314 008a 01       		.byte	0x1
+ 1315 008b 3F       		.uleb128 0x3f
+ 1316 008c 19       		.uleb128 0x19
+ 1317 008d 03       		.uleb128 0x3
+ 1318 008e 0E       		.uleb128 0xe
+ 1319 008f 3A       		.uleb128 0x3a
+ 1320 0090 0B       		.uleb128 0xb
+ 1321 0091 3B       		.uleb128 0x3b
+ 1322 0092 0B       		.uleb128 0xb
+ 1323 0093 27       		.uleb128 0x27
+ 1324 0094 19       		.uleb128 0x19
+ 1325 0095 49       		.uleb128 0x49
+ 1326 0096 13       		.uleb128 0x13
+ 1327 0097 8701     		.uleb128 0x87
+ 1328 0099 19       		.uleb128 0x19
+ 1329 009a 11       		.uleb128 0x11
+ 1330 009b 01       		.uleb128 0x1
+ 1331 009c 12       		.uleb128 0x12
+ 1332 009d 06       		.uleb128 0x6
+ 1333 009e 40       		.uleb128 0x40
+ 1334 009f 18       		.uleb128 0x18
+ 1335 00a0 9742     		.uleb128 0x2117
+ 1336 00a2 19       		.uleb128 0x19
+ 1337 00a3 01       		.uleb128 0x1
+ 1338 00a4 13       		.uleb128 0x13
+ 1339 00a5 00       		.byte	0
+ 1340 00a6 00       		.byte	0
+ 1341 00a7 0C       		.uleb128 0xc
+ 1342 00a8 898201   		.uleb128 0x4109
+ 1343 00ab 01       		.byte	0x1
+ 1344 00ac 11       		.uleb128 0x11
+ 1345 00ad 01       		.uleb128 0x1
+ 1346 00ae 31       		.uleb128 0x31
+ 1347 00af 13       		.uleb128 0x13
+ 1348 00b0 00       		.byte	0
+ 1349 00b1 00       		.byte	0
+ 1350 00b2 0D       		.uleb128 0xd
+ 1351 00b3 34       		.uleb128 0x34
+ 1352 00b4 00       		.byte	0
+ 1353 00b5 03       		.uleb128 0x3
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 27
+
+
+ 1354 00b6 0E       		.uleb128 0xe
+ 1355 00b7 3A       		.uleb128 0x3a
+ 1356 00b8 0B       		.uleb128 0xb
+ 1357 00b9 3B       		.uleb128 0x3b
+ 1358 00ba 05       		.uleb128 0x5
+ 1359 00bb 49       		.uleb128 0x49
+ 1360 00bc 13       		.uleb128 0x13
+ 1361 00bd 3F       		.uleb128 0x3f
+ 1362 00be 19       		.uleb128 0x19
+ 1363 00bf 3C       		.uleb128 0x3c
+ 1364 00c0 19       		.uleb128 0x19
+ 1365 00c1 00       		.byte	0
+ 1366 00c2 00       		.byte	0
+ 1367 00c3 0E       		.uleb128 0xe
+ 1368 00c4 34       		.uleb128 0x34
+ 1369 00c5 00       		.byte	0
+ 1370 00c6 03       		.uleb128 0x3
+ 1371 00c7 0E       		.uleb128 0xe
+ 1372 00c8 3A       		.uleb128 0x3a
+ 1373 00c9 0B       		.uleb128 0xb
+ 1374 00ca 3B       		.uleb128 0x3b
+ 1375 00cb 0B       		.uleb128 0xb
+ 1376 00cc 49       		.uleb128 0x49
+ 1377 00cd 13       		.uleb128 0x13
+ 1378 00ce 3F       		.uleb128 0x3f
+ 1379 00cf 19       		.uleb128 0x19
+ 1380 00d0 02       		.uleb128 0x2
+ 1381 00d1 18       		.uleb128 0x18
+ 1382 00d2 00       		.byte	0
+ 1383 00d3 00       		.byte	0
+ 1384 00d4 0F       		.uleb128 0xf
+ 1385 00d5 2E       		.uleb128 0x2e
+ 1386 00d6 00       		.byte	0
+ 1387 00d7 3F       		.uleb128 0x3f
+ 1388 00d8 19       		.uleb128 0x19
+ 1389 00d9 3C       		.uleb128 0x3c
+ 1390 00da 19       		.uleb128 0x19
+ 1391 00db 6E       		.uleb128 0x6e
+ 1392 00dc 0E       		.uleb128 0xe
+ 1393 00dd 03       		.uleb128 0x3
+ 1394 00de 0E       		.uleb128 0xe
+ 1395 00df 3A       		.uleb128 0x3a
+ 1396 00e0 0B       		.uleb128 0xb
+ 1397 00e1 3B       		.uleb128 0x3b
+ 1398 00e2 0B       		.uleb128 0xb
+ 1399 00e3 00       		.byte	0
+ 1400 00e4 00       		.byte	0
+ 1401 00e5 00       		.byte	0
+ 1402              		.section	.debug_aranges,"",%progbits
+ 1403 0000 24000000 		.4byte	0x24
+ 1404 0004 0200     		.2byte	0x2
+ 1405 0006 00000000 		.4byte	.Ldebug_info0
+ 1406 000a 04       		.byte	0x4
+ 1407 000b 00       		.byte	0
+ 1408 000c 0000     		.2byte	0
+ 1409 000e 0000     		.2byte	0
+ 1410 0010 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 28
+
+
+ 1411 0014 DC010000 		.4byte	.LFE63-.LFB63
+ 1412 0018 00000000 		.4byte	.LFB64
+ 1413 001c 2C000000 		.4byte	.LFE64-.LFB64
+ 1414 0020 00000000 		.4byte	0
+ 1415 0024 00000000 		.4byte	0
+ 1416              		.section	.debug_ranges,"",%progbits
+ 1417              	.Ldebug_ranges0:
+ 1418 0000 00000000 		.4byte	.LFB63
+ 1419 0004 DC010000 		.4byte	.LFE63
+ 1420 0008 00000000 		.4byte	.LFB64
+ 1421 000c 2C000000 		.4byte	.LFE64
+ 1422 0010 00000000 		.4byte	0
+ 1423 0014 00000000 		.4byte	0
+ 1424              		.section	.debug_line,"",%progbits
+ 1425              	.Ldebug_line0:
+ 1426 0000 E4010000 		.section	.debug_str,"MS",%progbits,1
+ 1426      02007E01 
+ 1426      00000201 
+ 1426      FB0E0D00 
+ 1426      01010101 
+ 1427              	.LASF24:
+ 1428 0000 53575F43 		.ascii	"SW_ClearInterrupt\000"
+ 1428      6C656172 
+ 1428      496E7465 
+ 1428      72727570 
+ 1428      7400
+ 1429              	.LASF25:
+ 1430 0012 4953525F 		.ascii	"ISR_SW_StartEx\000"
+ 1430      53575F53 
+ 1430      74617274 
+ 1430      457800
+ 1431              	.LASF23:
+ 1432 0021 50305F52 		.ascii	"P0_Read\000"
+ 1432      65616400 
+ 1433              	.LASF30:
+ 1434 0029 496E745F 		.ascii	"Int_SW\000"
+ 1434      535700
+ 1435              	.LASF9:
+ 1436 0030 5F5F696E 		.ascii	"__int32_t\000"
+ 1436      7433325F 
+ 1436      7400
+ 1437              	.LASF10:
+ 1438 003a 696E7433 		.ascii	"int32_t\000"
+ 1438      325F7400 
+ 1439              	.LASF12:
+ 1440 0042 666C6F61 		.ascii	"float\000"
+ 1440      7400
+ 1441              	.LASF26:
+ 1442 0048 4C43445F 		.ascii	"LCD_Start\000"
+ 1442      53746172 
+ 1442      7400
+ 1443              	.LASF1:
+ 1444 0052 756E7369 		.ascii	"unsigned char\000"
+ 1444      676E6564 
+ 1444      20636861 
+ 1444      7200
+ 1445              	.LASF27:
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 29
+
+
+ 1446 0060 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1446      43313120 
+ 1446      352E342E 
+ 1446      31203230 
+ 1446      31363036 
+ 1447 0093 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1447      20726576 
+ 1447      6973696F 
+ 1447      6E203233 
+ 1447      37373135 
+ 1448 00c6 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1448      66756E63 
+ 1448      74696F6E 
+ 1448      2D736563 
+ 1448      74696F6E 
+ 1449              	.LASF5:
+ 1450 00ee 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1450      20756E73 
+ 1450      69676E65 
+ 1450      6420696E 
+ 1450      7400
+ 1451              	.LASF3:
+ 1452 0100 73686F72 		.ascii	"short unsigned int\000"
+ 1452      7420756E 
+ 1452      7369676E 
+ 1452      65642069 
+ 1452      6E7400
+ 1453              	.LASF17:
+ 1454 0113 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1454      52784275 
+ 1454      66666572 
+ 1454      00
+ 1455              	.LASF13:
+ 1456 0120 646F7562 		.ascii	"double\000"
+ 1456      6C6500
+ 1457              	.LASF31:
+ 1458 0127 6D61696E 		.ascii	"main\000"
+ 1458      00
+ 1459              	.LASF20:
+ 1460 012c 4C43445F 		.ascii	"LCD_PrintString\000"
+ 1460      5072696E 
+ 1460      74537472 
+ 1460      696E6700 
+ 1461              	.LASF8:
+ 1462 013c 756E7369 		.ascii	"unsigned int\000"
+ 1462      676E6564 
+ 1462      20696E74 
+ 1462      00
+ 1463              	.LASF7:
+ 1464 0149 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1464      206C6F6E 
+ 1464      6720756E 
+ 1464      7369676E 
+ 1464      65642069 
+ 1465              	.LASF19:
+ 1466 0160 4C43445F 		.ascii	"LCD_Position\000"
+ 1466      506F7369 
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 30
+
+
+ 1466      74696F6E 
+ 1466      00
+ 1467              	.LASF22:
+ 1468 016d 53575F52 		.ascii	"SW_Read\000"
+ 1468      65616400 
+ 1469              	.LASF21:
+ 1470 0175 436F6E74 		.ascii	"Control_Write\000"
+ 1470      726F6C5F 
+ 1470      57726974 
+ 1470      6500
+ 1471              	.LASF15:
+ 1472 0183 73697A65 		.ascii	"sizetype\000"
+ 1472      74797065 
+ 1472      00
+ 1473              	.LASF6:
+ 1474 018c 6C6F6E67 		.ascii	"long long int\000"
+ 1474      206C6F6E 
+ 1474      6720696E 
+ 1474      7400
+ 1475              	.LASF28:
+ 1476 019a 6D61696E 		.ascii	"main.c\000"
+ 1476      2E6300
+ 1477              	.LASF14:
+ 1478 01a1 63686172 		.ascii	"char\000"
+ 1478      00
+ 1479              	.LASF18:
+ 1480 01a6 6C657472 		.ascii	"letra\000"
+ 1480      6100
+ 1481              	.LASF2:
+ 1482 01ac 73686F72 		.ascii	"short int\000"
+ 1482      7420696E 
+ 1482      7400
+ 1483              	.LASF11:
+ 1484 01b6 75696E74 		.ascii	"uint8\000"
+ 1484      3800
+ 1485              	.LASF4:
+ 1486 01bc 6C6F6E67 		.ascii	"long int\000"
+ 1486      20696E74 
+ 1486      00
+ 1487              	.LASF16:
+ 1488 01c5 6C6F6E67 		.ascii	"long double\000"
+ 1488      20646F75 
+ 1488      626C6500 
+ 1489              	.LASF0:
+ 1490 01d1 7369676E 		.ascii	"signed char\000"
+ 1490      65642063 
+ 1490      68617200 
+ 1491              	.LASF29:
+ 1492 01dd 443A5C44 		.ascii	"D:\\Documentos\\GITUD\\Documents\\PSoC Creator\\Pro"
+ 1492      6F63756D 
+ 1492      656E746F 
+ 1492      735C4749 
+ 1492      5455445C 
+ 1493 020b 79656374 		.ascii	"yecto3\\FiltroDigital.cydsn\000"
+ 1493      6F335C46 
+ 1493      696C7472 
+ 1493      6F446967 
+ARM GAS  C:\Users\GITUD\AppData\Local\Temp\ccov90r1.s 			page 31
+
+
+ 1493      6974616C 
+ 1494              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
