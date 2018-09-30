@@ -1,5 +1,5 @@
 # FiltroDigital
-# 2018-09-29 21:25:32Z
+# 2018-09-30 03:45:46Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -14,11 +14,11 @@ set_io "\LCD:LCDPort(3)\" iocell 12 3
 set_io "\LCD:LCDPort(4)\" iocell 12 4
 set_io "\LCD:LCDPort(5)\" iocell 12 5
 set_io "\LCD:LCDPort(6)\" iocell 12 6
-set_io "SW(0)" iocell 0 4
-set_io "SW(1)" iocell 0 5
-set_io "SW(2)" iocell 0 6
-set_io "SW(3)" iocell 0 7
-set_io "P0(0)" iocell 0 0
-set_io "P0(1)" iocell 0 1
-set_io "P0(2)" iocell 0 2
-set_io "P0(3)" iocell 0 3
+set_io "SW(0)" iocell 0 0
+set_io "SW(1)" iocell 0 1
+set_io "SW(2)" iocell 0 2
+set_io "SW(3)" iocell 0 3
+set_io "P0(0)" iocell 0 4
+set_io "P0(1)" iocell 0 5
+set_io "P0(2)" iocell 0 6
+set_io "P0(3)" iocell 0 7

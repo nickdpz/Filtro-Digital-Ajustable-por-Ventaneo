@@ -1,3 +1,3 @@
-# Component constraints for D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\FiltroDigital.cydsn\TopDesign\TopDesign.cysch
-# Project: D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\FiltroDigital.cydsn\FiltroDigital.cyprj
-# Date: Sat, 29 Sep 2018 21:25:30 GMT
+# Component constraints for C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj
+# Date: Sun, 30 Sep 2018 03:45:42 GMT

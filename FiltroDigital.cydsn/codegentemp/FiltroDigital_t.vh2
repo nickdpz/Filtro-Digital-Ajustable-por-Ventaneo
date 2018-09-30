@@ -1,5 +1,5 @@
--- Project:   D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\FiltroDigital.cydsn\FiltroDigital.cyprj
--- Generated: 09/29/2018 16:25:34
+-- Project:   C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj
+-- Generated: 09/29/2018 22:45:53
 -- PSoC Creator  4.2
 
 ENTITY FiltroDigital IS
@@ -42,23 +42,24 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL ClockBlock_PLL_OUT : bit;
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
-    SIGNAL Net_126 : bit;
-    ATTRIBUTE global_signal OF Net_126 : SIGNAL IS true;
-    SIGNAL Net_126_local : bit;
     SIGNAL Net_148_0 : bit;
-    ATTRIBUTE placement_force OF Net_148_0 : SIGNAL IS "U(3,4,B)1";
+    ATTRIBUTE placement_force OF Net_148_0 : SIGNAL IS "U(3,3,B)1";
     SIGNAL Net_148_1 : bit;
-    ATTRIBUTE placement_force OF Net_148_1 : SIGNAL IS "U(3,4,B)0";
+    ATTRIBUTE placement_force OF Net_148_1 : SIGNAL IS "U(3,3,B)0";
     SIGNAL Net_159 : bit;
-    ATTRIBUTE placement_force OF Net_159 : SIGNAL IS "U(3,4,A)0";
+    ATTRIBUTE placement_force OF Net_159 : SIGNAL IS "U(3,3,A)0";
     SIGNAL Net_160 : bit;
-    ATTRIBUTE placement_force OF Net_160 : SIGNAL IS "U(3,4,A)1";
+    ATTRIBUTE placement_force OF Net_160 : SIGNAL IS "U(3,3,A)1";
     SIGNAL Net_162 : bit;
-    ATTRIBUTE placement_force OF Net_162 : SIGNAL IS "U(3,4,A)2";
+    ATTRIBUTE placement_force OF Net_162 : SIGNAL IS "U(3,3,A)2";
     SIGNAL Net_168 : bit;
-    ATTRIBUTE placement_force OF Net_168 : SIGNAL IS "U(3,4,A)3";
-    SIGNAL Net_171 : bit;
+    ATTRIBUTE placement_force OF Net_168 : SIGNAL IS "U(3,3,A)3";
     SIGNAL Net_177 : bit;
+    SIGNAL Net_205 : bit;
+    SIGNAL Net_211 : bit;
+    SIGNAL Net_218 : bit;
+    ATTRIBUTE global_signal OF Net_218 : SIGNAL IS true;
+    SIGNAL Net_218_local : bit;
     SIGNAL P0(0)__PA : bit;
     SIGNAL P0(1)__PA : bit;
     SIGNAL P0(2)__PA : bit;
@@ -81,7 +82,10 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL \\\LCD:LCDPort(4)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
+    SIGNAL \Timer:Net_261\ : bit;
+    SIGNAL \Timer:Net_57\ : bit;
     SIGNAL __ONE__ : bit;
+    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(0,3,A)0";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -89,6 +93,7 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE POWER OF one : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
+    SIGNAL \ClockBlock.dclk_glb_ff_0__sig\ : bit;
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell1";
     ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P12[0]";
@@ -106,36 +111,40 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P12[6]";
     ATTRIBUTE Location OF SW : LABEL IS "F(PICU,0)";
     ATTRIBUTE lib_model OF SW(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF SW(0) : LABEL IS "P0[4]";
+    ATTRIBUTE Location OF SW(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF SW(1) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF SW(1) : LABEL IS "P0[5]";
+    ATTRIBUTE Location OF SW(1) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF SW(2) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF SW(2) : LABEL IS "P0[6]";
+    ATTRIBUTE Location OF SW(2) : LABEL IS "P0[2]";
     ATTRIBUTE lib_model OF SW(3) : LABEL IS "iocell11";
-    ATTRIBUTE Location OF SW(3) : LABEL IS "P0[7]";
+    ATTRIBUTE Location OF SW(3) : LABEL IS "P0[3]";
     ATTRIBUTE lib_model OF P0(0) : LABEL IS "iocell12";
-    ATTRIBUTE Location OF P0(0) : LABEL IS "P0[0]";
+    ATTRIBUTE Location OF P0(0) : LABEL IS "P0[4]";
     ATTRIBUTE lib_model OF P0(1) : LABEL IS "iocell13";
-    ATTRIBUTE Location OF P0(1) : LABEL IS "P0[1]";
+    ATTRIBUTE Location OF P0(1) : LABEL IS "P0[5]";
     ATTRIBUTE lib_model OF P0(2) : LABEL IS "iocell14";
-    ATTRIBUTE Location OF P0(2) : LABEL IS "P0[2]";
+    ATTRIBUTE Location OF P0(2) : LABEL IS "P0[6]";
     ATTRIBUTE lib_model OF P0(3) : LABEL IS "iocell15";
-    ATTRIBUTE Location OF P0(3) : LABEL IS "P0[3]";
+    ATTRIBUTE Location OF P0(3) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF Net_162 : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF Net_162 : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF Net_162 : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF Net_160 : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF Net_160 : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF Net_160 : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF Net_159 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_159 : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF Net_159 : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF Net_168 : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF Net_168 : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF Net_168 : LABEL IS "U(3,3)";
     ATTRIBUTE Location OF ISR_SW : LABEL IS "[IntrContainer=(0)][IntrId=(4)]";
     ATTRIBUTE lib_model OF \Control:Sync:ctrl_reg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \Control:Sync:ctrl_reg\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF Net_148_1 : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF Net_148_1 : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF Net_148_0 : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF Net_148_0 : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF \Control:Sync:ctrl_reg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \Timer:TimerHW\ : LABEL IS "F(Timer,0)";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell5";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF IRQ_T : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
+    ATTRIBUTE lib_model OF Net_148_1 : LABEL IS "macrocell6";
+    ATTRIBUTE Location OF Net_148_1 : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF Net_148_0 : LABEL IS "macrocell7";
+    ATTRIBUTE Location OF Net_148_0 : LABEL IS "U(3,3)";
     COMPONENT clockblockcell
         PORT (
             dclk_0 : OUT std_ulogic;
@@ -311,6 +320,17 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
             q : OUT std_ulogic;
             q_fixed : OUT std_ulogic);
     END COMPONENT;
+    COMPONENT timercell
+        PORT (
+            clock : IN std_ulogic;
+            kill : IN std_ulogic;
+            enable : IN std_ulogic;
+            capture : IN std_ulogic;
+            timer_reset : IN std_ulogic;
+            tc : OUT std_ulogic;
+            cmp : OUT std_ulogic;
+            irq : OUT std_ulogic);
+    END COMPONENT;
 BEGIN
 
     ClockBlock:clockblockcell
@@ -328,8 +348,9 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_126,
-            dclk_0 => Net_126_local);
+            dclk_glb_0 => Net_218,
+            dclk_0 => Net_218_local,
+            dclk_glb_ff_0 => \ClockBlock.dclk_glb_ff_0__sig\);
 
     \LCD:LCDPort\:logicalport
         GENERIC MAP(
@@ -902,8 +923,37 @@ BEGIN
             control_3 => \Control:control_3\,
             control_2 => \Control:control_2\,
             control_1 => \Control:control_1\,
-            control_0 => Net_171,
+            control_0 => Net_205,
             busclk => ClockBlock_BUS_CLK);
+
+    \Timer:TimerHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ClockBlock.dclk_glb_ff_0__sig\,
+            kill => open,
+            enable => __ONE__,
+            capture => open,
+            timer_reset => open,
+            tc => Net_211,
+            cmp => \Timer:Net_261\,
+            irq => \Timer:Net_57\);
+
+    __ONE__:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => __ONE__);
+
+    IRQ_T:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_211,
+            clock => ClockBlock_BUS_CLK);
 
     Net_148_1:macrocell
         GENERIC MAP(
@@ -913,9 +963,9 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_148_1,
-            clock_0 => Net_126,
+            clock_0 => Net_218,
             main_0 => Net_148_0,
-            main_1 => Net_171);
+            main_1 => Net_205);
 
     Net_148_0:macrocell
         GENERIC MAP(
@@ -925,7 +975,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_148_0,
-            clock_0 => Net_126,
-            main_0 => Net_171);
+            clock_0 => Net_218,
+            main_0 => Net_205);
 
 END __DEFAULT__;

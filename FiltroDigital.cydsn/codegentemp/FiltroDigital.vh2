@@ -2,7 +2,7 @@
 --	Conversion of FiltroDigital.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat Sep 29 16:25:31 2018
+--	Sat Sep 29 22:45:43 2018
 --
 
 USE cypress.cypress.all;
@@ -38,7 +38,6 @@ SIGNAL \LCD:tmpIO_6__LCDPort_net_0\ : bit;
 TERMINAL \LCD:tmpSIOVREF__LCDPort_net_0\ : bit;
 SIGNAL one : bit;
 SIGNAL \LCD:tmpINTERRUPT_0__LCDPort_net_0\ : bit;
-SIGNAL Net_126 : bit;
 SIGNAL tmpOE__SW_net_3 : bit;
 SIGNAL tmpOE__SW_net_2 : bit;
 SIGNAL tmpOE__SW_net_1 : bit;
@@ -83,7 +82,7 @@ SIGNAL Net_163 : bit;
 SIGNAL Net_167 : bit;
 SIGNAL \Control:clk\ : bit;
 SIGNAL \Control:rst\ : bit;
-SIGNAL Net_171 : bit;
+SIGNAL Net_205 : bit;
 SIGNAL \Control:control_out_0\ : bit;
 SIGNAL Net_178 : bit;
 SIGNAL \Control:control_out_1\ : bit;
@@ -107,7 +106,8 @@ SIGNAL \Control:control_3\ : bit;
 SIGNAL \Control:control_2\ : bit;
 SIGNAL \Control:control_1\ : bit;
 SIGNAL \Control:control_0\ : bit;
-SIGNAL Net_88 : bit;
+SIGNAL Net_218 : bit;
+SIGNAL Net_204 : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_1\ : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_0\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:b_31\ : bit;
@@ -306,6 +306,15 @@ SIGNAL \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_0\ : bit;
 SIGNAL \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\ : bit;
+SIGNAL Net_12 : bit;
+SIGNAL \Timer:Net_260\ : bit;
+SIGNAL \Timer:Net_266\ : bit;
+SIGNAL \Timer:Net_51\ : bit;
+SIGNAL \Timer:Net_261\ : bit;
+SIGNAL \Timer:Net_57\ : bit;
+SIGNAL Net_206 : bit;
+SIGNAL Net_211 : bit;
+SIGNAL \Timer:Net_102\ : bit;
 SIGNAL Net_148_1D : bit;
 SIGNAL Net_148_0D : bit;
 BEGIN
@@ -323,12 +332,12 @@ Net_160 <= (not Net_148_0
 Net_159 <= (Net_148_0
 	OR Net_148_1);
 
-Net_148_1D <= ((not Net_148_1 and Net_148_0 and Net_171)
-	OR (not Net_171 and Net_148_1)
+Net_148_1D <= ((not Net_148_1 and Net_148_0 and Net_205)
+	OR (not Net_205 and Net_148_1)
 	OR (not Net_148_0 and Net_148_1));
 
-Net_148_0D <= ((not Net_171 and Net_148_0)
-	OR (not Net_148_0 and Net_171));
+Net_148_0D <= ((not Net_205 and Net_148_0)
+	OR (not Net_148_0 and Net_205));
 
 Net_168 <= (Net_148_0
 	OR not Net_148_1);
@@ -413,16 +422,6 @@ ISR_SW:cy_isr_v1_0
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>\LCD:tmpINTERRUPT_0__LCDPort_net_0\);
-Clock_1:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"75771e00-48ba-4ca1-88b8-85f579048358",
-		source_clock_id=>"",
-		divisor=>0,
-		period=>"1000000000000",
-		is_direct=>'0',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_126,
-		dig_domain_out=>open);
 SW:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"1d88c6cc-aa82-427b-a3f6-90caae9e1ba8",
 		drive_mode=>"010010010010",
@@ -572,7 +571,7 @@ P0:cy_psoc3_pins_v1_10
 	PORT MAP(reset=>zero,
 		clock=>zero,
 		control=>(\Control:control_7\, \Control:control_6\, \Control:control_5\, \Control:control_4\,
-			\Control:control_3\, \Control:control_2\, \Control:control_1\, Net_171));
+			\Control:control_3\, \Control:control_2\, \Control:control_1\, Net_205));
 \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:gs(24):g2:g3:ub\:cy_buf
 	PORT MAP(x=>zero,
 		y=>\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_24\);
@@ -582,13 +581,37 @@ P0:cy_psoc3_pins_v1_10
 \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:gs(8):g2:g3:ub\:cy_buf
 	PORT MAP(x=>zero,
 		y=>\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_8\);
+Clock_2:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"79ea60c1-023d-4e01-b411-32e4fbb71bfe",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"100000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_218,
+		dig_domain_out=>open);
+\Timer:TimerHW\:cy_psoc3_timer_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_218,
+		kill=>zero,
+		enable=>one,
+		capture=>zero,
+		timer_reset=>zero,
+		tc=>Net_211,
+		compare=>\Timer:Net_261\,
+		interrupt=>\Timer:Net_57\);
+IRQ_T:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_211);
 Net_148_1:cy_dff
 	PORT MAP(d=>Net_148_1D,
-		clk=>Net_126,
+		clk=>Net_218,
 		q=>Net_148_1);
 Net_148_0:cy_dff
 	PORT MAP(d=>Net_148_0D,
-		clk=>Net_126,
+		clk=>Net_218,
 		q=>Net_148_0);
 
 END R_T_L;

@@ -1,5 +1,5 @@
 # FiltroDigital
-# 2018-09-29 21:25:33Z
+# 2018-09-30 03:45:49Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -16,19 +16,22 @@ set_io "\LCD:LCDPort(4)\" iocell 12 4
 set_io "\LCD:LCDPort(5)\" iocell 12 5
 set_io "\LCD:LCDPort(6)\" iocell 12 6
 set_location "SW" logicalport -1 -1 0
-set_io "SW(0)" iocell 0 4
-set_io "SW(1)" iocell 0 5
-set_io "SW(2)" iocell 0 6
-set_io "SW(3)" iocell 0 7
-set_io "P0(0)" iocell 0 0
-set_io "P0(1)" iocell 0 1
-set_io "P0(2)" iocell 0 2
-set_io "P0(3)" iocell 0 3
-set_location "Net_162" 3 4 0 2
-set_location "Net_160" 3 4 0 1
-set_location "Net_159" 3 4 0 0
-set_location "Net_168" 3 4 0 3
+set_io "SW(0)" iocell 0 0
+set_io "SW(1)" iocell 0 1
+set_io "SW(2)" iocell 0 2
+set_io "SW(3)" iocell 0 3
+set_io "P0(0)" iocell 0 4
+set_io "P0(1)" iocell 0 5
+set_io "P0(2)" iocell 0 6
+set_io "P0(3)" iocell 0 7
+set_location "Net_162" 3 3 0 2
+set_location "Net_160" 3 3 0 1
+set_location "Net_159" 3 3 0 0
+set_location "Net_168" 3 3 0 3
 set_location "ISR_SW" interrupt -1 -1 4
-set_location "\Control:Sync:ctrl_reg\" 3 4 6
-set_location "Net_148_1" 3 4 1 0
-set_location "Net_148_0" 3 4 1 1
+set_location "\Control:Sync:ctrl_reg\" 3 3 6
+set_location "\Timer:TimerHW\" timercell -1 -1 0
+set_location "__ONE__" 0 3 0 0
+set_location "IRQ_T" interrupt -1 -1 0
+set_location "Net_148_1" 3 3 1 0
+set_location "Net_148_0" 3 3 1 1
