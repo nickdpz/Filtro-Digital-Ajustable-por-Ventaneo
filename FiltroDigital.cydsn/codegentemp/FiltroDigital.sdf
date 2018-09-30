@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2018-09-30T03:45:53Z")
+ (DATE "2018-09-30T04:29:04Z")
  (DESIGN "FiltroDigital")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -14,7 +14,7 @@
    (ABSOLUTE
     (INTERCONNECT ClockBlock.clk_bus_glb ISR_SW.clock (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.clk_bus_glb \\Control\:Sync\:ctrl_reg\\.busclk (0.000:0.000:0.000))
-    (INTERCONNECT ClockBlock.clk_bus_glb IRQ_T.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.clk_bus_glb ISR_T.clock (0.000:0.000:0.000))
     (INTERCONNECT Net_148_0.q Net_148_1.main_0 (2.584:2.584:2.584))
     (INTERCONNECT Net_148_0.q Net_159.main_1 (2.584:2.584:2.584))
     (INTERCONNECT Net_148_0.q Net_160.main_1 (2.584:2.584:2.584))
@@ -31,7 +31,7 @@
     (INTERCONNECT SW.interrupt ISR_SW.interrupt (1.000:1.000:1.000))
     (INTERCONNECT \\Control\:Sync\:ctrl_reg\\.control_0 Net_148_0.main_0 (2.305:2.305:2.305))
     (INTERCONNECT \\Control\:Sync\:ctrl_reg\\.control_0 Net_148_1.main_1 (2.305:2.305:2.305))
-    (INTERCONNECT \\Timer\:TimerHW\\.tc IRQ_T.interrupt (3.425:3.425:3.425))
+    (INTERCONNECT \\Timer\:TimerHW\\.tc ISR_T.interrupt (3.425:3.425:3.425))
     (INTERCONNECT ClockBlock.dclk_glb_0 Net_148_0.clock_0 (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.dclk_glb_0 Net_148_1.clock_0 (0.000:0.000:0.000))
     (INTERCONNECT P0\(0\).pad_out P0\(0\).pad_in (0.000:0.000:0.000))

@@ -64,7 +64,7 @@
     <register name="Timer_PERIOD" address="0x40004F04" bitWidth="16" desc="TMRx.PER0 - Assigned Period" hidden="false" />
     <register name="Timer_COUNTER" address="0x40004F06" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" hidden="false" />
   </block>
-  <block name="IRQ_T" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="ISR_T" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Control" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <register name="Control_CONTROL_REG" address="0x40006475" bitWidth="8" desc="" hidden="false" />
   </block>

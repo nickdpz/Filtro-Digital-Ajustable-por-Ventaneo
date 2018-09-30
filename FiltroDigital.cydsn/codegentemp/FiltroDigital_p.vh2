@@ -1,5 +1,5 @@
 -- Project:   FiltroDigital
--- Generated: 09/29/2018 22:45:46
+-- Generated: 09/29/2018 23:28:58
 -- PSoC Creator  4.2
 
 ENTITY FiltroDigital IS
@@ -937,9 +937,9 @@ BEGIN
         PORT MAP(
             q => __ONE__);
 
-    IRQ_T:interrupt
+    ISR_T:interrupt
         GENERIC MAP(
-            int_type => "10",
+            int_type => "00",
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_211,
