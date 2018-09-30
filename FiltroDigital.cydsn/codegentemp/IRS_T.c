@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ISR_T.c  
+* File Name: IRS_T.c  
 * Version 1.70
 *
 *  Description:
@@ -18,15 +18,15 @@
 
 #include <cydevice_trm.h>
 #include <CyLib.h>
-#include <ISR_T.h>
+#include <IRS_T.h>
 #include "cyapicallbacks.h"
 
-#if !defined(ISR_T__REMOVED) /* Check for removal by optimization */
+#if !defined(IRS_T__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
 *  Place your includes, defines and code here 
 ********************************************************************************/
-/* `#START ISR_T_intc` */
+/* `#START IRS_T_intc` */
 
 /* `#END` */
 
@@ -42,7 +42,7 @@ CY_ISR_PROTO(IntDefaultHandler);
 
 
 /*******************************************************************************
-* Function Name: ISR_T_Start
+* Function Name: IRS_T_Start
 ********************************************************************************
 *
 * Summary:
@@ -58,24 +58,24 @@ CY_ISR_PROTO(IntDefaultHandler);
 *   None
 *
 *******************************************************************************/
-void ISR_T_Start(void)
+void IRS_T_Start(void)
 {
     /* For all we know the interrupt is active. */
-    ISR_T_Disable();
+    IRS_T_Disable();
 
-    /* Set the ISR to point to the ISR_T Interrupt. */
-    ISR_T_SetVector(&ISR_T_Interrupt);
+    /* Set the ISR to point to the IRS_T Interrupt. */
+    IRS_T_SetVector(&IRS_T_Interrupt);
 
     /* Set the priority. */
-    ISR_T_SetPriority((uint8)ISR_T_INTC_PRIOR_NUMBER);
+    IRS_T_SetPriority((uint8)IRS_T_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    ISR_T_Enable();
+    IRS_T_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_StartEx
+* Function Name: IRS_T_StartEx
 ********************************************************************************
 *
 * Summary:
@@ -101,24 +101,24 @@ void ISR_T_Start(void)
 *   None
 *
 *******************************************************************************/
-void ISR_T_StartEx(cyisraddress address)
+void IRS_T_StartEx(cyisraddress address)
 {
     /* For all we know the interrupt is active. */
-    ISR_T_Disable();
+    IRS_T_Disable();
 
-    /* Set the ISR to point to the ISR_T Interrupt. */
-    ISR_T_SetVector(address);
+    /* Set the ISR to point to the IRS_T Interrupt. */
+    IRS_T_SetVector(address);
 
     /* Set the priority. */
-    ISR_T_SetPriority((uint8)ISR_T_INTC_PRIOR_NUMBER);
+    IRS_T_SetPriority((uint8)IRS_T_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    ISR_T_Enable();
+    IRS_T_Enable();
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_Stop
+* Function Name: IRS_T_Stop
 ********************************************************************************
 *
 * Summary:
@@ -131,22 +131,22 @@ void ISR_T_StartEx(cyisraddress address)
 *   None
 *
 *******************************************************************************/
-void ISR_T_Stop(void)
+void IRS_T_Stop(void)
 {
     /* Disable this interrupt. */
-    ISR_T_Disable();
+    IRS_T_Disable();
 
     /* Set the ISR to point to the passive one. */
-    ISR_T_SetVector(&IntDefaultHandler);
+    IRS_T_SetVector(&IntDefaultHandler);
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_Interrupt
+* Function Name: IRS_T_Interrupt
 ********************************************************************************
 *
 * Summary:
-*   The default Interrupt Service Routine for ISR_T.
+*   The default Interrupt Service Routine for IRS_T.
 *
 *   Add custom code between the coments to keep the next version of this file
 *   from over writting your code.
@@ -157,27 +157,27 @@ void ISR_T_Stop(void)
 *   None
 *
 *******************************************************************************/
-CY_ISR(ISR_T_Interrupt)
+CY_ISR(IRS_T_Interrupt)
 {
-    #ifdef ISR_T_INTERRUPT_INTERRUPT_CALLBACK
-        ISR_T_Interrupt_InterruptCallback();
-    #endif /* ISR_T_INTERRUPT_INTERRUPT_CALLBACK */ 
+    #ifdef IRS_T_INTERRUPT_INTERRUPT_CALLBACK
+        IRS_T_Interrupt_InterruptCallback();
+    #endif /* IRS_T_INTERRUPT_INTERRUPT_CALLBACK */ 
 
     /*  Place your Interrupt code here. */
-    /* `#START ISR_T_Interrupt` */
+    /* `#START IRS_T_Interrupt` */
 
     /* `#END` */
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_SetVector
+* Function Name: IRS_T_SetVector
 ********************************************************************************
 *
 * Summary:
-*   Change the ISR vector for the Interrupt. Note calling ISR_T_Start
+*   Change the ISR vector for the Interrupt. Note calling IRS_T_Start
 *   will override any effect this method would have had. To set the vector 
-*   before the component has been started use ISR_T_StartEx instead.
+*   before the component has been started use IRS_T_StartEx instead.
 * 
 *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
 *   used to provide consistent definition across compilers:
@@ -197,18 +197,18 @@ CY_ISR(ISR_T_Interrupt)
 *   None
 *
 *******************************************************************************/
-void ISR_T_SetVector(cyisraddress address)
+void IRS_T_SetVector(cyisraddress address)
 {
     cyisraddress * ramVectorTable;
 
     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
 
-    ramVectorTable[CYINT_IRQ_BASE + (uint32)ISR_T__INTC_NUMBER] = address;
+    ramVectorTable[CYINT_IRQ_BASE + (uint32)IRS_T__INTC_NUMBER] = address;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_GetVector
+* Function Name: IRS_T_GetVector
 ********************************************************************************
 *
 * Summary:
@@ -221,26 +221,26 @@ void ISR_T_SetVector(cyisraddress address)
 *   Address of the ISR in the interrupt vector table.
 *
 *******************************************************************************/
-cyisraddress ISR_T_GetVector(void)
+cyisraddress IRS_T_GetVector(void)
 {
     cyisraddress * ramVectorTable;
 
     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
 
-    return ramVectorTable[CYINT_IRQ_BASE + (uint32)ISR_T__INTC_NUMBER];
+    return ramVectorTable[CYINT_IRQ_BASE + (uint32)IRS_T__INTC_NUMBER];
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_SetPriority
+* Function Name: IRS_T_SetPriority
 ********************************************************************************
 *
 * Summary:
 *   Sets the Priority of the Interrupt. 
 *
-*   Note calling ISR_T_Start or ISR_T_StartEx will 
+*   Note calling IRS_T_Start or IRS_T_StartEx will 
 *   override any effect this API would have had. This API should only be called
-*   after ISR_T_Start or ISR_T_StartEx has been called. 
+*   after IRS_T_Start or IRS_T_StartEx has been called. 
 *   To set the initial priority for the component, use the Design-Wide Resources
 *   Interrupt Editor.
 *
@@ -255,14 +255,14 @@ cyisraddress ISR_T_GetVector(void)
 *   None
 *
 *******************************************************************************/
-void ISR_T_SetPriority(uint8 priority)
+void IRS_T_SetPriority(uint8 priority)
 {
-    *ISR_T_INTC_PRIOR = priority << 5;
+    *IRS_T_INTC_PRIOR = priority << 5;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_GetPriority
+* Function Name: IRS_T_GetPriority
 ********************************************************************************
 *
 * Summary:
@@ -277,19 +277,19 @@ void ISR_T_SetPriority(uint8 priority)
 *    PSoC 4: Priority is from 0 to 3.
 *
 *******************************************************************************/
-uint8 ISR_T_GetPriority(void)
+uint8 IRS_T_GetPriority(void)
 {
     uint8 priority;
 
 
-    priority = *ISR_T_INTC_PRIOR >> 5;
+    priority = *IRS_T_INTC_PRIOR >> 5;
 
     return priority;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_Enable
+* Function Name: IRS_T_Enable
 ********************************************************************************
 *
 * Summary:
@@ -304,15 +304,15 @@ uint8 ISR_T_GetPriority(void)
 *   None
 *
 *******************************************************************************/
-void ISR_T_Enable(void)
+void IRS_T_Enable(void)
 {
     /* Enable the general interrupt. */
-    *ISR_T_INTC_SET_EN = ISR_T__INTC_MASK;
+    *IRS_T_INTC_SET_EN = IRS_T__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_GetState
+* Function Name: IRS_T_GetState
 ********************************************************************************
 *
 * Summary:
@@ -325,15 +325,15 @@ void ISR_T_Enable(void)
 *   1 if enabled, 0 if disabled.
 *
 *******************************************************************************/
-uint8 ISR_T_GetState(void)
+uint8 IRS_T_GetState(void)
 {
     /* Get the state of the general interrupt. */
-    return ((*ISR_T_INTC_SET_EN & (uint32)ISR_T__INTC_MASK) != 0u) ? 1u:0u;
+    return ((*IRS_T_INTC_SET_EN & (uint32)IRS_T__INTC_MASK) != 0u) ? 1u:0u;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_Disable
+* Function Name: IRS_T_Disable
 ********************************************************************************
 *
 * Summary:
@@ -346,15 +346,15 @@ uint8 ISR_T_GetState(void)
 *   None
 *
 *******************************************************************************/
-void ISR_T_Disable(void)
+void IRS_T_Disable(void)
 {
     /* Disable the general interrupt. */
-    *ISR_T_INTC_CLR_EN = ISR_T__INTC_MASK;
+    *IRS_T_INTC_CLR_EN = IRS_T__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_SetPending
+* Function Name: IRS_T_SetPending
 ********************************************************************************
 *
 * Summary:
@@ -373,14 +373,14 @@ void ISR_T_Disable(void)
 *   interrupts).
 *
 *******************************************************************************/
-void ISR_T_SetPending(void)
+void IRS_T_SetPending(void)
 {
-    *ISR_T_INTC_SET_PD = ISR_T__INTC_MASK;
+    *IRS_T_INTC_SET_PD = IRS_T__INTC_MASK;
 }
 
 
 /*******************************************************************************
-* Function Name: ISR_T_ClearPending
+* Function Name: IRS_T_ClearPending
 ********************************************************************************
 *
 * Summary:
@@ -398,9 +398,9 @@ void ISR_T_SetPending(void)
 *   None
 *
 *******************************************************************************/
-void ISR_T_ClearPending(void)
+void IRS_T_ClearPending(void)
 {
-    *ISR_T_INTC_CLR_PD = ISR_T__INTC_MASK;
+    *IRS_T_INTC_CLR_PD = IRS_T__INTC_MASK;
 }
 
 #endif /* End check for removal by optimization */

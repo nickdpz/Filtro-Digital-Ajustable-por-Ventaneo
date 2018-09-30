@@ -33,13 +33,16 @@
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Control.h" value="HEADER;;;;;Control" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Control.c" value="SOURCE_C;CortexM3;;;;Control" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Control_PM.c" value="SOURCE_C;CortexM3;;;;Control" />
-  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Clock_2.c" value="SOURCE_C;CortexM3;;;;Clock_2" />
-  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Clock_2.h" value="HEADER;;;;;Clock_2" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Timer.c" value="SOURCE_C;CortexM3;;;;Timer" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Timer.h" value="HEADER;;;;;Timer" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Timer_PM.c" value="SOURCE_C;CortexM3;;;;Timer" />
-  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\ISR_T.c" value="SOURCE_C;CortexM3;;;;ISR_T" />
-  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\ISR_T.h" value="HEADER;;;;;ISR_T" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\timer_clock.c" value="SOURCE_C;CortexM3;;;;timer_clock" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\timer_clock.h" value="HEADER;;;;;timer_clock" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Pin_1_aliases.h" value="HEADER;;;;;Pin_1" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Pin_1.c" value="SOURCE_C;CortexM3;;;;Pin_1" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\Pin_1.h" value="HEADER;;;;;Pin_1" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\IRS_T.c" value="SOURCE_C;CortexM3;;;;IRS_T" />
+  <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\IRS_T.h" value="HEADER;;;;;IRS_T" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="HEADER;;;;;LCD_LCDPort" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\LCD_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_LCDPort" />
   <file name="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\LCD_LCDPort.h" value="HEADER;;;;;LCD_LCDPort" />

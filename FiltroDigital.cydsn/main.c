@@ -11,66 +11,63 @@
 */
 #include "project.h"
 
-volatile uint16 frecuenciaux=100;
-volatile uint16 frecuencia=100;
-volatile uint8 de=1,po=9;
+volatile uint16 frecuenciaux=0;
+volatile uint8 de=0;
+volatile uint16 frecuencia=0;
 
-void visual(uint16 numero){
-    LCD_Position(1,15);
-    LCD_PrintString("n");
+void visual(uint8 numero){
     if(numero==10){  
+        //Enter
+        if(de==0){
         frecuencia=frecuenciaux;
-        Timer_Stop();
+        frecuenciaux=0;
+        de=1;
+        }
     }else{
-            if(frecuencia<10){
-                Timer_Start();
+        de=0;
+            if(frecuenciaux==0){
                 frecuenciaux=numero;
-                po=10;
             }else{
-                if(frecuencia<100){
-                    frecuenciaux=frecuenciaux*10+numero;
-                    po=11;
-                }else{
-                    Timer_Stop();
+                frecuenciaux=frecuenciaux*10+numero;
+                if(frecuenciaux>100){
+                    //Timer_Stop();
+                if(frecuenciaux>1000){
+                    frecuencia=1000;
+                    frecuenciaux=0;
+                    de=1;
+                }
                 }
         }
-    }   
+    } 
     LCD_Position(1,10);
-    LCD_PrintNumber(frecuenciaux);
-
-}
-
-CY_ISR(Int_Timer){
-    LCD_Position(1,po);
+    LCD_PrintString("    ");
+    LCD_Position(1,10);
     if(de==0){
-        LCD_PutChar(' '); 
-        de=1;
+        LCD_PrintNumber(frecuenciaux);
     }else{
-        LCD_PutChar(LCD_CUSTOM_0); 
-        de=0;
+        LCD_PrintNumber(frecuencia);
     }
 }
 
+
 CY_ISR(Int_SW){
+    uint8 temp=SW_Read();
     Control_Write(0);
     switch(SW_Read()) {
             case 0b00001110:
             switch(P0_Read()) {
                     case 0xE:
-                        visual(1);
+                    visual(1);
                     break;
                     case 0xD:
-                        visual(2);
-                        LCD_Position(0,1);    
-                        LCD_PrintString("2");
+                    visual(2);
                     break;
                      case 0xB:
-                        visual(3);
+                    visual(3);
                     break;
                     case 0x7:
-                    //A
-                    LCD_Position(0,0);
-                    LCD_PrintString("Fil. Pasa Bajos");            
+                    LCD_Position(0,6);
+                    LCD_PrintString("PasaBajos");   
                     break;
                     default:
                     break;
@@ -79,18 +76,17 @@ CY_ISR(Int_SW){
                 case 0b00001101:
             switch(P0_Read()) {
                     case 0xE:
-                        visual(4);
+                    visual(4);
                     break;
                     case 0xD:
-                        visual(5);
+                    visual(5);
                     break;
                     case 0xB:
-                        visual(6);
+                    visual(6);
                     break;
                     case 0x7:
-                    //B
-                    LCD_Position(0,0);
-                    LCD_PrintString("Fil. Pasa Altos");
+                    LCD_Position(0,6);
+                    LCD_PrintString("PasaAltos");
                     break;
                     default:
                     break;   
@@ -108,9 +104,8 @@ CY_ISR(Int_SW){
                     visual(9);
                     break;
                     case 0x7:
-                    //C
-                    LCD_Position(0,0);
-                    LCD_PrintString("Fil. Pasa Banda");
+                    LCD_Position(0,6);
+                    LCD_PrintString("PasaBanda");
                     break;
                     default:
                     break;   
@@ -118,21 +113,20 @@ CY_ISR(Int_SW){
                     break;
                 case 0b000000111:
                     switch(P0_Read()) {
-                    case 0xE:
-                        visual(10);//Enter
-                    break;
+                    //case 0xE:
+                    //LCD_Position(0,1);    
+                    //LCD_PrintString("*");
+                    //break;
                     case 0xD:
-                        visual(0);
+                    visual(0);
                     break;
-                     case 0xB:
-                        visual(10);//Enter
-                    break;
-                    /*
+                    //case 0xB:
+                    //LCD_Position(0,1);    
+                    //LCD_PrintString("D");
+                    //break;
                     case 0x7:
-                    LCD_Position(0,1);    
-                    LCD_PrintString("D");
+                        visual(10);
                     break;
-                    */
                     default:
                     break;   
                 }
@@ -141,8 +135,9 @@ CY_ISR(Int_SW){
             default:
                 break;
     }
-    Control_Write(1);
+    while(SW_Read()==temp);
     SW_ClearInterrupt();
+    Control_Write(1);
 }
 
 
@@ -150,13 +145,13 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
     ISR_SW_StartEx(Int_SW); //indicar cual es la rutina/vector de interrupcion
-    //ISR_T_StartEx(Int_Timer); //indicar cual es la rutina/vector de interrupcion
     LCD_Start();
+    Control_Write(1);
     LCD_Position(0,0);
-    LCD_PrintString("Fil. Pasa Bajos");
+    LCD_PrintString("Filtro PasaBajos");
     LCD_Position(1,0);
-    LCD_PrintString("F. Corte: ");
-    //Timer_Start();
+LCD_PrintString("F. Corte: 1000");
+    
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     for(;;)
     {

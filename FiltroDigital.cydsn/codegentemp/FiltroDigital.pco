@@ -1,5 +1,5 @@
 # FiltroDigital
-# 2018-09-30 04:29:00Z
+# 2018-09-30 22:09:30Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -24,14 +24,15 @@ set_io "P0(0)" iocell 0 4
 set_io "P0(1)" iocell 0 5
 set_io "P0(2)" iocell 0 6
 set_io "P0(3)" iocell 0 7
-set_location "Net_162" 3 3 0 2
-set_location "Net_160" 3 3 0 1
-set_location "Net_159" 3 3 0 0
-set_location "Net_168" 3 3 0 3
+set_io "Pin_1(0)" iocell 2 1
+set_location "Net_162" 0 1 0 2
+set_location "Net_160" 0 1 0 1
+set_location "Net_159" 0 1 0 0
+set_location "Net_168" 0 1 0 3
 set_location "ISR_SW" interrupt -1 -1 4
-set_location "\Control:Sync:ctrl_reg\" 3 3 6
+set_location "\Control:Sync:ctrl_reg\" 0 1 6
 set_location "\Timer:TimerHW\" timercell -1 -1 0
 set_location "__ONE__" 0 3 0 0
-set_location "ISR_T" interrupt -1 -1 0
-set_location "Net_148_1" 3 3 1 0
-set_location "Net_148_0" 3 3 1 1
+set_location "IRS_T" interrupt -1 -1 0
+set_location "Net_148_1" 0 1 1 0
+set_location "Net_148_0" 0 1 1 1
