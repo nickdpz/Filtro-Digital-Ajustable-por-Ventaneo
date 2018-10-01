@@ -119,6 +119,28 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRS_T.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRS_T.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_dma.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_dma.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_AMux.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_AMux.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Ext_CP_Clk.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Ext_CP_Clk.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_Data.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_Data.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\Export\ARM_GCC_Generic">

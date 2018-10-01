@@ -1,5 +1,5 @@
 # FiltroDigital
-# 2018-09-30 22:09:27Z
+# 2018-10-01 00:18:44Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -23,3 +23,6 @@ set_io "P0(1)" iocell 0 5
 set_io "P0(2)" iocell 0 6
 set_io "P0(3)" iocell 0 7
 set_io "Pin_1(0)" iocell 2 1
+set_io "Pin_2ADC(0)" iocell 2 5
+set_location "\ADC:DSM\" dsmodcell -1 -1 0
+set_location "\DAC:viDAC8\" vidaccell -1 -1 2
