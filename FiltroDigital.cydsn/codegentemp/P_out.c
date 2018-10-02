@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_2ADC.c  
+* File Name: P_out.c  
 * Version 2.20
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "Pin_2ADC.h"
+#include "P_out.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 Pin_2ADC__PORT == 15 && ((Pin_2ADC__MASK & 0xC0) != 0))
+	 P_out__PORT == 15 && ((P_out__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: Pin_2ADC_Write
+* Function Name: P_out_Write
 ****************************************************************************//**
 *
 * \brief Writes the value to the physical port (data output register), masking
@@ -52,17 +52,17 @@
 *  this function.
 *
 * \funcusage
-*  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_Write
+*  \snippet P_out_SUT.c usage_P_out_Write
 *******************************************************************************/
-void Pin_2ADC_Write(uint8 value)
+void P_out_Write(uint8 value)
 {
-    uint8 staticBits = (Pin_2ADC_DR & (uint8)(~Pin_2ADC_MASK));
-    Pin_2ADC_DR = staticBits | ((uint8)(value << Pin_2ADC_SHIFT) & Pin_2ADC_MASK);
+    uint8 staticBits = (P_out_DR & (uint8)(~P_out_MASK));
+    P_out_DR = staticBits | ((uint8)(value << P_out_SHIFT) & P_out_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_2ADC_SetDriveMode
+* Function Name: P_out_SetDriveMode
 ****************************************************************************//**
 *
 * \brief Sets the drive mode for each of the Pins component's pins.
@@ -85,16 +85,16 @@ void Pin_2ADC_Write(uint8 value)
 *  APIs (primary method) or disable interrupts around this function.
 *
 * \funcusage
-*  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_SetDriveMode
+*  \snippet P_out_SUT.c usage_P_out_SetDriveMode
 *******************************************************************************/
-void Pin_2ADC_SetDriveMode(uint8 mode)
+void P_out_SetDriveMode(uint8 mode)
 {
-	CyPins_SetPinDriveMode(Pin_2ADC_0, mode);
+	CyPins_SetPinDriveMode(P_out_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_2ADC_Read
+* Function Name: P_out_Read
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port (pin status register) and masks 
@@ -108,16 +108,16 @@ void Pin_2ADC_SetDriveMode(uint8 mode)
 *  The current value for the pins in the component as a right justified number.
 *
 * \funcusage
-*  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_Read  
+*  \snippet P_out_SUT.c usage_P_out_Read  
 *******************************************************************************/
-uint8 Pin_2ADC_Read(void)
+uint8 P_out_Read(void)
 {
-    return (Pin_2ADC_PS & Pin_2ADC_MASK) >> Pin_2ADC_SHIFT;
+    return (P_out_PS & P_out_MASK) >> P_out_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_2ADC_ReadDataReg
+* Function Name: P_out_ReadDataReg
 ****************************************************************************//**
 *
 * \brief Reads the associated physical port's data output register and masks 
@@ -126,8 +126,8 @@ uint8 Pin_2ADC_Read(void)
 *
 * The data output register controls the signal applied to the physical pin in 
 * conjunction with the drive mode parameter. This is not the same as the 
-* preferred Pin_2ADC_Read() API because the 
-* Pin_2ADC_ReadDataReg() reads the data register instead of the status 
+* preferred P_out_Read() API because the 
+* P_out_ReadDataReg() reads the data register instead of the status 
 * register. For output pins this is a useful function to determine the value 
 * just written to the pin.
 *
@@ -136,19 +136,19 @@ uint8 Pin_2ADC_Read(void)
 *  justified number for the component instance.
 *
 * \funcusage
-*  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_ReadDataReg 
+*  \snippet P_out_SUT.c usage_P_out_ReadDataReg 
 *******************************************************************************/
-uint8 Pin_2ADC_ReadDataReg(void)
+uint8 P_out_ReadDataReg(void)
 {
-    return (Pin_2ADC_DR & Pin_2ADC_MASK) >> Pin_2ADC_SHIFT;
+    return (P_out_DR & P_out_MASK) >> P_out_SHIFT;
 }
 
 
 /* If interrupt is connected for this Pins component */ 
-#if defined(Pin_2ADC_INTSTAT) 
+#if defined(P_out_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: Pin_2ADC_SetInterruptMode
+    * Function Name: P_out_SetInterruptMode
     ****************************************************************************//**
     *
     * \brief Configures the interrupt mode for each of the Pins component's
@@ -161,12 +161,12 @@ uint8 Pin_2ADC_ReadDataReg(void)
     * \param position
     *  The pin position as listed in the Pins component. You may OR these to be 
     *  able to configure the interrupt mode of multiple pins within a Pins 
-    *  component. Or you may use Pin_2ADC_INTR_ALL to configure the
+    *  component. Or you may use P_out_INTR_ALL to configure the
     *  interrupt mode of all the pins in the Pins component.       
-    *  - Pin_2ADC_0_INTR       (First pin in the list)
-    *  - Pin_2ADC_1_INTR       (Second pin in the list)
+    *  - P_out_0_INTR       (First pin in the list)
+    *  - P_out_1_INTR       (Second pin in the list)
     *  - ...
-    *  - Pin_2ADC_INTR_ALL     (All pins in Pins component)
+    *  - P_out_INTR_ALL     (All pins in Pins component)
     *
     * \param mode
     *  Interrupt mode for the selected pins. Valid options are documented in
@@ -182,19 +182,19 @@ uint8 Pin_2ADC_ReadDataReg(void)
     *  port.
     *
     * \funcusage
-    *  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_SetInterruptMode
+    *  \snippet P_out_SUT.c usage_P_out_SetInterruptMode
     *******************************************************************************/
-    void Pin_2ADC_SetInterruptMode(uint16 position, uint16 mode)
+    void P_out_SetInterruptMode(uint16 position, uint16 mode)
     {
-		if((position & Pin_2ADC_0_INTR) != 0u) 
+		if((position & P_out_0_INTR) != 0u) 
 		{ 
-			 Pin_2ADC_0_INTTYPE_REG = (uint8)mode; 
+			 P_out_0_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
     
     /*******************************************************************************
-    * Function Name: Pin_2ADC_ClearInterrupt
+    * Function Name: P_out_ClearInterrupt
     ****************************************************************************//**
     *
     * \brief Clears any active interrupts attached with the component and returns 
@@ -211,11 +211,11 @@ uint8 Pin_2ADC_ReadDataReg(void)
     *  those associated with the Pins component.
     *
     * \funcusage
-    *  \snippet Pin_2ADC_SUT.c usage_Pin_2ADC_ClearInterrupt
+    *  \snippet P_out_SUT.c usage_P_out_ClearInterrupt
     *******************************************************************************/
-    uint8 Pin_2ADC_ClearInterrupt(void)
+    uint8 P_out_ClearInterrupt(void)
     {
-        return (Pin_2ADC_INTSTAT & Pin_2ADC_MASK) >> Pin_2ADC_SHIFT;
+        return (P_out_INTSTAT & P_out_MASK) >> P_out_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

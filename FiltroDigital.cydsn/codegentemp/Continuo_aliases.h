@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_2ADC.h  
+* File Name: Continuo.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_Pin_2ADC_ALIASES_H) /* Pins Pin_2ADC_ALIASES_H */
-#define CY_PINS_Pin_2ADC_ALIASES_H
+#if !defined(CY_PINS_Continuo_ALIASES_H) /* Pins Continuo_ALIASES_H */
+#define CY_PINS_Continuo_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Pin_2ADC_0			(Pin_2ADC__0__PC)
-#define Pin_2ADC_0_INTR	((uint16)((uint16)0x0001u << Pin_2ADC__0__SHIFT))
+#define Continuo_0			(Continuo__0__PC)
+#define Continuo_0_INTR	((uint16)((uint16)0x0001u << Continuo__0__SHIFT))
 
-#define Pin_2ADC_INTR_ALL	 ((uint16)(Pin_2ADC_0_INTR))
+#define Continuo_INTR_ALL	 ((uint16)(Continuo_0_INTR))
 
-#endif /* End Pins Pin_2ADC_ALIASES_H */
+#endif /* End Pins Continuo_ALIASES_H */
 
 
 /* [] END OF FILE */

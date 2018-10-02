@@ -412,6 +412,18 @@
 <v>Generated_Source\PSoC5\Pin_2ADC.h</v>
 <v>Generated_Source\PSoC5\ISR_Data.c</v>
 <v>Generated_Source\PSoC5\ISR_Data.h</v>
+<v>Generated_Source\PSoC5\DMAIN_dma.c</v>
+<v>Generated_Source\PSoC5\DMAIN_dma.h</v>
+<v>Generated_Source\PSoC5\Continuo_aliases.h</v>
+<v>Generated_Source\PSoC5\Continuo.c</v>
+<v>Generated_Source\PSoC5\Continuo.h</v>
+<v>Generated_Source\PSoC5\P_out_aliases.h</v>
+<v>Generated_Source\PSoC5\P_out.c</v>
+<v>Generated_Source\PSoC5\P_out.h</v>
+<v>Generated_Source\PSoC5\DMA_OUT_dma.c</v>
+<v>Generated_Source\PSoC5\DMA_OUT_dma.h</v>
+<v>Generated_Source\PSoC5\Clock_3.c</v>
+<v>Generated_Source\PSoC5\Clock_3.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -420,7 +432,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="131828267372401074" />
+<deps_time v="131829816984524315" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -939,7 +951,7 @@
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.20]">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Ports and Pins\Analog Pin [v2.20]">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
 <v>Cypress Component Catalog\Digital</v>
@@ -983,6 +995,11 @@
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </tree_states>
 </CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b>
+</dataGuid>
+<dataGuid v="2a4578c1-6f5e-41bc-81e4-e5d0befc4490">
+<CyGuid_2a4578c1-6f5e-41bc-81e4-e5d0befc4490 type_name="CyDesigner.Gde.Schematic.CyComponentCatalog+CyCompCatalogData" version="1" display_mode="ALL">
+<NOOP />
+</CyGuid_2a4578c1-6f5e-41bc-81e4-e5d0befc4490>
 </dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>

@@ -58,6 +58,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cyfitteriar.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cyfitter.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cydisabledsheets.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P0.h</File>
@@ -115,8 +117,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\timer_clock.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRS_T.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRS_T.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.c</File>
@@ -126,8 +126,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DAC_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_dma.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_dma.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_AMux.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_AMux.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_Ext_CP_Clk.c</File>
@@ -136,11 +134,18 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_IRQ.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_theACLK.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_2ADC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_Data.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ISR_Data.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMAIN_dma.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMAIN_dma.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Continuo_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Continuo.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Continuo.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P_out_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P_out.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\P_out.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_OUT_dma.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\DMA_OUT_dma.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\Export\ARM_GCC_Generic">

@@ -1,5 +1,5 @@
 /***************************************************************************
-* File Name: DMA_dma.c  
+* File Name: DMAIN_dma.c  
 * Version 1.70
 *
 *  Description:
@@ -19,7 +19,7 @@
 ********************************************************************************/
 #include <CYLIB.H>
 #include <CYDMAC.H>
-#include <DMA_dma.H>
+#include <DMAIN_dma.H>
 
 
 
@@ -29,47 +29,47 @@
 * 
 * 
 * 
-* DMA__DRQ_CTL_REG
+* DMAIN__DRQ_CTL_REG
 * 
 * 
-* DMA__DRQ_NUMBER
+* DMAIN__DRQ_NUMBER
 * 
 * Number of TD's used by this channel.
-* DMA__NUMBEROF_TDS
+* DMAIN__NUMBEROF_TDS
 * 
 * Priority of this channel.
-* DMA__PRIORITY
+* DMAIN__PRIORITY
 * 
-* True if DMA_TERMIN_SEL is used.
-* DMA__TERMIN_EN
+* True if DMAIN_TERMIN_SEL is used.
+* DMAIN__TERMIN_EN
 * 
 * TERMIN interrupt line to signal terminate.
-* DMA__TERMIN_SEL
+* DMAIN__TERMIN_SEL
 * 
 * 
-* True if DMA_TERMOUT0_SEL is used.
-* DMA__TERMOUT0_EN
+* True if DMAIN_TERMOUT0_SEL is used.
+* DMAIN__TERMOUT0_EN
 * 
 * 
 * TERMOUT0 interrupt line to signal completion.
-* DMA__TERMOUT0_SEL
+* DMAIN__TERMOUT0_SEL
 * 
 * 
-* True if DMA_TERMOUT1_SEL is used.
-* DMA__TERMOUT1_EN
+* True if DMAIN_TERMOUT1_SEL is used.
+* DMAIN__TERMOUT1_EN
 * 
 * 
 * TERMOUT1 interrupt line to signal completion.
-* DMA__TERMOUT1_SEL
+* DMAIN__TERMOUT1_SEL
 * 
 ****************************************************************************/
 
 
-/* Zero based index of DMA dma channel */
-uint8 DMA_DmaHandle = DMA_INVALID_CHANNEL;
+/* Zero based index of DMAIN dma channel */
+uint8 DMAIN_DmaHandle = DMA_INVALID_CHANNEL;
 
 /*********************************************************************
-* Function Name: uint8 DMA_DmaInitalize
+* Function Name: uint8 DMAIN_DmaInitalize
 **********************************************************************
 * Summary:
 *   Allocates and initialises a channel of the DMAC to be used by the
@@ -94,34 +94,34 @@ uint8 DMA_DmaHandle = DMA_INVALID_CHANNEL;
 *
 *
 *******************************************************************/
-uint8 DMA_DmaInitialize(uint8 BurstCount, uint8 ReqestPerBurst, uint16 UpperSrcAddress, uint16 UpperDestAddress) 
+uint8 DMAIN_DmaInitialize(uint8 BurstCount, uint8 ReqestPerBurst, uint16 UpperSrcAddress, uint16 UpperDestAddress) 
 {
 
     /* Allocate a DMA channel. */
-    DMA_DmaHandle = (uint8)DMA__DRQ_NUMBER;
+    DMAIN_DmaHandle = (uint8)DMAIN__DRQ_NUMBER;
 
     /* Configure the channel. */
-    (void)CyDmaChSetConfiguration(DMA_DmaHandle,
+    (void)CyDmaChSetConfiguration(DMAIN_DmaHandle,
                                   BurstCount,
                                   ReqestPerBurst,
-                                  (uint8)DMA__TERMOUT0_SEL,
-                                  (uint8)DMA__TERMOUT1_SEL,
-                                  (uint8)DMA__TERMIN_SEL);
+                                  (uint8)DMAIN__TERMOUT0_SEL,
+                                  (uint8)DMAIN__TERMOUT1_SEL,
+                                  (uint8)DMAIN__TERMIN_SEL);
 
     /* Set the extended address for the transfers */
-    (void)CyDmaChSetExtendedAddress(DMA_DmaHandle, UpperSrcAddress, UpperDestAddress);
+    (void)CyDmaChSetExtendedAddress(DMAIN_DmaHandle, UpperSrcAddress, UpperDestAddress);
 
     /* Set the priority for this channel */
-    (void)CyDmaChPriority(DMA_DmaHandle, (uint8)DMA__PRIORITY);
+    (void)CyDmaChPriority(DMAIN_DmaHandle, (uint8)DMAIN__PRIORITY);
     
-    return DMA_DmaHandle;
+    return DMAIN_DmaHandle;
 }
 
 /*********************************************************************
-* Function Name: void DMA_DmaRelease
+* Function Name: void DMAIN_DmaRelease
 **********************************************************************
 * Summary:
-*   Frees the channel associated with DMA.
+*   Frees the channel associated with DMAIN.
 *
 *
 * Parameters:
@@ -133,9 +133,9 @@ uint8 DMA_DmaInitialize(uint8 BurstCount, uint8 ReqestPerBurst, uint16 UpperSrcA
 *   void.
 *
 *******************************************************************/
-void DMA_DmaRelease(void) 
+void DMAIN_DmaRelease(void) 
 {
     /* Disable the channel */
-    (void)CyDmaChDisable(DMA_DmaHandle);
+    (void)CyDmaChDisable(DMAIN_DmaHandle);
 }
 
