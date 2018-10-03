@@ -1,5 +1,5 @@
 -- Project:   FiltroDigital
--- Generated: 10/02/2018 14:21:26
+-- Generated: 10/03/2018 18:02:29
 -- PSoC Creator  4.2
 
 ENTITY FiltroDigital IS
@@ -52,13 +52,12 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL Net_168 : bit;
     SIGNAL Net_177 : bit;
     SIGNAL Net_236 : bit;
-    SIGNAL Net_243 : bit;
-    SIGNAL Net_257 : bit;
-    SIGNAL Net_267 : bit;
-    SIGNAL Net_301 : bit;
-    ATTRIBUTE global_signal OF Net_301 : SIGNAL IS true;
-    SIGNAL Net_301_local : bit;
-    SIGNAL Net_308 : bit;
+    SIGNAL Net_318 : bit;
+    SIGNAL Net_347 : bit;
+    SIGNAL Net_351 : bit;
+    SIGNAL Net_385 : bit;
+    ATTRIBUTE global_signal OF Net_385 : SIGNAL IS true;
+    SIGNAL Net_385_local : bit;
     SIGNAL P0(0)__PA : bit;
     SIGNAL P0(1)__PA : bit;
     SIGNAL P0(2)__PA : bit;
@@ -105,8 +104,6 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL \\\LCD:LCDPort(4)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
-    SIGNAL \Timer:Net_261\ : bit;
-    SIGNAL \Timer:Net_57\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -116,7 +113,6 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
-    SIGNAL \ClockBlock.dclk_glb_ff_1__sig\ : bit;
     ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell1";
     ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P12[0]";
     ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell2";
@@ -150,9 +146,9 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell16";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P2[1]";
     ATTRIBUTE lib_model OF Continuo(0) : LABEL IS "iocell17";
-    ATTRIBUTE Location OF Continuo(0) : LABEL IS "P2[2]";
+    ATTRIBUTE Location OF Continuo(0) : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF P_out(0) : LABEL IS "iocell18";
-    ATTRIBUTE Location OF P_out(0) : LABEL IS "P2[3]";
+    ATTRIBUTE Location OF P_out(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF Net_162 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_160 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF Net_159 : LABEL IS "macrocell3";
@@ -160,8 +156,8 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE lib_model OF \Control:Sync:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE Location OF \ADC:DSM\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \DAC:viDAC8\ : LABEL IS "F(VIDAC,0)";
-    ATTRIBUTE lib_model OF DMAIN : LABEL IS "drqcell1";
+    ATTRIBUTE Location OF \DAC:viDAC8\ : LABEL IS "F(VIDAC,3)";
+    ATTRIBUTE lib_model OF DMA_IN : LABEL IS "drqcell1";
     ATTRIBUTE lib_model OF DMA_OUT : LABEL IS "drqcell2";
     ATTRIBUTE lib_model OF Net_148_1 : LABEL IS "macrocell6";
     ATTRIBUTE lib_model OF Net_148_0 : LABEL IS "macrocell7";
@@ -391,17 +387,6 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE udb_chain OF macrocell : COMPONENT IS "cin,cout";
     ATTRIBUTE chain_lsb OF macrocell : COMPONENT IS "cin";
     ATTRIBUTE chain_msb OF macrocell : COMPONENT IS "cout";
-    COMPONENT timercell
-        PORT (
-            clock : IN std_ulogic;
-            kill : IN std_ulogic;
-            enable : IN std_ulogic;
-            capture : IN std_ulogic;
-            timer_reset : IN std_ulogic;
-            tc : OUT std_ulogic;
-            cmp : OUT std_ulogic;
-            irq : OUT std_ulogic);
-    END COMPONENT;
     COMPONENT vidaccell
         PORT (
             data_0 : IN std_ulogic;
@@ -441,10 +426,9 @@ BEGIN
             aclk_0 => \ADC:Net_488_local\,
             clk_a_dig_glb_0 => \ADC:Net_488_adig\,
             clk_a_dig_0 => \ADC:Net_488_adig_local\,
-            dclk_glb_1 => Net_301,
-            dclk_1 => Net_301_local,
-            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\,
-            dclk_glb_ff_1 => \ClockBlock.dclk_glb_ff_1__sig\);
+            dclk_glb_1 => Net_385,
+            dclk_1 => Net_385_local,
+            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     \LCD:LCDPort\:logicalport
         GENERIC MAP(
@@ -1047,7 +1031,7 @@ BEGIN
 
     Continuo:logicalport
         GENERIC MAP(
-            drive_mode => "110",
+            drive_mode => "000",
             ibuf_enabled => "0",
             id => "77715107-f8d5-47e5-a629-0fb83101ac6b",
             init_dr_st => "0",
@@ -1319,7 +1303,7 @@ BEGIN
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_308,
+            interrupt => Net_318,
             clock => ClockBlock_BUS_CLK);
 
     \ADC:DEC\:decimatorcell
@@ -1333,7 +1317,7 @@ BEGIN
             mod_dat_0 => \ADC:mod_dat_0\,
             ext_start => __ONE__,
             modrst => \ADC:mod_reset\,
-            interrupt => Net_308);
+            interrupt => Net_318);
 
     __ONE__:macrocell
         GENERIC MAP(
@@ -1342,27 +1326,6 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => __ONE__);
-
-    \Timer:TimerHW\:timercell
-        GENERIC MAP(
-            cy_registers => "")
-        PORT MAP(
-            clock => \ClockBlock.dclk_glb_ff_1__sig\,
-            kill => open,
-            enable => __ONE__,
-            capture => open,
-            timer_reset => open,
-            tc => Net_243,
-            cmp => \Timer:Net_261\,
-            irq => \Timer:Net_57\);
-
-    IRS_T:interrupt
-        GENERIC MAP(
-            int_type => "10",
-            is_nmi => 0)
-        PORT MAP(
-            interrupt => Net_243,
-            clock => ClockBlock_BUS_CLK);
 
     \DAC:viDAC8\:vidaccell
         GENERIC MAP(
@@ -1374,14 +1337,14 @@ BEGIN
             idir => open,
             ioff => open);
 
-    DMAIN:drqcell
+    DMA_IN:drqcell
         GENERIC MAP(
             drq_type => "00",
             num_tds => 0)
         PORT MAP(
-            dmareq => Net_308,
+            dmareq => Net_318,
             termin => '0',
-            termout => Net_257,
+            termout => Net_347,
             clock => ClockBlock_BUS_CLK);
 
     ISR_Data:interrupt
@@ -1389,7 +1352,7 @@ BEGIN
             int_type => "00",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_257,
+            interrupt => Net_347,
             clock => ClockBlock_BUS_CLK);
 
     DMA_OUT:drqcell
@@ -1397,9 +1360,9 @@ BEGIN
             drq_type => "00",
             num_tds => 0)
         PORT MAP(
-            dmareq => Net_257,
+            dmareq => Net_318,
             termin => '0',
-            termout => Net_267,
+            termout => Net_351,
             clock => ClockBlock_BUS_CLK);
 
     Net_148_1:macrocell
@@ -1410,7 +1373,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_148_1,
-            clock_0 => Net_301,
+            clock_0 => Net_385,
             main_0 => Net_148_0,
             main_1 => Net_236);
 
@@ -1422,7 +1385,7 @@ BEGIN
             clken_mode => 1)
         PORT MAP(
             q => Net_148_0,
-            clock_0 => Net_301,
+            clock_0 => Net_385,
             main_0 => Net_236);
 
 END __DEFAULT__;

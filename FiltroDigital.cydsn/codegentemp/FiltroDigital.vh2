@@ -2,7 +2,7 @@
 --	Conversion of FiltroDigital.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Oct 02 14:21:23 2018
+--	Wed Oct 03 18:02:28 2018
 --
 
 USE cypress.cypress.all;
@@ -106,7 +106,7 @@ SIGNAL \Control:control_3\ : bit;
 SIGNAL \Control:control_2\ : bit;
 SIGNAL \Control:control_1\ : bit;
 SIGNAL \Control:control_0\ : bit;
-SIGNAL Net_301 : bit;
+SIGNAL Net_385 : bit;
 SIGNAL Net_204 : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_1\ : bit;
 SIGNAL \BasicCounter_1:add_vi_vv_MODGEN_1_0\ : bit;
@@ -338,21 +338,12 @@ SIGNAL \ADC:Net_245_0\ : bit;
 TERMINAL \ADC:Net_352\ : bit;
 TERMINAL \ADC:Net_257\ : bit;
 TERMINAL \ADC:Net_249\ : bit;
-SIGNAL Net_308 : bit;
+SIGNAL Net_318 : bit;
 SIGNAL \ADC:Net_250\ : bit;
 SIGNAL \ADC:Net_252\ : bit;
 SIGNAL \ADC:soc\ : bit;
 SIGNAL \ADC:Net_268\ : bit;
 SIGNAL \ADC:Net_270\ : bit;
-SIGNAL \Timer:Net_260\ : bit;
-SIGNAL \Timer:Net_266\ : bit;
-SIGNAL Net_12 : bit;
-SIGNAL \Timer:Net_51\ : bit;
-SIGNAL \Timer:Net_261\ : bit;
-SIGNAL \Timer:Net_57\ : bit;
-SIGNAL Net_238 : bit;
-SIGNAL Net_243 : bit;
-SIGNAL \Timer:Net_102\ : bit;
 SIGNAL tmpOE__Pin_1_net_0 : bit;
 SIGNAL tmpFB_0__Pin_1_net_0 : bit;
 SIGNAL tmpIO_0__Pin_1_net_0 : bit;
@@ -363,7 +354,7 @@ SIGNAL \DAC:Net_81\ : bit;
 SIGNAL \DAC:Net_82\ : bit;
 TERMINAL Net_254 : bit;
 TERMINAL \DAC:Net_77\ : bit;
-SIGNAL Net_257 : bit;
+SIGNAL Net_347 : bit;
 SIGNAL tmpOE__Continuo_net_0 : bit;
 SIGNAL tmpFB_0__Continuo_net_0 : bit;
 SIGNAL tmpIO_0__Continuo_net_0 : bit;
@@ -374,7 +365,7 @@ SIGNAL tmpFB_0__P_out_net_0 : bit;
 SIGNAL tmpIO_0__P_out_net_0 : bit;
 TERMINAL tmpSIOVREF__P_out_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__P_out_net_0 : bit;
-SIGNAL Net_267 : bit;
+SIGNAL Net_351 : bit;
 SIGNAL Net_148_1D : bit;
 SIGNAL Net_148_0D : bit;
 BEGIN
@@ -728,13 +719,13 @@ P0:cy_psoc3_pins_v1_10
 \ADC:IRQ\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_308);
+	PORT MAP(int_signal=>Net_318);
 \ADC:theACLK\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"c6bc1483-9d27-4b6f-a328-51361802da9c/edd15f43-b66b-457b-be3a-5342345270c8",
 		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
 		divisor=>0,
-		period=>"6250000000",
+		period=>"617283950.617284",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\ADC:Net_488\,
@@ -745,17 +736,17 @@ P0:cy_psoc3_pins_v1_10
 		mod_dat=>(\ADC:mod_dat_3\, \ADC:mod_dat_2\, \ADC:mod_dat_1\, \ADC:mod_dat_0\),
 		ext_start=>one,
 		mod_reset=>\ADC:mod_reset\,
-		interrupt=>Net_308);
-\Timer:TimerHW\:cy_psoc3_timer_v1_0
-	GENERIC MAP(cy_registers=>"")
-	PORT MAP(clock=>Net_301,
-		kill=>zero,
-		enable=>one,
-		capture=>zero,
-		timer_reset=>zero,
-		tc=>Net_243,
-		compare=>\Timer:Net_261\,
-		interrupt=>\Timer:Net_57\);
+		interrupt=>Net_318);
+Clock_1:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"2262ed97-0dd5-4793-80fa-b2d7488be22a",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"1000000000000",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_385,
+		dig_domain_out=>open);
 Pin_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"d1f31ae5-6ae5-4fac-b479-1ab5eba7321f",
 		drive_mode=>"110",
@@ -826,10 +817,6 @@ Pin_1:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__Pin_1_net_0);
-IRS_T:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10",
-		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_243);
 \DAC:viDAC8\:cy_psoc3_vidac8_v1_0
 	GENERIC MAP(cy_registers=>"",
 		reg_data=>'0',
@@ -845,19 +832,19 @@ IRS_T:cy_isr_v1_0
 		iout=>\DAC:Net_77\);
 \DAC:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\DAC:Net_77\);
-DMAIN:cy_dma_v1_0
+DMA_IN:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"00",
 		num_tds=>0)
-	PORT MAP(drq=>Net_308,
+	PORT MAP(drq=>Net_318,
 		trq=>zero,
-		nrq=>Net_257);
+		nrq=>Net_347);
 ISR_Data:cy_isr_v1_0
 	GENERIC MAP(int_type=>"00",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_257);
+	PORT MAP(int_signal=>Net_347);
 Continuo:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"77715107-f8d5-47e5-a629-0fb83101ac6b",
-		drive_mode=>"110",
+		drive_mode=>"000",
 		ibuf_enabled=>"0",
 		init_dr_st=>"0",
 		input_sync=>"1",
@@ -998,26 +985,16 @@ P_out:cy_psoc3_pins_v1_10
 DMA_OUT:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"00",
 		num_tds=>0)
-	PORT MAP(drq=>Net_257,
+	PORT MAP(drq=>Net_318,
 		trq=>zero,
-		nrq=>Net_267);
-Clock_1:cy_clock_v1_0
-	GENERIC MAP(cy_registers=>"",
-		id=>"3fbb72a0-0f1d-47df-8ccb-93f2cdac7e4d",
-		source_clock_id=>"",
-		divisor=>0,
-		period=>"500000000000",
-		is_direct=>'0',
-		is_digital=>'1')
-	PORT MAP(clock_out=>Net_301,
-		dig_domain_out=>open);
+		nrq=>Net_351);
 Net_148_1:cy_dff
 	PORT MAP(d=>Net_148_1D,
-		clk=>Net_301,
+		clk=>Net_385,
 		q=>Net_148_1);
 Net_148_0:cy_dff
 	PORT MAP(d=>Net_148_0D,
-		clk=>Net_301,
+		clk=>Net_385,
 		q=>Net_148_0);
 
 END R_T_L;

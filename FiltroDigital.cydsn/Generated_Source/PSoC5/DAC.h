@@ -82,7 +82,7 @@ void DAC_Wakeup(void)          ;
 ***************************************/
 
  /* Default DAC range */
-#define DAC_DEFAULT_RANGE    0u
+#define DAC_DEFAULT_RANGE    4u
  /* Default DAC speed */
 #define DAC_DEFAULT_SPEED    2u
  /* Default Control */

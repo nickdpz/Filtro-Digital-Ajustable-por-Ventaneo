@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 4s.531ms
+Loading plugins phase: Elapsed time ==> 0s.140ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -d CY8C5888LTI-LP097 -s D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 12s.624ms
+Elaboration phase: Elapsed time ==> 1s.109ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.124ms
+HDL generation phase: Elapsed time ==> 0s.031ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -24,24 +24,24 @@ HDL generation phase: Elapsed time ==> 0s.124ms
 
 ======================================================================
 Compiling:  FiltroDigital.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 FiltroDigital.v -verilog
+Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 FiltroDigital.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  FiltroDigital.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 FiltroDigital.v -verilog
+Program  :   D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 FiltroDigital.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  FiltroDigital.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Tue Oct 02 14:21:20 2018
+Wed Oct 03 18:02:27 2018
 
 
 ======================================================================
@@ -51,41 +51,40 @@ Options  :    -yv2 -q10 FiltroDigital.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Tue Oct 02 14:21:21 2018
+Wed Oct 03 18:02:27 2018
 
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
 
 vpp:  No errors.
 
 Library 'work' => directory 'lcpsoc3'
 General_symbol_table
 General_symbol_table
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Using control file 'FiltroDigital.ctl'.
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v (line 59, col 28):  Note: Substituting module 'add_vi_vv' for '+'.
+D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v (line 59, col 28):  Note: Substituting module 'add_vi_vv' for '+'.
 
 vlogfe:  No errors.
 
@@ -93,38 +92,37 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  FiltroDigital.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Tue Oct 02 14:21:22 2018
+Wed Oct 03 18:02:27 2018
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.ctl'.
-Linking 'C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.ctl'.
+Linking 'D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
 
 tovif:  No errors.
 
@@ -132,39 +130,38 @@ tovif:  No errors.
 ======================================================================
 Compiling:  FiltroDigital.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -dcpsoc3 -verilog FiltroDigital.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Tue Oct 02 14:21:22 2018
+Wed Oct 03 18:02:28 2018
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.ctl'.
-Linking 'C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.ctl'.
+Linking 'D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\codegentemp\FiltroDigital.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\CyControlReg_v1_80\CyControlReg_v1_80.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BasicCounter_v1_0\BasicCounter_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
 
 ----------------------------------------------------------
 Detecting unused logic.
@@ -288,7 +285,6 @@ Detecting unused logic.
 	\BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_25\
 	\ADC:Net_268\
 	\ADC:Net_270\
-	Net_238
 
     Synthesized names
 	\BasicCounter_1:add_vi_vv_MODGEN_1_31\
@@ -322,7 +318,7 @@ Detecting unused logic.
 	\BasicCounter_1:add_vi_vv_MODGEN_1_3\
 	\BasicCounter_1:add_vi_vv_MODGEN_1_2\
 
-Deleted 119 User equations/components.
+Deleted 118 User equations/components.
 Deleted 30 Synthesized equations/components.
 
 ------------------------------------------------------
@@ -373,9 +369,6 @@ Aliasing \BasicCounter_1:MODULE_1:g2:a0:g1:z1:s0:g1:u0:b_0\ to \LCD:tmpOE__LCDPo
 Aliasing \ADC:Net_482\ to zero
 Aliasing \ADC:Net_252\ to zero
 Aliasing \ADC:soc\ to \LCD:tmpOE__LCDPort_net_6\
-Aliasing \Timer:Net_260\ to zero
-Aliasing Net_12 to zero
-Aliasing \Timer:Net_102\ to \LCD:tmpOE__LCDPort_net_6\
 Aliasing tmpOE__Pin_1_net_0 to \LCD:tmpOE__LCDPort_net_6\
 Aliasing \DAC:Net_83\ to zero
 Aliasing \DAC:Net_81\ to zero
@@ -442,20 +435,15 @@ Removing Lhs of wire \ADC:Net_481\[317] = zero[10]
 Removing Lhs of wire \ADC:Net_482\[318] = zero[10]
 Removing Lhs of wire \ADC:Net_252\[352] = zero[10]
 Removing Lhs of wire \ADC:soc\[354] = one[26]
-Removing Lhs of wire \Timer:Net_260\[358] = zero[10]
-Removing Lhs of wire \Timer:Net_266\[359] = one[26]
-Removing Lhs of wire Net_12[360] = zero[10]
-Removing Rhs of wire Net_243[365] = \Timer:Net_51\[361]
-Removing Lhs of wire \Timer:Net_102\[366] = one[26]
-Removing Lhs of wire tmpOE__Pin_1_net_0[368] = one[26]
-Removing Lhs of wire \DAC:Net_83\[375] = zero[10]
-Removing Lhs of wire \DAC:Net_81\[376] = zero[10]
-Removing Lhs of wire \DAC:Net_82\[377] = zero[10]
-Removing Lhs of wire tmpOE__Continuo_net_0[385] = one[26]
-Removing Lhs of wire tmpOE__P_out_net_0[391] = one[26]
+Removing Lhs of wire tmpOE__Pin_1_net_0[359] = one[26]
+Removing Lhs of wire \DAC:Net_83\[365] = zero[10]
+Removing Lhs of wire \DAC:Net_81\[366] = zero[10]
+Removing Lhs of wire \DAC:Net_82\[367] = zero[10]
+Removing Lhs of wire tmpOE__Continuo_net_0[375] = one[26]
+Removing Lhs of wire tmpOE__P_out_net_0[381] = one[26]
 
 ------------------------------------------------------
-Aliased 0 equations, 71 wires.
+Aliased 0 equations, 66 wires.
 ------------------------------------------------------
 
 ----------------------------------------------------------
@@ -619,18 +607,18 @@ Circuit simplification results:
 
 topld:  No errors.
 
-CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp
-Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj" -dcpsoc3 FiltroDigital.v -verilog
+CYPRESS_DIR    : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp
+Warp Program   : D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj" -dcpsoc3 FiltroDigital.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 3s.828ms
+Warp synthesis phase: Elapsed time ==> 0s.968ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Tuesday, 02 October 2018 14:21:23
-Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -d CY8C5888LTI-LP097 FiltroDigital.v -verilog
+cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Wednesday, 03 October 2018 18:02:28
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj -d CY8C5888LTI-LP097 FiltroDigital.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.031ms
+Design parsing phase: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -640,7 +628,7 @@ Design parsing phase: Elapsed time ==> 0s.031ms
 <CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
     Digital Clock 0: Automatic-assigning  clock 'ADC_Ext_CP_Clk'. Fanout=1, Signal=\ADC:Net_93\
     Analog  Clock 0: Automatic-assigning  clock 'ADC_theACLK'. Fanout=1, Signal=\ADC:Net_488\
-    Digital Clock 1: Automatic-assigning  clock 'Clock_1'. Fanout=3, Signal=Net_301
+    Digital Clock 1: Automatic-assigning  clock 'Clock_1'. Fanout=2, Signal=Net_385
 </CYPRESSTAG>
 <CYPRESSTAG name="UDB Clock/Enable Remapping Results">
 </CYPRESSTAG>
@@ -1299,7 +1287,7 @@ Design Equations
             Out Sync Option: AUTO
             Interrupt generated: False
             Interrupt mode: NONE
-            Drive mode: CMOS_OUT
+            Drive mode: HI_Z_ANALOG
             VTrip: EITHER
             Slew: FAST
             Input Sync needed: False
@@ -1426,13 +1414,13 @@ Design Equations
         !(
             0
         );
-        Output = __ONE__ (fanout=2)
+        Output = __ONE__ (fanout=1)
 
     MacroCell: Name=Net_148_1, Mode=(T-Register)
         Total # of inputs        : 2
         Total # of product terms : 1
         List of special equations: 
-            Clock  = (Net_301) => Global
+            Clock  = (Net_385) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
@@ -1444,7 +1432,7 @@ Design Equations
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
-            Clock  = (Net_301) => Global
+            Clock  = (Net_385) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
@@ -1494,11 +1482,11 @@ Design Equations
     DRQ listing
     ------------------------------------------------------------
 
-    drqcell: Name =DMAIN
+    drqcell: Name =DMA_IN
         PORT MAP (
-            dmareq => Net_308 ,
+            dmareq => Net_318 ,
             termin => zero ,
-            termout => Net_257 );
+            termout => Net_347 );
         Properties:
         {
             drq_type = "00"
@@ -1507,9 +1495,9 @@ Design Equations
 
     drqcell: Name =DMA_OUT
         PORT MAP (
-            dmareq => Net_257 ,
+            dmareq => Net_318 ,
             termin => zero ,
-            termout => Net_267 );
+            termout => Net_351 );
         Properties:
         {
             drq_type = "00"
@@ -1533,16 +1521,7 @@ Design Equations
 
     interrupt: Name =\ADC:IRQ\
         PORT MAP (
-            interrupt => Net_308 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-
-    interrupt: Name =IRS_T
-        PORT MAP (
-            interrupt => Net_243 );
+            interrupt => Net_318 );
         Properties:
         {
             int_type = "10"
@@ -1551,7 +1530,7 @@ Design Equations
 
     interrupt: Name =ISR_Data
         PORT MAP (
-            interrupt => Net_257 );
+            interrupt => Net_347 );
         Properties:
         {
             int_type = "00"
@@ -1571,14 +1550,14 @@ Digital Clocks                :    2 :    6 :    8 : 25.00 %
 Analog Clocks                 :    1 :    3 :    4 : 25.00 %
 CapSense Buffers              :    0 :    2 :    2 :  0.00 %
 Digital Filter Block          :    0 :    1 :    1 :  0.00 %
-Interrupts                    :    4 :   28 :   32 : 12.50 %
+Interrupts                    :    3 :   29 :   32 :  9.38 %
 IO                            :   21 :   27 :   48 : 43.75 %
 Segment LCD                   :    0 :    1 :    1 :  0.00 %
 CAN 2.0b                      :    0 :    1 :    1 :  0.00 %
 I2C                           :    0 :    1 :    1 :  0.00 %
 USB                           :    0 :    1 :    1 :  0.00 %
 DMA Channels                  :    2 :   22 :   24 :  8.33 %
-Timer                         :    1 :    3 :    4 : 25.00 %
+Timer                         :    0 :    4 :    4 :  0.00 %
 UDB                           :      :      :      :        
   Macrocells                  :    7 :  185 :  192 :  3.65 %
   Unique P-terms              :    6 :  378 :  384 :  1.56 %
@@ -1596,18 +1575,18 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    1 :    3 :    4 : 25.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.234ms
-Tech Mapping phase: Elapsed time ==> 0s.359ms
+Technology Mapping: Elapsed time ==> 0s.171ms
+Tech Mapping phase: Elapsed time ==> 0s.234ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Info: apr.M0002: Analog signal "\ADC:Net_35\" is connected to one terminal only. (App=cydsfit)
 Initial Analog Placement Results:
-IO_2@[IOP=(2)][IoId=(2)] : Continuo(0) (fixed)
+IO_5@[IOP=(2)][IoId=(5)] : Continuo(0) (fixed)
 IO_4@[IOP=(0)][IoId=(4)] : P0(0) (fixed)
 IO_5@[IOP=(0)][IoId=(5)] : P0(1) (fixed)
 IO_6@[IOP=(0)][IoId=(6)] : P0(2) (fixed)
 IO_7@[IOP=(0)][IoId=(7)] : P0(3) (fixed)
-IO_3@[IOP=(2)][IoId=(3)] : P_out(0) (fixed)
+IO_5@[IOP=(3)][IoId=(5)] : P_out(0) (fixed)
 IO_1@[IOP=(2)][IoId=(1)] : Pin_1(0) (fixed)
 IO_0@[IOP=(0)][IoId=(0)] : SW(0) (fixed)
 IO_1@[IOP=(0)][IoId=(1)] : SW(1) (fixed)
@@ -1623,16 +1602,16 @@ IO_6@[IOP=(12)][IoId=(6)] : \LCD:LCDPort(6)\ (fixed)
 DSM[0]@[FFB(DSM,0)] : \ADC:DSM\
 Vref[6]@[FFB(Vref,6)] : \ADC:vRef_2\
 VIDAC[1]@[FFB(VIDAC,1)] : \DAC:viDAC8\
-Log: apr.M0058: The analog placement iterative improvement is 25% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 57% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 91% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 21% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 38% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 86% done. (App=cydsfit)
 Analog Placement Results:
-IO_2@[IOP=(2)][IoId=(2)] : Continuo(0) (fixed)
+IO_5@[IOP=(2)][IoId=(5)] : Continuo(0) (fixed)
 IO_4@[IOP=(0)][IoId=(4)] : P0(0) (fixed)
 IO_5@[IOP=(0)][IoId=(5)] : P0(1) (fixed)
 IO_6@[IOP=(0)][IoId=(6)] : P0(2) (fixed)
 IO_7@[IOP=(0)][IoId=(7)] : P0(3) (fixed)
-IO_3@[IOP=(2)][IoId=(3)] : P_out(0) (fixed)
+IO_5@[IOP=(3)][IoId=(5)] : P_out(0) (fixed)
 IO_1@[IOP=(2)][IoId=(1)] : Pin_1(0) (fixed)
 IO_0@[IOP=(0)][IoId=(0)] : SW(0) (fixed)
 IO_1@[IOP=(0)][IoId=(1)] : SW(1) (fixed)
@@ -1647,12 +1626,12 @@ IO_5@[IOP=(12)][IoId=(5)] : \LCD:LCDPort(5)\ (fixed)
 IO_6@[IOP=(12)][IoId=(6)] : \LCD:LCDPort(6)\ (fixed)
 DSM[0]@[FFB(DSM,0)] : \ADC:DSM\
 Vref[6]@[FFB(Vref,6)] : \ADC:vRef_2\
-VIDAC[0]@[FFB(VIDAC,0)] : \DAC:viDAC8\
+VIDAC[3]@[FFB(VIDAC,3)] : \DAC:viDAC8\
 
-Analog Placement phase: Elapsed time ==> 1s.640ms
+Analog Placement phase: Elapsed time ==> 0s.566ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.000ms
+Analog Routing phase: Elapsed time ==> 0s.015ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -1668,17 +1647,17 @@ Map of net to items {
   }
   Net: Net_245 {
     dsm_0_vplus
-    agl2_x_dsm_0_vplus
-    agl2
-    agl2_x_p2_2
-    p2_2
+    agl1_x_dsm_0_vplus
+    agl1
+    agl1_x_p2_5
+    p2_5
   }
   Net: Net_254 {
-    vidac_0_vout
-    amuxbusl_x_vidac_0_vout
-    amuxbusl
-    amuxbusl_x_p2_3
-    p2_3
+    vidac_3_vout
+    agr5_x_vidac_3_vout
+    agr5
+    agr5_x_p3_5
+    p3_5
   }
   Net: \ADC:Net_249\ {
   }
@@ -1699,15 +1678,15 @@ Map of net to items {
 }
 Map of item to net {
   dsm_0_vplus                                      -> Net_245
-  agl2_x_dsm_0_vplus                               -> Net_245
-  agl2                                             -> Net_245
-  agl2_x_p2_2                                      -> Net_245
-  p2_2                                             -> Net_245
-  vidac_0_vout                                     -> Net_254
-  amuxbusl_x_vidac_0_vout                          -> Net_254
-  amuxbusl                                         -> Net_254
-  amuxbusl_x_p2_3                                  -> Net_254
-  p2_3                                             -> Net_254
+  agl1_x_dsm_0_vplus                               -> Net_245
+  agl1                                             -> Net_245
+  agl1_x_p2_5                                      -> Net_245
+  p2_5                                             -> Net_245
+  vidac_3_vout                                     -> Net_254
+  agr5_x_vidac_3_vout                              -> Net_254
+  agr5                                             -> Net_254
+  agr5_x_p3_5                                      -> Net_254
+  p3_5                                             -> Net_254
   dsm_0_vminus                                     -> \ADC:Net_20\
   common_vssa                                      -> \ADC:Net_244\
   dsm_0_vminus_x_dsm_0_vminus_vssa                 -> AmuxNet::\ADC:AMux\
@@ -1744,11 +1723,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.609ms
+Analog Code Generation phase: Elapsed time ==> 0s.234ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 1.2 sec.
+I2076: Total run-time: 0.5 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -1765,7 +1744,7 @@ PLD Packing Summary
 
         PLD Resource Type :     Average/LAB
     =======================================
-                   Inputs :            2.00
+                   Inputs :            1.33
                    Pterms :            2.00
                Macrocells :            2.33
 </CYPRESSTAG>
@@ -1779,7 +1758,7 @@ PLD Packing: Elapsed time ==> 0s.000ms
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.046ms
+Partitioning: Elapsed time ==> 0s.031ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -1798,24 +1777,9 @@ Component Placement Details
 ------------------------------------------------------------
 UDB [UDB=(0,0)] is empty.
 UDB [UDB=(0,1)] contents:
-LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=3, #pterms=4
+LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=2, #pterms=4
 {
-    [McSlotId=0]:     MacroCell: Name=Net_148_1, Mode=(T-Register) @ [UDB=(0,1)][LB=0][MC=0]
-        Total # of inputs        : 2
-        Total # of product terms : 1
-        List of special equations: 
-            Clock  = (Net_301) => Global
-            Clock Enable: True
-        Main Equation            : 1 pterm
-        (
-              Net_148_0 * Net_236
-        );
-        Output = Net_148_1 (fanout=4)
-        Properties               : 
-        {
-        }
-
-    [McSlotId=1]:     MacroCell: Name=Net_159, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=1]
+    [McSlotId=0]:     MacroCell: Name=Net_159, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=0]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -1828,7 +1792,7 @@ LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=3, #pterms=4
         {
         }
 
-    [McSlotId=2]:     MacroCell: Name=Net_160, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=2]
+    [McSlotId=1]:     MacroCell: Name=Net_160, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=1]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -1841,7 +1805,7 @@ LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=3, #pterms=4
         {
         }
 
-    [McSlotId=3]:     MacroCell: Name=Net_162, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=3]
+    [McSlotId=2]:     MacroCell: Name=Net_162, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=2]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -1853,11 +1817,8 @@ LAB@[UDB=(0,1)][LB=0] #macrocells=4, #inputs=3, #pterms=4
         Properties               : 
         {
         }
-}
 
-LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=3, #pterms=2
-{
-    [McSlotId=0]:     MacroCell: Name=Net_168, Mode=(Combinatorial) @ [UDB=(0,1)][LB=1][MC=0]
+    [McSlotId=3]:     MacroCell: Name=Net_168, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=3]
         Total # of inputs        : 2
         Total # of product terms : 1
             Clock Enable: True
@@ -1869,12 +1830,30 @@ LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=3, #pterms=2
         Properties               : 
         {
         }
+}
+
+LAB@[UDB=(0,1)][LB=1] #macrocells=2, #inputs=2, #pterms=2
+{
+    [McSlotId=0]:     MacroCell: Name=Net_148_1, Mode=(T-Register) @ [UDB=(0,1)][LB=1][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_385) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              Net_148_0 * Net_236
+        );
+        Output = Net_148_1 (fanout=4)
+        Properties               : 
+        {
+        }
 
     [McSlotId=1]:     MacroCell: Name=Net_148_0, Mode=(T-Register) @ [UDB=(0,1)][LB=1][MC=1]
         Total # of inputs        : 1
         Total # of product terms : 1
         List of special equations: 
-            Clock  = (Net_301) => Global
+            Clock  = (Net_385) => Global
             Clock Enable: True
         Main Equation            : 1 pterm
         (
@@ -1921,7 +1900,7 @@ LAB@[UDB=(0,3)][LB=0] #macrocells=1, #inputs=0, #pterms=0
         !(
             0
         );
-        Output = __ONE__ (fanout=2)
+        Output = __ONE__ (fanout=1)
         Properties               : 
         {
         }
@@ -1953,18 +1932,9 @@ UDB [UDB=(3,4)] is empty.
 UDB [UDB=(3,5)] is empty.
 Intr container @ [IntrContainer=(0)]: 
   Intr@ [IntrContainer=(0)][IntrId=(0)] 
-    interrupt: Name =IRS_T
-        PORT MAP (
-            interrupt => Net_243 );
-        Properties:
-        {
-            int_type = "10"
-            is_nmi = 0
-        }
-  Intr@ [IntrContainer=(0)][IntrId=(1)] 
     interrupt: Name =ISR_Data
         PORT MAP (
-            interrupt => Net_257 );
+            interrupt => Net_347 );
         Properties:
         {
             int_type = "00"
@@ -1982,7 +1952,7 @@ Intr container @ [IntrContainer=(0)]:
   Intr@ [IntrContainer=(0)][IntrId=(29)] 
     interrupt: Name =\ADC:IRQ\
         PORT MAP (
-            interrupt => Net_308 );
+            interrupt => Net_318 );
         Properties:
         {
             int_type = "10"
@@ -1992,20 +1962,20 @@ Drq container @ [DrqContainer=(0)]:
   Dma@ [DrqContainer=(0)][DrqId=(0)] 
     drqcell: Name =DMA_OUT
         PORT MAP (
-            dmareq => Net_257 ,
+            dmareq => Net_318 ,
             termin => zero ,
-            termout => Net_267 );
+            termout => Net_351 );
         Properties:
         {
             drq_type = "00"
             num_tds = 0
         }
   Dma@ [DrqContainer=(0)][DrqId=(10)] 
-    drqcell: Name =DMAIN
+    drqcell: Name =DMA_IN
         PORT MAP (
-            dmareq => Net_308 ,
+            dmareq => Net_318 ,
             termin => zero ,
-            termout => Net_257 );
+            termout => Net_347 );
         Properties:
         {
             drq_type = "00"
@@ -2445,7 +2415,7 @@ Pin : Name = Pin_1(0)
     {
     }
 
-[IoId=2]: 
+[IoId=5]: 
 Pin : Name = Continuo(0)
     Attributes:
         In Group/Port: True
@@ -2453,7 +2423,7 @@ Pin : Name = Continuo(0)
         Out Sync Option: AUTO
         Interrupt generated: False
         Interrupt mode: NONE
-        Drive mode: CMOS_OUT
+        Drive mode: HI_Z_ANALOG
         VTrip: EITHER
         Slew: FAST
         Input Sync needed: False
@@ -2486,7 +2456,8 @@ Pin : Name = Continuo(0)
     {
     }
 
-[IoId=3]: 
+Port 3 contains the following IO cells:
+[IoId=5]: 
 Pin : Name = P_out(0)
     Attributes:
         In Group/Port: True
@@ -2527,7 +2498,6 @@ Pin : Name = P_out(0)
     {
     }
 
-Port 3 contains the following IO cells:
 Port 12 contains the following IO cells:
 [IoId=0]: 
 Pin : Name = \LCD:LCDPort(0)\
@@ -2835,8 +2805,8 @@ Clock group 0:
             aclk_0 => \ADC:Net_488_local\ ,
             clk_a_dig_glb_0 => \ADC:Net_488_adig\ ,
             clk_a_dig_0 => \ADC:Net_488_adig_local\ ,
-            dclk_glb_1 => Net_301 ,
-            dclk_1 => Net_301_local );
+            dclk_glb_1 => Net_385 ,
+            dclk_1 => Net_385_local );
         Properties:
         {
         }
@@ -2884,7 +2854,7 @@ Decimator group 0:
             mod_dat_0 => \ADC:mod_dat_0\ ,
             ext_start => __ONE__ ,
             modrst => \ADC:mod_reset\ ,
-            interrupt => Net_308 );
+            interrupt => Net_318 );
         Properties:
         {
             cy_registers = ""
@@ -2897,22 +2867,10 @@ PICU group 0: empty
 PM group 0: empty
 SC group 0: empty
 SPC group 0: empty
-Timer group 0: 
-    Timer Block @ F(Timer,0): 
-    timercell: Name =\Timer:TimerHW\
-        PORT MAP (
-            clock => Net_301 ,
-            enable => __ONE__ ,
-            tc => Net_243 ,
-            cmp => \Timer:Net_261\ ,
-            irq => \Timer:Net_57\ );
-        Properties:
-        {
-            cy_registers = ""
-        }
+Timer group 0: empty
 USB group 0: empty
 VIDAC group 0: 
-    VIDAC Block @ F(VIDAC,0): 
+    VIDAC Block @ F(VIDAC,3): 
     vidaccell: Name =\DAC:viDAC8\
         PORT MAP (
             vout => Net_254 ,
@@ -2978,8 +2936,9 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
      |   7 |     * |      NONE |         CMOS_OUT |            P0(3) | In(Net_162)
 -----+-----+-------+-----------+------------------+------------------+----------------
    2 |   1 |     * |      NONE |         CMOS_OUT |         Pin_1(0) | In(Net_236)
-     |   2 |     * |      NONE |         CMOS_OUT |      Continuo(0) | Analog(Net_245)
-     |   3 |     * |      NONE |      HI_Z_ANALOG |         P_out(0) | Analog(Net_254)
+     |   5 |     * |      NONE |      HI_Z_ANALOG |      Continuo(0) | Analog(Net_245)
+-----+-----+-------+-----------+------------------+------------------+----------------
+   3 |   5 |     * |      NONE |      HI_Z_ANALOG |         P_out(0) | Analog(Net_254)
 -----+-----+-------+-----------+------------------+------------------+----------------
   12 |   0 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(0)\ | 
      |   1 |     * |      NONE |         CMOS_OUT | \LCD:LCDPort(1)\ | 
@@ -2992,33 +2951,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.093ms
-Digital Placement phase: Elapsed time ==> 2s.312ms
+Digital component placer commit/Report: Elapsed time ==> 0s.046ms
+Digital Placement phase: Elapsed time ==> 0s.914ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
-"C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata" --vh2-path "FiltroDigital_r.vh2" --pcf-path "FiltroDigital.pco" --des-name "FiltroDigital" --dsf-path "FiltroDigital.dsf" --sdc-path "FiltroDigital.sdc" --lib-path "FiltroDigital_r.lib"
+"D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc5/psoc5lp/route_arch-rrg.cydata" --vh2-path "FiltroDigital_r.vh2" --pcf-path "FiltroDigital.pco" --des-name "FiltroDigital" --dsf-path "FiltroDigital.dsf" --sdc-path "FiltroDigital.sdc" --lib-path "FiltroDigital_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 2s.765ms
+Digital Routing phase: Elapsed time ==> 1s.266ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.578ms
+Bitstream Generation phase: Elapsed time ==> 0s.156ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.140ms
+Bitstream Verification phase: Elapsed time ==> 0s.046ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in FiltroDigital_timing.html.
-Static timing analysis phase: Elapsed time ==> 1s.281ms
+Static timing analysis phase: Elapsed time ==> 0s.337ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.343ms
+Design database save phase: Elapsed time ==> 0s.187ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 10s.156ms
+cydsfit: Elapsed time ==> 3s.973ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 10s.156ms
-API generation phase: Elapsed time ==> 3s.906ms
-Dependency generation phase: Elapsed time ==> 0s.062ms
+Fitter phase: Elapsed time ==> 3s.973ms
+API generation phase: Elapsed time ==> 1s.324ms
+Dependency generation phase: Elapsed time ==> 0s.015ms
 Cleanup phase: Elapsed time ==> 0s.000ms
