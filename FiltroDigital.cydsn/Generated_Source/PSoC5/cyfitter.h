@@ -487,9 +487,9 @@
 #define ISR_Data__INTC_SET_PD_REG CYREG_NVIC_SETPEND0
 
 /* Miscellaneous */
-#define BCLK__BUS_CLK__HZ 24000000U
-#define BCLK__BUS_CLK__KHZ 24000U
-#define BCLK__BUS_CLK__MHZ 24U
+#define BCLK__BUS_CLK__HZ 74700000U
+#define BCLK__BUS_CLK__KHZ 74700U
+#define BCLK__BUS_CLK__MHZ 74U
 #define CY_PROJECT_NAME "FiltroDigital"
 #define CY_VERSION "PSoC Creator  4.2"
 #define CYDEV_CHIP_DIE_LEOPARD 1u

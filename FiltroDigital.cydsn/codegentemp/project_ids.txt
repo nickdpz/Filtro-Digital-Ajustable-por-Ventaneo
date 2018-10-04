@@ -1,6 +1,6 @@
-D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj|c7349b88-5b93-4657-a6b7-9b779845e86b
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|562089b7-166c-4427-b123-08f997f6418a
-D:\Documentos\GITUD\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|43892cfc-b67e-4c19-a7b8-3ddf2ea0def6
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|3f6c31ce-4fa4-4718-a56e-0a364c322e80
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|086d6169-11dc-4d1c-97d2-5dc69c4d06bf
-D:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6481c720-71c1-4263-9e58-086aee1298af
+C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj|39967f65-56c4-494f-8eee-44ba1aaf8ef5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2d193ad8-0133-4152-b364-4e1c9689c888
+C:\Users\Nicolas Zamora\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|4d8e536a-3219-44eb-9711-f6e8d8ac282f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|de627d75-d916-4535-9e9c-af2a3dc981ae
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|23d79e76-125f-4af1-bc31-63f4688d8f90
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9a835909-4124-40b9-9437-7884971a1714

@@ -1,25 +1,24 @@
 /*******************************************************************************
 * File Name: Clock_1.h
-* Version 2.20
+* Version 1.70
 *
 *  Description:
 *   Provides the function and constant definitions for the clock component.
 *
-*  Note:
+* Note:
 *
 ********************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2010, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions, 
 * disclaimers, and limitations in the end user license agreement accompanying 
 * the software package with which this file was provided.
-*******************************************************************************/
+********************************************************************************/
 
 #if !defined(CY_CLOCK_Clock_1_H)
 #define CY_CLOCK_Clock_1_H
 
 #include <cytypes.h>
 #include <cyfitter.h>
-
 
 /***************************************
 * Conditional Compilation Parameters
@@ -28,9 +27,8 @@
 /* Check to see if required defines such as CY_PSOC5LP are available */
 /* They are defined starting with cy_boot v3.0 */
 #if !defined (CY_PSOC5LP)
-    #error Component cy_clock_v2_20 requires cy_boot v3.0 or later
+    #error Component cy_clock_v1_70 requires cy_boot v3.0 or later
 #endif /* (CY_PSOC5LP) */
-
 
 /***************************************
 *        Function Prototypes
@@ -41,11 +39,10 @@ void Clock_1_Stop(void) ;
 
 #if(CY_PSOC3 || CY_PSOC5LP)
 void Clock_1_StopBlock(void) ;
-#endif /* (CY_PSOC3 || CY_PSOC5LP) */
+#endif
 
 void Clock_1_StandbyPower(uint8 state) ;
-void Clock_1_SetDividerRegister(uint16 clkDivider, uint8 restart) 
-                                ;
+void Clock_1_SetDividerRegister(uint16 clkDivider, uint8 reset) ;
 uint16 Clock_1_GetDividerRegister(void) ;
 void Clock_1_SetModeRegister(uint8 modeBitMask) ;
 void Clock_1_ClearModeRegister(uint8 modeBitMask) ;
@@ -55,18 +52,18 @@ uint8 Clock_1_GetSourceRegister(void) ;
 #if defined(Clock_1__CFG3)
 void Clock_1_SetPhaseRegister(uint8 clkPhase) ;
 uint8 Clock_1_GetPhaseRegister(void) ;
-#endif /* defined(Clock_1__CFG3) */
+#endif
 
 #define Clock_1_Enable()                       Clock_1_Start()
 #define Clock_1_Disable()                      Clock_1_Stop()
-#define Clock_1_SetDivider(clkDivider)         Clock_1_SetDividerRegister(clkDivider, 1u)
-#define Clock_1_SetDividerValue(clkDivider)    Clock_1_SetDividerRegister((clkDivider) - 1u, 1u)
+#define Clock_1_SetDivider(clkDivider)         Clock_1_SetDividerRegister(clkDivider, 1)
+#define Clock_1_SetDividerValue(clkDivider)    Clock_1_SetDividerRegister((clkDivider) - 1, 1)
 #define Clock_1_SetMode(clkMode)               Clock_1_SetModeRegister(clkMode)
 #define Clock_1_SetSource(clkSource)           Clock_1_SetSourceRegister(clkSource)
 #if defined(Clock_1__CFG3)
 #define Clock_1_SetPhase(clkPhase)             Clock_1_SetPhaseRegister(clkPhase)
-#define Clock_1_SetPhaseValue(clkPhase)        Clock_1_SetPhaseRegister((clkPhase) + 1u)
-#endif /* defined(Clock_1__CFG3) */
+#define Clock_1_SetPhaseValue(clkPhase)        Clock_1_SetPhaseRegister((clkPhase) + 1)
+#endif
 
 
 /***************************************
@@ -98,7 +95,7 @@ uint8 Clock_1_GetPhaseRegister(void) ;
 /* Analog clock phase configuration register */
 #define Clock_1_PHASE              (* (reg8 *) Clock_1__CFG3)
 #define Clock_1_PHASE_PTR          ((reg8 *) Clock_1__CFG3)
-#endif /* defined(Clock_1__CFG3) */
+#endif
 
 
 /**************************************
@@ -116,7 +113,7 @@ uint8 Clock_1_GetPhaseRegister(void) ;
 #if defined(Clock_1__CFG3)
 /* CFG3 phase mask */
 #define Clock_1_PHASE_MASK         Clock_1__CFG3_PHASE_DLY_MASK
-#endif /* defined(Clock_1__CFG3) */
+#endif
 
 #endif /* CY_CLOCK_Clock_1_H */
 

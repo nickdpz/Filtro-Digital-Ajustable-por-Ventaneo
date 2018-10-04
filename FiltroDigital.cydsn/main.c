@@ -234,22 +234,21 @@ CY_ISR(Int_dato){
         Salida[i]=Muestra[i];}
     }else{*/
         double aux=0;
-        
-        for(uint16 n=0;n<ORDEN;n++){             
-            for(uint16 k=0;k<ORDEN;k++){
-                aux=aux+bk[k]*Muestra[BUFFER-n-k];
-            
-            }
-               Salida[n]=(char)aux;
-        }
+        int a;
     
-        for(uint16 n=ORDEN;n<BUFFER;n++){             
-            for(uint16 k=0;k<ORDEN;k++){
-                aux=aux+bk[k]*Muestra[n-k];
-            
+        for(uint16 n=0;n<=BUFFER;n++){  
+            aux=0;
+            for(uint16 k=0;k<=ORDEN;k++){
+                a=n-k;
+                if(a<0){
+                aux=aux+bk[k]*Muestra[BUFFER+a+1];
+                }else{                
+                aux=aux+bk[k]*Muestra[a];
+                }
             }
-               Salida[n]=(char)aux;
+            Salida[n]=(char)aux;
         }
+        
     //}
 }
 

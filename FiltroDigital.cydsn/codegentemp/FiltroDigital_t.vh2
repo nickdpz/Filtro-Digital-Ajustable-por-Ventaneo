@@ -1,5 +1,5 @@
--- Project:   D:\Documentos\GITUD\Documents\PSoC Creator\Proyecto3\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj
--- Generated: 10/03/2018 18:42:29
+-- Project:   C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj
+-- Generated: 10/03/2018 22:42:29
 -- PSoC Creator  4.2
 
 ENTITY FiltroDigital IS
