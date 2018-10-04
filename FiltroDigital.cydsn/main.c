@@ -8,22 +8,16 @@
  * WHICH IS THE PROPERTY OF your company.
  *
  * ========================================
-
 *Mecanica 
 Modo Nomal
 Se configura el ADC en modo continuo, para que muestre con una frecuentcia de 10 K Hz con 8 bit( porque el DAC tiene esa resolucion)
 Una vez el ADC Termina la conversion el DMA Lo pasa al arreglo Muestra[]
 Cuando el DMA termina la transacion la interrupcion INT_dato se ejecuta y calcula el valor de la salida
 Este valor un tiempo despues es cargado al DMA Y de este al DAC
-
 Cambio de parametros
-
 Cuando se seleccione una frecuencia diferente o se cambia la naturaleza del filrtro
 se llama la funcion coeficientes. Esta detiene el ADC por ende toda la cadena
 hasta calcular los coeficientes, una vez los tenga vuleve al modo normal. Se utiliza la libreria MATH.C
-
-
-
 */
 #include "project.h"
 #include <math.h>
@@ -57,7 +51,7 @@ uint8 DMA_IN_Chan;
 uint8 DMA_IN_TD[1];
 
 volatile uint16 frecuenciaux=0;
-volatile uint8 de=0,clase=0;
+volatile uint8 de=0,de2=0,clase=0;
 volatile uint16 frecuencia=100;
 
 uint8 Muestra[BUFFER]={0};
@@ -76,14 +70,14 @@ void coeficientes(){
         case 0:
         //Calculo pasa bajos
         bk[0]=2*fc;
-         for (uint8 i=1;i<=ORDEN;i++){
+         for (uint8 i=1;i<ORDEN;i++){
         bk[i]=(sin(fc*i)/(ORDEN*PI));
             }
         break;
         case 1:
         // Calculo pasa altos
         bk[0]=1-2*fc;
-         for (uint8 i=1;i<=ORDEN;i++){
+         for (uint8 i=1;i<ORDEN;i++){
         bk[i]=(-sin(fc*i)/(ORDEN*PI));
             }
         break;
@@ -91,7 +85,7 @@ void coeficientes(){
         // Calculo pasa banda
         fd=2*PI*((frecuencia-10)/20000-0.165);
           bk[0]=1-2*(fc-fd);
-         for (uint8 i=1;i<=ORDEN;i++){
+         for (uint8 i=1;i<ORDEN;i++){
             bk[i]=((sin(fc*i)-sin(fd*i))/(ORDEN*PI));
             }
         break;
@@ -212,7 +206,8 @@ CY_ISR(Int_SW){
                     //LCD_PrintString("*");
                     //break;
                     case 0xD:
-                        //de2=!de2;
+                        //
+                        de2=!de2;
                     break;
                     visual(0);//Enter D
                     case 0x7:
@@ -233,8 +228,29 @@ CY_ISR(Int_SW){
 }
 
 CY_ISR(Int_dato){
+    
+    /*if(de2==0){
     for(uint16 i=0;i<=BUFFER;i++){
         Salida[i]=Muestra[i];}
+    }else{*/
+        double aux=0;
+        
+        for(uint16 n=0;n<ORDEN;n++){             
+            for(uint16 k=0;k<ORDEN;k++){
+                aux=aux+bk[k]*Muestra[BUFFER-n-k];
+            
+            }
+               Salida[n]=(char)aux;
+        }
+    
+        for(uint16 n=ORDEN;n<BUFFER;n++){             
+            for(uint16 k=0;k<ORDEN;k++){
+                aux=aux+bk[k]*Muestra[n-k];
+            
+            }
+               Salida[n]=(char)aux;
+        }
+    //}
 }
 
 

@@ -2,7 +2,7 @@
 --	Conversion of FiltroDigital.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Oct 03 18:02:28 2018
+--	Wed Oct 03 18:42:25 2018
 --
 
 USE cypress.cypress.all;
@@ -725,7 +725,7 @@ P0:cy_psoc3_pins_v1_10
 		id=>"c6bc1483-9d27-4b6f-a328-51361802da9c/edd15f43-b66b-457b-be3a-5342345270c8",
 		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
 		divisor=>0,
-		period=>"617283950.617284",
+		period=>"1234567901.23457",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\ADC:Net_488\,
