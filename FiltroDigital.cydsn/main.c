@@ -23,9 +23,10 @@ hasta calcular los coeficientes, una vez los tenga vuleve al modo normal. Se uti
 #include <math.h>
 
 
-#define BUFFER 511
+#define BUFFER 10000
 #define PI 3.14159265
-#define ORDEN 10   
+#define ORDEN 20
+#define FM 8000
 
     /* Defines for DMA_OUT */
 #define DMA_OUT_BYTES_PER_BURST 1
@@ -52,49 +53,55 @@ uint8 DMA_IN_TD[1];
 
 volatile uint16 frecuenciaux=0;
 volatile uint8 de=0,de2=0,clase=0;
-volatile uint16 frecuencia=100;
-
-uint8 Muestra[BUFFER]={0};
-uint8 Salida[BUFFER]={0};
+char Muestra[BUFFER];
+float fc;
+volatile float frecuencia=100;
+float bk[ORDEN];
+char Salida[ORDEN];
 
 
 uint8 cont=0;
-double bk[ORDEN];
+float bk[ORDEN]={0.0};
 
 
 void coeficientes(){
-
-        double fc,fd;
-        fc=2*PI*(frecuencia/20000+0.165);
+        float fc,fd;
+        fc=2*frecuencia/FM;
     switch(clase){
         case 0:
         //Calculo pasa bajos
-        bk[0]=2*fc;
-         for (uint8 i=1;i<ORDEN;i++){
-        bk[i]=(sin(fc*i)/(ORDEN*PI));
-            }
+        for (int i=0;i<=ORDEN;i++){
+                if((i-ORDEN/2)==0){
+                   bk[i]=2*fc;            
+                }else{
+                    bk[i]=(2)*(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
+                }
+    }
         break;
         case 1:
         // Calculo pasa altos
-        bk[0]=1-2*fc;
-         for (uint8 i=1;i<ORDEN;i++){
-        bk[i]=(-sin(fc*i)/(ORDEN*PI));
-            }
+       for (int i=0;i<=ORDEN;i++){
+                if((i-ORDEN/2)==0){
+                   bk[i]=2*fc;            
+                }else{
+                    bk[i]=(-2)*(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
+                }
+    }
         break;
         case 2:
         // Calculo pasa banda
-        fd=2*PI*((frecuencia-10)/20000-0.165);
-          bk[0]=1-2*(fc-fd);
-         for (uint8 i=1;i<ORDEN;i++){
-            bk[i]=((sin(fc*i)-sin(fd*i))/(ORDEN*PI));
+        fd=2*(frecuencia-10)/FM;
+         for (int i=0;i<=ORDEN;i++){
+                if((i-ORDEN/2)==0){
+                   bk[i]=2*fc;            
+                }else{
+                    bk[i]=(2)*(sin(PI*fc*(i-ORDEN/2))-sin(PI*fd*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
+                } 
             }
         break;
         default:
         break;
     }
-    
-
-
 }
 
 void visual(uint8 numero){
@@ -126,14 +133,15 @@ void visual(uint8 numero){
     LCD_PrintString("    ");
     LCD_Position(1,10);
     if(de==0){
-        LCD_PrintNumber(frecuenciaux);
+        LCD_PrintNumber((int)frecuenciaux);
     }else{
-        LCD_PrintNumber(frecuencia);
+        LCD_PrintNumber((int)frecuencia);
     }
 }
 
 CY_ISR(Int_SW){
-    //ADC_StopConvert();
+    ADC_StopConvert();
+    ADC_Stop();
     uint8 temp=SW_Read();
     Control_Write(0);
     switch(SW_Read()) {
@@ -201,15 +209,20 @@ CY_ISR(Int_SW){
                     break;
                 case 0b000000111:
                     switch(P0_Read()) {
-                    //case 0xE:
-                    //LCD_Position(0,1);    
-                    //LCD_PrintString("*");
-                    //break;
-                    case 0xD:
-                        //
-                        de2=!de2;
+                    case 0xE:
+                            de2=0;
+                            LCD_Position(1,15);
+                            LCD_PrintString("*");
                     break;
-                    visual(0);//Enter D
+                    case 0xD:
+                            visual(0);
+                    break;
+                    case 0xB:                            
+                            de2=1;
+                            LCD_Position(1,15);
+                            LCD_PrintString("#");
+                    break;
+                    
                     case 0x7:
                         visual(10);
                     break;
@@ -221,24 +234,24 @@ CY_ISR(Int_SW){
                 break;
     }
     while(SW_Read()==temp);
-    //ADC_StartConvert();
+    ADC_StartConvert();
+    ADC_Start();
     Control_Write(1);
     SW_ClearInterrupt();
     
 }
 
 CY_ISR(Int_dato){
-    
-    /*if(de2==0){
-    for(uint16 i=0;i<=BUFFER;i++){
-        Salida[i]=Muestra[i];}
-    }else{*/
-        double aux=0;
+    if(de2==0){
+        for(uint16 i=0;i<BUFFER;i++){
+            Salida[i]=Muestra[i];
+        }
+    }else{
+        float aux=0;
         int a;
-    
-        for(uint16 n=0;n<=BUFFER;n++){  
+        for(int n=0;n<=BUFFER;n++){  
             aux=0;
-            for(uint16 k=0;k<=ORDEN;k++){
+            for(int k=0;k<=ORDEN;k++){
                 a=n-k;
                 if(a<0){
                 aux=aux+bk[k]*Muestra[BUFFER+a+1];
@@ -249,15 +262,12 @@ CY_ISR(Int_dato){
             Salida[n]=(char)aux;
         }
         
-    //}
+    }
 }
-
-
 
 int main(void)
 {
-    CyGlobalIntEnable; /* Enable global interrupts. */
-    
+    CyGlobalIntEnable; /* Enable global interrupts. */   
     /* DMA Configuration for DMA_OUT */
     DMA_OUT_Chan = DMA_OUT_DmaInitialize(DMA_OUT_BYTES_PER_BURST, DMA_OUT_REQUEST_PER_BURST, 
         HI16(DMA_OUT_SRC_BASE), HI16(DMA_OUT_DST_BASE));

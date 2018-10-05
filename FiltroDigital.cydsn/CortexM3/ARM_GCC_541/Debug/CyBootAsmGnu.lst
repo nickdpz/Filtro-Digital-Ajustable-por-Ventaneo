@@ -11808,9 +11808,9 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  487              	.set ISR_Data__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
  488              	
  489              	/* Miscellaneous */
- 490              	.set BCLK__BUS_CLK__HZ, 24000000
- 491              	.set BCLK__BUS_CLK__KHZ, 24000
- 492              	.set BCLK__BUS_CLK__MHZ, 24
+ 490              	.set BCLK__BUS_CLK__HZ, 74700000
+ 491              	.set BCLK__BUS_CLK__KHZ, 74700
+ 492              	.set BCLK__BUS_CLK__MHZ, 74
  493              	.set CYDEV_CHIP_DIE_LEOPARD, 1
  494              	.set CYDEV_CHIP_DIE_PSOC4A, 18
  495              	.set CYDEV_CHIP_DIE_PSOC5LP, 2
