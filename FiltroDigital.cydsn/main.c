@@ -24,7 +24,7 @@ hasta calcular los coeficientes, una vez los tenga vuleve al modo normal. Se uti
 
 
 #define BUFFER 10000
-#define PI 3.14159265
+#define PI 3.141
 #define ORDEN 20
 #define FM 8000
 
@@ -72,9 +72,9 @@ void coeficientes(){
         //Calculo pasa bajos
         for (int i=0;i<=ORDEN;i++){
                 if((i-ORDEN/2)==0){
-                   bk[i]=2*fc;            
+                   bk[i]=3.4*fc;            
                 }else{
-                    bk[i]=(2)*(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
+                    bk[i]=(1.7)*(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
                 }
     }
         break;
@@ -82,9 +82,9 @@ void coeficientes(){
         // Calculo pasa altos
        for (int i=0;i<=ORDEN;i++){
                 if((i-ORDEN/2)==0){
-                   bk[i]=2*fc;            
+                   bk[i]=1.25-2.4*fc/PI;            
                 }else{
-                    bk[i]=(-2)*(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
+                    bk[i]=(-1.5*sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
                 }
     }
         break;

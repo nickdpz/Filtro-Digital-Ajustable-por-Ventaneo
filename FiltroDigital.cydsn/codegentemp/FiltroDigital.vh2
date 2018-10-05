@@ -2,7 +2,7 @@
 --	Conversion of FiltroDigital.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Oct 04 19:50:37 2018
+--	Thu Oct 04 20:31:44 2018
 --
 
 USE cypress.cypress.all;
