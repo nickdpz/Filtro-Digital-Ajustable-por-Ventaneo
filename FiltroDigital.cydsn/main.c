@@ -24,9 +24,9 @@ hasta calcular los coeficientes, una vez los tenga vuleve al modo normal. Se uti
 
 
 #define BUFFER 10000
-#define PI 3.141
+#define PI 3.14
 #define ORDEN 20
-#define FM 8000
+#define FM 6000
 
     /* Defines for DMA_OUT */
 #define DMA_OUT_BYTES_PER_BURST 1
@@ -82,7 +82,7 @@ void coeficientes(){
         // Calculo pasa altos
        for (int i=0;i<=ORDEN;i++){
                 if((i-ORDEN/2)==0){
-                   bk[i]=1.25-2.4*fc/PI;            
+                   bk[i]=1.3-2.4*fc/PI;            
                 }else{
                     bk[i]=(-1.5*sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)));
                 }
@@ -111,7 +111,11 @@ void visual(uint8 numero){
         frecuencia=frecuenciaux;
         frecuenciaux=0;
         de=1;
-        coeficientes();    
+        coeficientes();
+        LCD_Position(1,10);
+        LCD_PrintString("    ");
+        LCD_Position(1,10);
+        LCD_PrintNumber((int)frecuencia);
         }
     }else{
         de=0;
@@ -119,25 +123,14 @@ void visual(uint8 numero){
                 frecuenciaux=numero;
             }else{
                 frecuenciaux=frecuenciaux*10+numero;
-                if(frecuenciaux>100){
-                    //Timer_Stop();
-                if(frecuenciaux>1000){
-                    frecuencia=1000;
-                    frecuenciaux=0;
-                    de=1;
-                }
+                    if((frecuenciaux>100)&(frecuenciaux>1000)){
+                        frecuencia=1000;
+                        frecuenciaux=0;
+                        de=1;
+                    }
                 }
         }
-    } 
-    LCD_Position(1,10);
-    LCD_PrintString("    ");
-    LCD_Position(1,10);
-    if(de==0){
-        LCD_PrintNumber((int)frecuenciaux);
-    }else{
-        LCD_PrintNumber((int)frecuencia);
     }
-}
 
 CY_ISR(Int_SW){
     ADC_StopConvert();
