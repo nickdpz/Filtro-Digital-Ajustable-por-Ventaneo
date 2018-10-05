@@ -23,8 +23,8 @@
 Number of clocks: 10
 Clock: ADC_Ext_CP_Clk               | N/A                    | Target: 74.70 MHz   | 
 Clock: ADC_Ext_CP_Clk(routed)       | N/A                    | Target: 74.70 MHz   | 
-Clock: ADC_theACLK                  | N/A                    | Target: 0.49 MHz    | 
-Clock: ADC_theACLK(fixed-function)  | N/A                    | Target: 0.49 MHz    | 
+Clock: ADC_theACLK                  | N/A                    | Target: 0.13 MHz    | 
+Clock: ADC_theACLK(fixed-function)  | N/A                    | Target: 0.13 MHz    | 
 Clock: Clock_1                      | Frequency: 127.25 MHz  | Target: 0.00 MHz    | 
 Clock: CyBUS_CLK                    | Frequency: 127.25 MHz  | Target: 74.70 MHz   | 
 Clock: CyILO                        | N/A                    | Target: 0.00 MHz    | 
