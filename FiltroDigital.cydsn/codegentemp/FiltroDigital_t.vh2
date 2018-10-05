@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Nicolas Zamora\Documents\Embepot\Filtro-Digital-Ajustable-por-Ventaneo\FiltroDigital.cydsn\FiltroDigital.cyprj
--- Generated: 10/05/2018 12:26:11
+-- Generated: 10/05/2018 13:00:56
 -- PSoC Creator  4.2
 
 ENTITY FiltroDigital IS
@@ -58,6 +58,11 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE placement_force OF Net_168 : SIGNAL IS "U(0,1,A)3";
     SIGNAL Net_177 : bit;
     SIGNAL Net_236 : bit;
+    SIGNAL Net_316 : bit;
+    ATTRIBUTE global_signal OF Net_316 : SIGNAL IS true;
+    SIGNAL Net_316_adig : bit;
+    SIGNAL Net_316_adig_local : bit;
+    SIGNAL Net_316_local : bit;
     SIGNAL Net_318 : bit;
     SIGNAL Net_347 : bit;
     SIGNAL Net_351 : bit;
@@ -111,7 +116,6 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     SIGNAL \\\LCD:LCDPort(5)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
     SIGNAL __ONE__ : bit;
-    ATTRIBUTE placement_force OF __ONE__ : SIGNAL IS "U(0,3,A)0";
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
@@ -172,17 +176,15 @@ ARCHITECTURE __DEFAULT__ OF FiltroDigital IS
     ATTRIBUTE Location OF \ADC:DSM\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE Location OF \ADC:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(29)]";
     ATTRIBUTE Location OF \ADC:DEC\ : LABEL IS "F(Decimator,0)";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(0,3)";
     ATTRIBUTE Location OF \DAC:viDAC8\ : LABEL IS "F(VIDAC,3)";
     ATTRIBUTE lib_model OF DMA_IN : LABEL IS "drqcell1";
     ATTRIBUTE Location OF DMA_IN : LABEL IS "[DrqContainer=(0)][DrqId=(10)]";
     ATTRIBUTE Location OF ISR_Data : LABEL IS "[IntrContainer=(0)][IntrId=(0)]";
     ATTRIBUTE lib_model OF DMA_OUT : LABEL IS "drqcell2";
     ATTRIBUTE Location OF DMA_OUT : LABEL IS "[DrqContainer=(0)][DrqId=(0)]";
-    ATTRIBUTE lib_model OF Net_148_1 : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF Net_148_1 : LABEL IS "macrocell5";
     ATTRIBUTE Location OF Net_148_1 : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF Net_148_0 : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF Net_148_0 : LABEL IS "macrocell6";
     ATTRIBUTE Location OF Net_148_0 : LABEL IS "U(0,1)";
     COMPONENT clockblockcell
         PORT (
@@ -439,6 +441,10 @@ BEGIN
             aclk_0 => \ADC:Net_488_local\,
             clk_a_dig_glb_0 => \ADC:Net_488_adig\,
             clk_a_dig_0 => \ADC:Net_488_adig_local\,
+            aclk_glb_1 => Net_316,
+            aclk_1 => Net_316_local,
+            clk_a_dig_glb_1 => Net_316_adig,
+            clk_a_dig_1 => Net_316_adig_local,
             dclk_glb_1 => Net_385,
             dclk_1 => Net_385_local,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
@@ -1328,17 +1334,9 @@ BEGIN
             mod_dat_2 => \ADC:mod_dat_2\,
             mod_dat_1 => \ADC:mod_dat_1\,
             mod_dat_0 => \ADC:mod_dat_0\,
-            ext_start => __ONE__,
+            ext_start => Net_316_local,
             modrst => \ADC:mod_reset\,
             interrupt => Net_318);
-
-    __ONE__:macrocell
-        GENERIC MAP(
-            eqn_main => "1'b0",
-            regmode => 0,
-            clken_mode => 1)
-        PORT MAP(
-            q => __ONE__);
 
     \DAC:viDAC8\:vidaccell
         GENERIC MAP(

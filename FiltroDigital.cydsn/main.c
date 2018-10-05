@@ -26,7 +26,7 @@ hasta calcular los coeficientes, una vez los tenga vuleve al modo normal. Se uti
 #define BUFFER 4096
 #define PI 3.14
 #define ORDEN 20
-#define FM 8000
+#define FM 6000
 
     /* Defines for DMA_OUT */
 #define DMA_OUT_BYTES_PER_BURST 1
@@ -55,7 +55,7 @@ volatile uint16 frecuenciaux=0;
 volatile uint8 de=0,de2=0,clase=0;
 char Muestra[BUFFER+1];
 float fc;
-volatile float frecuencia=300;
+volatile float frecuencia=100;
 float bk[ORDEN];
 char Salida[ORDEN+1];
 
@@ -65,7 +65,7 @@ float bk[ORDEN]={0.0};
 
 
 void coeficientes(){
-        float fc,fd;
+        float fc;
         fc=2*frecuencia/FM;
     switch(clase){
         case 0:
@@ -90,12 +90,13 @@ void coeficientes(){
         break;
         case 2:
         // Calculo pasa banda
-        fd=2*(frecuencia-2)/FM;
+        //fd=2*(frecuencia-10)/FM;
          for (int i=0;i<=ORDEN;i++){
                 if((i-ORDEN/2)==0){
-                   bk[i]=5*(fc-fd);           
+                   bk[i]=1-2*(fc)/PI;           
                 }else{
-                    bk[i]=1.5*(sin(PI*fc*(i-ORDEN/2))-sin(PI*fd*(i-ORDEN/2)))/(i-ORDEN/2);
+                    //bk[i]=2.55*(sin(PI*fc*(i-ORDEN/2))-sin(PI*fd*(i-ORDEN/2)))/(i-ORDEN/2);
+                    bk[i]=(sin(PI*fc*(i-ORDEN/2))/(PI*(i-ORDEN/2)))/2;
                 } 
             }
         break;
@@ -252,6 +253,7 @@ CY_ISR(Int_dato){
                 aux=aux+bk[k]*Muestra[a];
                 }
             }
+
             Salida[n]=(char)aux;
         }
         
@@ -291,7 +293,7 @@ int main(void)
     LCD_Position(0,0);
     LCD_PrintString("Filtro PasaBajos");
     LCD_Position(1,0);
-    LCD_PrintString("F. Corte: 300");
+    LCD_PrintString("F. Corte: 100");
     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     for(;;)

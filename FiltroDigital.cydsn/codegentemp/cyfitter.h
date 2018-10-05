@@ -408,6 +408,19 @@
 #define Clock_1__PM_STBY_CFG CYREG_PM_STBY_CFG2
 #define Clock_1__PM_STBY_MSK 0x02u
 
+/* Clock_2 */
+#define Clock_2__CFG0 CYREG_CLKDIST_ACFG1_CFG0
+#define Clock_2__CFG1 CYREG_CLKDIST_ACFG1_CFG1
+#define Clock_2__CFG2 CYREG_CLKDIST_ACFG1_CFG2
+#define Clock_2__CFG2_SRC_SEL_MASK 0x07u
+#define Clock_2__CFG3 CYREG_CLKDIST_ACFG1_CFG3
+#define Clock_2__CFG3_PHASE_DLY_MASK 0x0Fu
+#define Clock_2__INDEX 0x01u
+#define Clock_2__PM_ACT_CFG CYREG_PM_ACT_CFG1
+#define Clock_2__PM_ACT_MSK 0x02u
+#define Clock_2__PM_STBY_CFG CYREG_PM_STBY_CFG1
+#define Clock_2__PM_STBY_MSK 0x02u
+
 /* Control */
 #define Control_Sync_ctrl_reg__0__MASK 0x01u
 #define Control_Sync_ctrl_reg__0__POS 0

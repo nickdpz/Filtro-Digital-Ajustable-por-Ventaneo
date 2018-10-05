@@ -38,6 +38,7 @@
 #include "P_out_aliases.h"
 #include "P_out.h"
 #include "DMA_OUT_dma.h"
+#include "Clock_2.h"
 #include "LCD_LCDPort_aliases.h"
 #include "LCD_LCDPort.h"
 #include "ADC_AMux.h"

@@ -408,6 +408,19 @@
 .set Clock_1__PM_STBY_CFG, CYREG_PM_STBY_CFG2
 .set Clock_1__PM_STBY_MSK, 0x02
 
+/* Clock_2 */
+.set Clock_2__CFG0, CYREG_CLKDIST_ACFG1_CFG0
+.set Clock_2__CFG1, CYREG_CLKDIST_ACFG1_CFG1
+.set Clock_2__CFG2, CYREG_CLKDIST_ACFG1_CFG2
+.set Clock_2__CFG2_SRC_SEL_MASK, 0x07
+.set Clock_2__CFG3, CYREG_CLKDIST_ACFG1_CFG3
+.set Clock_2__CFG3_PHASE_DLY_MASK, 0x0F
+.set Clock_2__INDEX, 0x01
+.set Clock_2__PM_ACT_CFG, CYREG_PM_ACT_CFG1
+.set Clock_2__PM_ACT_MSK, 0x02
+.set Clock_2__PM_STBY_CFG, CYREG_PM_STBY_CFG1
+.set Clock_2__PM_STBY_MSK, 0x02
+
 /* Control */
 .set Control_Sync_ctrl_reg__0__MASK, 0x01
 .set Control_Sync_ctrl_reg__0__POS, 0

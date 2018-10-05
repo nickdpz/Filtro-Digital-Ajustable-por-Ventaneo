@@ -61,12 +61,12 @@
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\ADC_IRQ</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\ADC_theACLK</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\Clock_1</v>
+<v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\Clock_2</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\Continuo</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\Control</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\cy_boot</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\DAC</v>
 <v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\DMA_IN</v>
-<v>Proyecto3\FiltroDigital\Generated_Source\PSoC5\DMA_OUT</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -99,6 +99,7 @@
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_theACLK.lst</v>
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\Continuo.lst</v>
 <v>Proyecto3\FiltroDigital\CortexM3\ARM_GCC_541\Debug\Listing Files\Control.lst</v>
@@ -156,7 +157,8 @@
 <v>Proyecto3\FiltroDigital\ADC_DelSig_v3_30.pdf</v>
 <v>Proyecto3\FiltroDigital\BasicCounter_v1_0.pdf</v>
 <v>Proyecto3\FiltroDigital\CharLCD_v2_20.pdf</v>
-<v>Proyecto3\FiltroDigital\cy_clock_v1_70.pdf</v>
+<v>Proyecto3\FiltroDigital\cy_clock_v1_70</v>
+<v>Proyecto3\FiltroDigital\cy_clock_v1_70\cy_clock_v1_70.pdf</v>
 <v>Proyecto3\FiltroDigital\cy_constant_v1_0</v>
 <v>Proyecto3\FiltroDigital\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>Proyecto3\FiltroDigital\cy_dma_v1_70</v>
@@ -181,7 +183,8 @@
 <v>Proyecto3\FiltroDigital\ADC_DelSig_v3_30.pdf</v>
 <v>Proyecto3\FiltroDigital\BasicCounter_v1_0.pdf</v>
 <v>Proyecto3\FiltroDigital\CharLCD_v2_20.pdf</v>
-<v>Proyecto3\FiltroDigital\cy_clock_v1_70.pdf</v>
+<v>Proyecto3\FiltroDigital\cy_clock_v1_70</v>
+<v>Proyecto3\FiltroDigital\cy_clock_v1_70\cy_clock_v1_70.pdf</v>
 <v>Proyecto3\FiltroDigital\cy_constant_v1_0</v>
 <v>Proyecto3\FiltroDigital\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
 <v>Proyecto3\FiltroDigital\cy_dma_v1_70</v>
